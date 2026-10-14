@@ -140,10 +140,12 @@ def fill_text(tf, paragraphs, size=22, color=INK, bold=False, align=PP_ALIGN.LEF
 
 def tb(slide, x, y, w, h, paragraphs, size=22, color=INK, bold=False, align=PP_ALIGN.LEFT,
        anchor=MSO_ANCHOR.TOP, margin=0.0, space_after=6, line_spacing=1.0, bullet=None,
-       bullet_color=None, font=FONT, name=None):
+       bullet_color=None, font=FONT, name=None, rotation=None):
     box = slide.shapes.add_textbox(Inches(x), Inches(y), Inches(w), Inches(h))
     if name:
         box.name = name
+    if rotation is not None:
+        box.rotation = rotation
     tf = box.text_frame
     tf.margin_left = tf.margin_right = tf.margin_top = tf.margin_bottom = Inches(margin)
     tf.vertical_anchor = anchor
@@ -310,7 +312,7 @@ def stat(slide, x, y, w, number, label, h=1.6, num_size=54, lab_size=18, num_col
        color=lab_color, align=align, space_after=0, line_spacing=1.05)
 
 
-def step_track(slide, active, y=10.28):
+def step_track(slide, active, y=10.12):
     """Trilha dos 7 passos no rodapé. active: int ou conjunto de ints (1..7)."""
     if isinstance(active, int):
         active = {active}
@@ -368,7 +370,7 @@ def table(slide, x, y, w, rows, col_widths=None, header=True, size=16, row_h=0.4
 
 # ---------- gráfico nativo ----------
 def bar_chart(slide, x, y, w, h, categories, values, color=NAVY, number_format='#,##0', font_size=14,
-              title=None):
+              title=None, labels=None):
     cd = CategoryChartData()
     cd.categories = categories
     cd.add_series("Registros", values)
@@ -399,6 +401,17 @@ def bar_chart(slide, x, y, w, h, categories, values, color=NAVY, number_format='
     ser = plot.series[0]
     ser.format.fill.solid()
     ser.format.fill.fore_color.rgb = color
+    if labels:  # rótulos de texto fixos (independentes do idioma/locale do PowerPoint)
+        for i, lab in enumerate(labels):
+            pdl = ser.points[i].data_label
+            pdl.position = XL_LABEL_POSITION.OUTSIDE_END
+            tf = pdl.text_frame
+            tf.text = lab
+            for p in tf.paragraphs:
+                for r in p.runs:
+                    r.font.size = Pt(font_size)
+                    r.font.name = FONT
+                    r.font.color.rgb = INK
     va = ch.value_axis
     va.visible = False
     va.has_major_gridlines = False

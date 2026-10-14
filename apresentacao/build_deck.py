@@ -121,7 +121,8 @@ peco = [
                        "profissionais de anestesia."),
     ("E", "Exposição", "Exposição ocupacional à fumaça gerada por dispositivos de energia (eletrocautério, laser, bisturi "
                        "ultrassônico)."),
-    ("C", "Comparador", "Não expostos, minimamente expostos ou com medidas de proteção."),
+    ("C", "Comparador", "Não expostos, minimamente expostos ou com medidas de proteção (exaustão local, máscaras de alta "
+                        "filtração)."),
     ("O", "Outcome (desfecho)", "Efeitos à saúde: sintomas, função pulmonar, biomarcadores urinários, mucosa nasal, "
                                 "HPV-DNA nas vias aéreas."),
 ]
@@ -189,7 +190,7 @@ for i, (t, body) in enumerate(steps, start=1):
     tb(s, cx - seg / 2 + 0.05, 3.15, seg - 0.1, 0.8, [t], size=19, color=NAVY, bold=True, align=PP_ALIGN.CENTER,
        space_after=0, anchor=MSO_ANCHOR.TOP)
     rect(s, cx - seg / 2 + 0.08, 3.95, seg - 0.16, 3.15, fill=LIGHT)
-    tb(s, cx - seg / 2 + 0.22, 4.05, seg - 0.44, 3.0, body.split("\n"), size=16, color=INK, space_after=5,
+    tb(s, cx - seg / 2 + 0.22, 4.05, seg - 0.44, 3.0, body.split("\n"), size=17, color=INK, space_after=5,
        line_spacing=1.02)
 # ferramentas
 rect(s, L, 7.4, 18.2, 1.65, fill=NAVY_TINT)
@@ -203,14 +204,14 @@ tw = (18.2 - 3.2) / len(tools)
 for i, (ic, name, desc) in enumerate(tools):
     x = tx + i * tw
     icon(s, ic, x, 7.85, 0.55, color="navy")
-    tb(s, x + 0.7, 7.62, tw - 0.8, 0.45, [name], size=16, color=NAVY, bold=True, space_after=0)
-    tb(s, x + 0.7, 8.05, tw - 0.8, 0.95, [desc], size=14, color=INK, space_after=0)
-tb(s, L, 9.3, 18.2, 1.2, [
+    tb(s, x + 0.7, 7.6, tw - 0.8, 0.45, [name], size=17, color=NAVY, bold=True, space_after=0)
+    tb(s, x + 0.7, 8.03, tw - 0.8, 0.98, [desc], size=15, color=INK, space_after=0)
+tb(s, L, 9.3, 18.2, 1.3, [
     [("Transparência e reprodutibilidade: ", {"bold": True, "color": NAVY}),
      ("checklist PRISMA 2020 com 27 itens preenchido; estratégias completas por base (Anexo A); extração, risco de viés e "
       "perfil GRADE em anexos; códigos de análise, figuras e planilhas abertos no OSF (osf.io/jktmn). ", {}),
      ("Uso de IA declarado conforme a Portaria CNPq nº 2.664/2026.", {"color": GRAY})]],
-   size=15, color=INK, space_after=0)
+   size=16, color=INK, space_after=0)
 deck.notes(s, """[1:35–2:05] METODOLOGIA – MAPA (~30 s)
 A parte que mais me orgulho é o método, então vou apresentá-lo como um passo a passo, do jeito que o PRISMA 2020 recomenda. São sete passos.
 Um: a pergunta e o protocolo, registrado no PROSPERO antes da extração de dados, e a dispensa do Comitê de Ética, por ser revisão de literatura. Dois: a busca em sete bases, mais literatura cinzenta e busca por citação. Três: a seleção, com deduplicação, triagem e leitura na íntegra. Quatro: a extração padronizada. Cinco: o risco de viés com as ferramentas do JBI. Seis: a síntese, que é a metanálise de proporções. Sete: a certeza da evidência pelo GRADE.
@@ -235,9 +236,9 @@ tb(s, L + 0.3, 3.05, 7.8, 3.1, [
     "Resumos de congresso só com população, cenário, definição do desfecho, eventos e denominador "
     "(classificados como preocupação alta e testados em análise de sensibilidade).",
 ], size=17, color=INK, bullet=True, bullet_color=TEAL, space_after=6)
-icon(s, "xmark", L + 0.3, 6.3, 0.4, color="red")
-tb(s, L + 0.85, 6.25, 7.3, 0.45, ["Excluímos"], size=18, color=RED, bold=True, space_after=0)
-tb(s, L + 0.3, 6.73, 7.8, 3.1, [
+icon(s, "xmark", L + 0.3, 6.0, 0.4, color="red")
+tb(s, L + 0.85, 5.95, 7.3, 0.45, ["Excluímos"], size=18, color=RED, bold=True, space_after=0)
+tb(s, L + 0.3, 6.43, 7.8, 3.3, [
     "Estudos in vitro ou em animais;",
     "População fora do centro cirúrgico (ex.: ambulatórios de dermatologia ou ginecologia);",
     "Desfecho apenas no paciente;",
@@ -252,12 +253,13 @@ tb(s, 10.2, 2.02, 9.0, 0.4, ["Registros recuperados por fonte (busca em 09/07/20
 bar_chart(s, 10.0, 2.45, 6.7, 4.35,
           ["PubMed/MEDLINE", "Embase", "Web of Science", "Scopus", "BVS (LILACS/IBECS)", "Google Scholar", "SciELO",
            "Cochrane CENTRAL", "Catálogo CAPES"],
-          [4522, 4660, 3629, 2639, 1229, 50, 28, 0, 0], color=NAVY, font_size=13)
+          [4522, 4660, 3629, 2639, 1229, 50, 28, 0, 0], color=NAVY, font_size=13,
+          labels=["4.522", "4.660", "3.629", "2.639", "1.229", "50", "28", "0", "0"])
 stat(s, 16.85, 2.6, 2.5, "16.757", "registros identificados", h=1.6, num_size=40, lab_size=15, num_color=RED)
 stat(s, 16.85, 4.35, 2.5, "+ 443", "referências avaliadas na busca por citação (OpenAlex)", h=1.6, num_size=32,
      lab_size=14, num_color=NAVY)
-tb(s, 16.85, 5.95, 2.5, 0.8, ["Cinzenta: 4 estratégias no Google Scholar (50 primeiros resultados cada) e Catálogo CAPES"],
-   size=12, color=GRAY, space_after=0)
+tb(s, 16.85, 5.95, 2.5, 0.85, ["Cinzenta: 4 estratégias no Google Scholar (50 primeiros resultados cada) e Catálogo CAPES"],
+   size=13, color=GRAY, space_after=0)
 # estratégia
 rect(s, 9.95, 7.05, 9.5, 2.8, fill=GOLD_TINT)
 tb(s, 10.2, 7.12, 9.0, 0.4, ["Como a estratégia foi construída"], size=18, color=NAVY, bold=True, space_after=0)
@@ -284,18 +286,18 @@ flow = [("16.757", "registros identificados\n(bases + literatura cinzenta)", NAV
         ("32", "relatórios buscados na íntegra\n(28 da triagem + 4 por citação)", NAVY),
         ("26", "avaliados para elegibilidade\n(6 não recuperados)", NAVY),
         ("22", "relatórios incluídos\n(4 excluídos na íntegra)", RED)]
-between = ["", "10.882 excluídos\nna triagem", "6 não\nrecuperados", "4 excluídos\nna íntegra"]
-bw, bg = 3.0, 0.8
+between = ["", "10.882\nexcluídos\nna triagem", "6 não\nrecuperados", "4 excluídos\nna íntegra"]
+bw, bg = 2.7, 1.175
 for i, (num, lab, col) in enumerate(flow):
     x = L + i * (bw + bg)
     rect(s, x, 2.0, bw, 2.15, fill=RED_TINT if col == RED else LIGHT)
-    tb(s, x + 0.2, 2.08, bw - 0.4, 0.8, [num], size=40, color=col, bold=True, align=PP_ALIGN.CENTER, space_after=0)
-    tb(s, x + 0.2, 2.9, bw - 0.4, 1.2, lab.split("\n"), size=14, color=INK, align=PP_ALIGN.CENTER, space_after=0)
+    tb(s, x + 0.15, 2.08, bw - 0.3, 0.8, [num], size=40, color=col, bold=True, align=PP_ALIGN.CENTER, space_after=0)
+    tb(s, x + 0.15, 2.9, bw - 0.3, 1.2, lab.split("\n"), size=14, color=INK, align=PP_ALIGN.CENTER, space_after=0)
     if i < len(flow) - 1:
-        line(s, x + bw + 0.08, 3.05, x + bw + bg - 0.08, 3.05, color=NAVY, width=2.5, arrow=True)
+        line(s, x + bw + 0.08, 2.75, x + bw + bg - 0.08, 2.75, color=NAVY, width=2.5, arrow=True)
         if between[i]:
-            tb(s, x + bw - 0.2, 3.35, bg + 0.4, 0.8, between[i].split("\n"), size=12, color=GRAY,
-               align=PP_ALIGN.CENTER, space_after=0)
+            tb(s, x + bw + 0.02, 2.95, bg - 0.04, 1.2, between[i].split("\n"), size=12, color=GRAY,
+               align=PP_ALIGN.CENTER, space_after=0, line_spacing=0.95)
 cards = [
     ("filter", "Deduplicação e triagem", [
         "Zotero → Rayyan; duplicatas por DOI, PMID e similaridade de título.",
@@ -354,9 +356,9 @@ table(s, L + 0.3, 7.35, 6.7, [
     ["Estudo", "Eventos", "n", "Prev.", "Definição"],
     ["İlçe et al., 2017", "33", "81", "40,7%", "lacrimejamento"],
     ["Usta et al., 2019", "57", "105", "54,3%", "lacrimejamento"],
-    ["Mohd Fikri Rosely; Titi R., 2019", "28", "137", "20,4%", "irritação ocular"],
+    ["Mohd Fikri Rosely; Titi Rahmawati, 2019", "28", "137", "20,4%", "irritação ocular"],
     ["Bieniek et al., 2022", "67", "155", "43,2%", "escala (sistema ocular)"],
-], col_widths=[2.55, 0.8, 0.6, 0.8, 1.95], size=12, row_h=0.4,
+], col_widths=[2.45, 0.95, 0.6, 0.85, 1.85], size=12, row_h=0.4,
       align_cols={1: PP_ALIGN.CENTER, 2: PP_ALIGN.CENTER, 3: PP_ALIGN.CENTER})
 # JBI
 tb(s, 8.85, 1.95, 10.6, 0.45, ["Risco de viés: ferramenta JBI escolhida pela função de cada estudo na síntese"], size=18,
@@ -377,17 +379,16 @@ tb(s, 8.85, 4.1, 10.6, 1.0, [
       "resposta), não por corte percentual. “Não” pesou mais do que “incerto”. Nenhuma pontuação foi combinada entre "
       "instrumentos. Todos os estudos foram mantidos; a classificação alimentou o GRADE.", {})]], size=14, color=INK,
    space_after=0)
-pic(s, FIG / "figE1_jbi_prev.png", 8.85, 5.2, w=8.6, h=3.95, name="Figura E1 JBI")
-tb(s, 17.6, 5.3, 1.9, 3.8, [
-    {"runs": [("Itens JBI (prevalência)", {"bold": True, "color": NAVY})], "space_after": 4},
-    "1 marco amostral", "2 amostragem", "3 tamanho amostral", "4 sujeitos e cenário", "5 cobertura", "6 validade do desfecho",
-    "7 padronização", "8 análise", "9 taxa de resposta",
-], size=11, color=INK, space_after=1)
-tb(s, 8.85, 9.2, 8.6, 0.7, [[("Figura E1. ", {"bold": True}), ("Sete estudos das metanálises. ", {}),
-                            ("+ sim  ", {"color": GREEN, "bold": True}), ("? incerto  ", {"color": AMBER, "bold": True}),
-                            ("− não.  ", {"color": RED, "bold": True}),
-                            ("Preocupação global: moderada ou alta em todos; nenhum com preocupação baixa.", {})]],
-   size=13, color=INK, space_after=0)
+pic(s, FIG / "figE1_jbi_prev.png", 8.85, 5.1, w=10.6, h=4.1, name="Figura E1 JBI")
+tb(s, 8.85, 9.22, 10.6, 0.75, [
+    [("Figura E1. ", {"bold": True}), ("Sete estudos das metanálises. ", {}),
+     ("+ sim  ", {"color": GREEN, "bold": True}), ("? incerto  ", {"color": AMBER, "bold": True}),
+     ("− não.  ", {"color": RED, "bold": True}),
+     ("Preocupação global: moderada ou alta em todos; nenhum com preocupação baixa.", {})],
+    [("Itens: ", {"bold": True, "color": NAVY}),
+     ("1 marco amostral · 2 amostragem · 3 tamanho amostral · 4 sujeitos e cenário · 5 cobertura · 6 validade do "
+      "desfecho · 7 padronização · 8 análise · 9 taxa de resposta", {})],
+], size=13, color=INK, space_after=2)
 deck.notes(s, """[3:15–3:45] PASSOS 4 E 5 (~30 s)
 A extração foi feita em planilha padronizada: identificação, desenho, população, dispositivo gerador, comparador, instrumento e definição do desfecho, taxa de resposta e, para a metanálise, o número de eventos e o denominador de cada estudo. Por exemplo, no İlçe 2017, 33 de 81 profissionais relataram lacrimejamento.
 O risco de viés foi avaliado com as ferramentas do Joanna Briggs Institute, escolhidas pela função de cada estudo: a lista de prevalência, com nove itens, para os sete estudos das metanálises; a de transversal analítico para os comparativos; e a de coorte para os três longitudinais. O julgamento global foi qualitativo, guiado pelos domínios críticos: amostragem, tamanho amostral, validade da mensuração e taxa de resposta.
@@ -415,11 +416,11 @@ pipe = [
         "τ² = variância entre estudos; peso de cada estudo = 1 ÷ (variância interna + τ²).",
         "Paule-Mandel é mais estável que DerSimonian-Laird com poucos estudos.",
     ]),
-    ("Ajuste de Hartung-Knapp", "IC com distribuição t (k − 1 gl)", [
-        "Corrige o IC da estimativa combinada quando há poucos estudos e heterogeneidade alta.",
+    ("Ajuste de Hartung-Knapp", "IC pela distribuição t", [
+        "Usa k − 1 graus de liberdade e corrige o IC da estimativa combinada quando há poucos estudos e heterogeneidade alta.",
         "Produz intervalos mais honestos (geralmente mais largos) do que o método clássico (IntHout et al., 2014).",
     ]),
-    ("Voltar para % e interpretar", "I² e intervalo de predição", [
+    ("Voltar para % e interpretar", "I²  +  intervalo de predição", [
         "Retrotransformação do logito para porcentagem.",
         "I² = % da variação total devida à heterogeneidade.",
         "Intervalo de predição = faixa esperada para um novo estudo (Riley et al., 2011); instável com k < 10.",
@@ -432,7 +433,7 @@ for i, (t, formula, body) in enumerate(pipe, start=1):
     circle(s, x + 0.5, 2.35, 0.6, fill=RED, text=str(i), size=20)
     tb(s, x + 0.95, 2.05, pw - 1.1, 0.65, [t], size=16, color=NAVY, bold=True, space_after=0, anchor=MSO_ANCHOR.MIDDLE)
     rect(s, x + 0.2, 2.85, pw - 0.4, 0.6, fill=WHITE, line=rgb("C9CFDA"))
-    tb(s, x + 0.25, 2.85, pw - 0.5, 0.6, [formula], size=17, color=RED, bold=True, align=PP_ALIGN.CENTER, space_after=0,
+    tb(s, x + 0.25, 2.85, pw - 0.5, 0.6, [formula], size=16, color=RED, bold=True, align=PP_ALIGN.CENTER, space_after=0,
        anchor=MSO_ANCHOR.MIDDLE)
     tb(s, x + 0.2, 3.6, pw - 0.4, 3.05, body, size=15, color=INK, bullet=True, bullet_color=NAVY, space_after=5)
     if i < len(pipe):
@@ -457,7 +458,7 @@ tb(s, L + 1.05, 8.72, 17.1, 1.1, [
       "exigem ≥ 10 estudos. O viés de relato foi apreciado qualitativamente. ", {}),
      ("Sem metarregressão ", {"bold": True}), ("(poucos estudos por covariável). ", {}),
      ("Riscos relativos ", {"bold": True}), ("dos desfechos objetivos: escala log, método de Wald.", {})]],
-   size=14, color=INK, space_after=0, anchor=MSO_ANCHOR.MIDDLE)
+   size=15, color=INK, space_after=0, anchor=MSO_ANCHOR.MIDDLE)
 deck.notes(s, """[3:45–4:35] PASSO 6 – METANÁLISE (~50 s)  ← o coração da apresentação
 Vou explicar a metanálise em cinco passos. Primeiro, cada estudo vira uma proporção: eventos dividido pelo n. Segundo, aplicamos a transformação logito, o logaritmo da chance: isso tira a proporção da escala de zero a um, aproxima da distribuição normal e garante que a estimativa combinada e os intervalos fiquem entre 0 e 100%. Terceiro, usamos modelo de efeitos aleatórios, porque não faz sentido supor uma única prevalência verdadeira em hospitais da Turquia, da Malásia e do Brasil; a variância entre estudos, o tau-quadrado, foi estimada por Paule-Mandel. Quarto, o intervalo de confiança da estimativa combinada recebeu o ajuste de Hartung-Knapp, que usa a distribuição t e é mais honesto quando há poucos estudos e muita heterogeneidade. Quinto, voltamos para porcentagem e reportamos o I² e o intervalo de predição, que diz onde cairia a prevalência de um novo estudo.
 Para testar a robustez, repetimos tudo com a transformação de Freeman-Tukey e com um modelo logístico misto, fizemos leave-one-out, gráfico de Baujat e subgrupo por país.
@@ -497,7 +498,7 @@ tb(s, L + 0.3, 5.75, 10.0, 4.0, [
     [("Desfechos com um único estudo: ", {"bold": True}), ("inconsistência não aplicável; viés de publicação não avaliável.", {})],
     {"runs": [("●●●● alta   ●●●○ moderada   ●●○○ baixa   ●○○○ muito baixa", {"color": NAVY, "bold": True})],
      "space_before": 6, "bullet": False},
-], size=15, color=INK, bullet=True, bullet_color=NAVY, space_after=5)
+], size=16, color=INK, bullet=True, bullet_color=NAVY, space_after=7)
 rect(s, 12.15, 5.65, 7.3, 4.2, fill=GOLD_TINT)
 icon(s, "clipboard", 12.4, 5.8, 0.5, color="navy")
 tb(s, 13.05, 5.75, 6.3, 0.5, ["Decisões posteriores ao registro (transparência)"], size=17, color=NAVY, bold=True,
@@ -508,7 +509,7 @@ tb(s, 12.4, 6.4, 6.85, 3.4, [
     "1 publicação por desfecho no cluster com sobreposição; análises por país e de influência exploratórias;",
     "Resumos de congresso com dados suficientes admitidos (preocupação alta);",
     "Durante a análise: regra do sintoma-índice e sensibilidade por definição específica, independentes dos resultados.",
-], size=14, color=INK, bullet=True, bullet_color=GOLD, space_after=4)
+], size=15, color=INK, bullet=True, bullet_color=GOLD, space_after=6)
 deck.notes(s, """[4:35–5:05] PASSO 7 – GRADE (~30 s)
 O último passo foi graduar a certeza da evidência pelo GRADE, nos cinco domínios: risco de viés, inconsistência, evidência indireta, imprecisão e viés de publicação. Como não existe adaptação universal do GRADE para prevalência, explicitamos os critérios em cada domínio.
 Partimos de certeza baixa, por ser evidência observacional, e qualquer domínio grave leva a muito baixa. Um detalhe que mostra cuidado: a evidência indireta não foi rebaixada nos sintomas, porque o sintoma autorrelatado é exatamente o desfecho da pergunta de frequência; já nos biomarcadores foi rebaixada, por coexposição e desfecho substituto. E evitamos dupla contagem: o intervalo de predição entrou em inconsistência, e a largura do IC em imprecisão.
@@ -520,7 +521,47 @@ SE PERGUNTAREM "se começasse em alta, mudaria?": não. Com inconsistência muit
 # SLIDE 10 — RESULTADOS: SELEÇÃO E CARACTERÍSTICAS
 # =====================================================================
 s = deck.content_slide("RESULTADOS", "Seleção (PRISMA 2020) e características dos 22 relatórios incluídos")
-pic(s, FIG / "fig1_prisma.png", L, 1.9, w=9.3, h=8.75, name="Figura 1 PRISMA")
+# fluxograma PRISMA em formas nativas (legível no projetor); Figura 1 do manuscrito
+MX, MW, SX, SW = 2.3, 5.0, 7.6, 2.95
+rows_prisma = [
+    (1.95, 1.15, [[("Registros identificados (n = 16.757)", {"bold": True})],
+                  "Bases eletrônicas: 16.707 · Literatura cinzenta: 50"],
+     [[("Busca por citação (OpenAlex)", {"bold": True})], "443 referências avaliadas → 4 relatórios para texto completo"],
+     GOLD_TINT),
+    (3.35, 0.95, [[("Importados: 16.749 (8 não exportados)", {})], [("Duplicatas removidas: 5.839", {"bold": True})]],
+     None, None),
+    (4.55, 0.95, [[("Triados por título e resumo (n = 10.910)", {"bold": True})], "revisor único; IA só ordenou a leitura"],
+     [[("Excluídos na triagem", {"bold": True})], "n = 10.882"], LIGHT),
+    (5.75, 0.95, [[("Buscados para texto completo (n = 32)", {"bold": True})], "28 da triagem + 4 por citação"],
+     [[("Não recuperados", {"bold": True})], "n = 6"], LIGHT),
+    (6.95, 0.95, [[("Avaliados para elegibilidade (n = 26)", {"bold": True})]],
+     [[("Excluídos na íntegra (n = 4)", {"bold": True})], "1 resumo sem dados; 3 população ou contexto inelegível"],
+     LIGHT),
+    (8.15, 1.6, [[("Relatórios incluídos (n = 22)", {"bold": True, "size": 17, "color": GREEN})],
+                 "Metanálise de prevalência: 6 (ocular) e 7 (respiratório) amostras independentes",
+                 "Síntese narrativa + GRADE: desfechos objetivos e biomarcadores"], None, None),
+]
+for i, (y, h, main, side, side_fill) in enumerate(rows_prisma):
+    last = i == len(rows_prisma) - 1
+    rect(s, MX, y, MW, h, fill=GREEN_TINT if last else LIGHT, radius=0.08)
+    tb(s, MX + 0.2, y + 0.05, MW - 0.4, h - 0.1, main, size=14, color=INK, space_after=2, anchor=MSO_ANCHOR.MIDDLE)
+    if side:
+        rect(s, SX, y, SW, h, fill=side_fill, radius=0.08)
+        tb(s, SX + 0.15, y + 0.05, SW - 0.3, h - 0.1, side, size=13, color=INK, space_after=0, anchor=MSO_ANCHOR.MIDDLE)
+        if i == 0:
+            line(s, SX, y + h / 2, MX + MW + 0.02, y + h / 2, color=rgb("8A6D1F"), width=2, arrow=True)
+        else:
+            line(s, MX + MW, y + h / 2, SX - 0.02, y + h / 2, color=NAVY, width=2, arrow=True)
+    if not last:
+        ny = rows_prisma[i + 1][0]
+        line(s, MX + MW / 2, y + h, MX + MW / 2, ny - 0.02, color=NAVY, width=2, arrow=True)
+for lab, y0, y1 in [("Identificação", 1.95, 4.3), ("Triagem", 4.55, 6.7), ("Elegibilidade", 6.95, 7.9),
+                    ("Incluídos", 8.15, 9.75)]:
+    cy = (y0 + y1) / 2
+    tb(s, 1.25 + 0.45 - 1.1, cy - 0.2, 2.2, 0.4, [lab], size=13, color=NAVY, bold=True, align=PP_ALIGN.CENTER,
+       space_after=0, rotation=270, anchor=MSO_ANCHOR.MIDDLE)
+tb(s, MX, 9.85, 8.25, 0.4, ["Fluxograma PRISMA 2020 (Figura 1 do manuscrito); lista dos não recuperados e dos excluídos no Anexo C."],
+   size=12, color=GRAY, space_after=0)
 sx, sy, sw, sh = 10.85, 1.95, 4.15, 1.75
 stat(s, sx, sy, sw, "22", "relatórios de estudos observacionais incluídos", h=sh, fill=LIGHT, num_size=44, lab_size=14)
 stat(s, sx + sw + 0.3, sy, sw, "9", "países: Turquia, Malásia, Brasil, Paquistão, China, México, EUA, Sudão e Tailândia",
@@ -595,23 +636,23 @@ tb(s, L, 7.9, 10.2, 0.5, [[("Figura 3. ", {"bold": True}),
 rect(s, L, 8.5, 10.2, 2.15, fill=NAVY_TINT)
 tb(s, L + 0.3, 8.57, 9.6, 2.0, [
     {"runs": [("Subgrupo por país (sintoma ocular; exploratório)", {"bold": True, "color": NAVY})], "space_after": 4},
-    [("Turquia 50,5% ", {"bold": True, "color": RED}), ("(k = 3; n = 268; I² = 57%)   ", {}),
-     ("Malásia 19,8% ", {"bold": True, "color": RED}), ("(k = 2; n = 333; I² = 0%)   ", {}),
-     ("Brasil 43,2% ", {"bold": True}), ("(k = 1, descritivo)", {})],
+    [("Turquia 50,5% ", {"bold": True, "color": RED}), ("(k = 3; n = 268; I² = 57%)   ·   ", {}),
+     ("Malásia 19,8% ", {"bold": True, "color": RED}), ("(k = 2; n = 333; I² = 0%)", {})],
+    [("Brasil 43,2% ", {"bold": True}), ("(k = 1; estrato descritivo)", {})],
     [("Teste entre subgrupos p < 0,001, mas: ", {"bold": True}), ("poucos estudos por país e um resumo de congresso no estrato da "
                                                                    "Malásia → gera hipótese (contexto, exaustão, EPI, forma de "
                                                                    "aferir), não prova moderação causal.", {})],
 ], size=14, color=INK, space_after=3)
-rect(s, 11.85, 1.95, 7.6, 1.75, fill=RED_TINT)
-tb(s, 12.1, 2.0, 2.9, 1.1, ["41,7%"], size=50, color=RED, bold=True, space_after=0, anchor=MSO_ANCHOR.MIDDLE)
-tb(s, 15.0, 2.05, 4.3, 1.6, [
-    [("prevalência combinada de sintoma respiratório", {"bold": True})],
-    "IC95% 30,4 – 53,9 · IP 15 – 74%",
-    "I² = 91% · k = 7 · n = 1.428",
-], size=14, color=INK, space_after=2, anchor=MSO_ANCHOR.MIDDLE)
-tb(s, 11.85, 3.9, 7.6, 0.4, ["Robustez: estável entre modelos e estudos"], size=16, color=NAVY,
+rect(s, 11.85, 1.95, 7.6, 2.35, fill=RED_TINT)
+stat(s, 12.1, 2.0, 7.1, "41,7%", "prevalência combinada de sintoma respiratório", h=1.4, num_size=50, lab_size=16,
+     num_color=RED, number_h=0.9)
+tb(s, 12.1, 3.45, 7.1, 0.8, [
+    [("IC95% ", {"bold": True}), ("30,4 – 53,9   ·   ", {}), ("Intervalo de predição ", {"bold": True}), ("15 – 74%", {})],
+    [("I² = 91% · k = 7 · n = 1.428", {"bold": True})],
+], size=15, color=INK, space_after=2)
+tb(s, 11.85, 4.5, 7.6, 0.4, ["Robustez: estável entre modelos e estudos"], size=16, color=NAVY,
    bold=True, space_after=0)
-table(s, 11.85, 4.35, 7.6, [
+table(s, 11.85, 4.95, 7.6, [
     ["Análise", "Ocular", "Respiratório"],
     ["Logito + Hartung-Knapp (principal)", "37,6%", "41,7%"],
     ["Freeman-Tukey (DerSimonian-Laird)", "38,1%", "41,7%"],
@@ -620,10 +661,10 @@ table(s, 11.85, 4.35, 7.6, [
     ["Sem o resumo de congresso", "42,1%", "42,4%"],
     ["Só definições específicas", "36,5% (I² 94%)", "35,8% (I² 61%)"],
 ], col_widths=[4.3, 1.55, 1.75], size=13, row_h=0.42, align_cols={1: PP_ALIGN.CENTER, 2: PP_ALIGN.CENTER}, bold_rows=(1,))
-tb(s, 11.85, 7.4, 7.6, 0.5, [[("Sem o estudo de definição mais divergente (Van Giersbergen 2019): ", {"bold": True}),
-                              ("38,9%, sem mudar a conclusão.", {})]], size=13, color=INK, space_after=0)
-card(s, 11.85, 8.0, 7.6, 2.65, title="O que a sensibilidade ensina", icon_name="lightbulb", fill=GOLD_TINT, body_size=14,
-     bullet=True, pad=0.25, body=[
+tb(s, 11.85, 7.95, 7.6, 0.5, [[("Sem o estudo de definição mais divergente (Van Giersbergen 2019): ", {"bold": True}),
+                               ("38,9%, sem mudar a conclusão.", {})]], size=13, color=INK, space_after=0)
+card(s, 11.85, 8.5, 7.6, 2.15, title="O que a sensibilidade ensina", icon_name="lightbulb", fill=GOLD_TINT, body_size=14,
+     bullet=True, pad=0.2, body=[
          "Restringir a definições específicas reduziu o I² respiratório de 91% para 61%: a definição do desfecho explica "
          "parte relevante da heterogeneidade.",
          "No ocular, a heterogeneidade não depende de um único estudo (Baujat: Mohd Fikri Rosely 2022 é o mais influente).",
@@ -673,18 +714,17 @@ for i, (ic, t, src, body) in enumerate(obj):
     tb(s, x + 1.25, y + 0.58, ow - 1.45, 0.4, [src], size=13, color=GRAY, space_after=0)
     tb(s, x + 0.3, y + 1.08, ow - 0.6, oh - 1.2, body, size=15, color=INK, bullet=True, bullet_color=NAVY, space_after=5)
 # faixa GRADE
-rect(s, L, 8.4, 18.2, 1.8, fill=NAVY)
-tb(s, L + 0.3, 8.45, 5.6, 1.7, [[("●○○○  Certeza MUITO BAIXA", {"bold": True, "color": GOLD, "size": 20})],
-                                [("em todos os desfechos (GRADE); medidas comparativas não combinadas (desenhos e desfechos "
-                                  "heterogêneos).", {"size": 14})]], size=14, color=WHITE, space_after=2,
-   anchor=MSO_ANCHOR.MIDDLE)
-tb(s, 7.2, 8.45, 5.6, 1.7, [[("0 estudos sobre câncer ou DPOC", {"bold": True, "color": GOLD, "size": 20})],
-                            [("vazio de evidência: ausência de estudos ≠ ausência de risco.", {"size": 14})]],
-   size=14, color=WHITE, space_after=2, anchor=MSO_ANCHOR.MIDDLE)
-tb(s, 13.1, 8.45, 6.2, 1.7, [[("Direção consistente, mas…", {"bold": True, "color": GOLD, "size": 20})],
-                             [("coexposições (gases anestésicos, radiação), 1 estudo por desfecho e IC amplos: marcadores de "
-                               "exposição/efeito, não doença crônica atribuível.", {"size": 14})]],
-   size=14, color=WHITE, space_after=2, anchor=MSO_ANCHOR.MIDDLE)
+rect(s, L, 8.4, 18.2, 1.85, fill=NAVY)
+for bx, bw_, t, body in [
+    (L + 0.3, 5.6, "●○○○  Certeza MUITO BAIXA",
+     "em todos os desfechos (GRADE); medidas comparativas não combinadas (desenhos e desfechos heterogêneos)."),
+    (7.2, 5.6, "0 estudos sobre câncer ou DPOC", "vazio de evidência: ausência de estudos ≠ ausência de risco."),
+    (13.1, 6.2, "Direção consistente, mas…",
+     "coexposições (gases anestésicos, radiação), 1 estudo por desfecho e IC amplos: marcadores de exposição/efeito, não "
+     "doença crônica atribuível."),
+]:
+    tb(s, bx, 8.55, bw_, 0.45, [t], size=20, color=GOLD, bold=True, space_after=0)
+    tb(s, bx, 9.05, bw_, 1.1, [body], size=15, color=WHITE, space_after=0)
 deck.notes(s, """[6:40–7:20] DESFECHOS OBJETIVOS E GRADE (~40 s)
 Além dos sintomas, quatro estudos, um por desfecho, trouxeram medidas objetivas, e todos apontam na mesma direção, desfavorável aos expostos.
 Espirometria no Sudão: VEF1, CVF e pico de fluxo menores nos expostos, com gradiente pelo tempo de atuação; mas a relação VEF1/CVF foi normal e o pico de fluxo depende de esforço, então lemos com cautela. Biomarcadores urinários no Brasil: metabólitos de benzeno e xileno e malondialdeído muito mais altos nos expostos. Biópsia nasal numa coorte mexicana de quatro anos: metaplasia em 70% dos expostos contra 5%, risco relativo de 13,9, com intervalo muito amplo. E DNA de HPV na mucosa nasal de ginecologistas chineses: 9% contra 1,7%, risco relativo de 5,2.
@@ -698,7 +738,7 @@ NÚMEROS para decorar: 37,6% ocular; 41,7% respiratório; RR 13,9 metaplasia; RR
 s = deck.content_slide("DISCUSSÃO", "O que os achados significam e como interpretá-los com cautela")
 cols = [
     ("chart", "Carga de sintomas", [
-        "Sintomas frequentes: ocular 37,6%, respiratório 41,7%, qualquer sintoma 55,6–73,2%.",
+        "Sintomas frequentes: ocular 37,6%, respiratório 41,7%, qualquer sintoma entre 55,6% e 73,2%.",
         "Coerente com a literatura prévia, que era transversal e sem síntese quantitativa (Mowbray 2013; Dixon 2023).",
         [("Contribuição: ", {"bold": True}), ("primeira estimativa combinada com intervalo de predição, subgrupo por país e "
                                               "GRADE para este corpo de literatura.", {})],
@@ -745,6 +785,7 @@ card(s, L, 1.95, 7.4, 8.4, title="Pontos fortes", icon_name="thumbsup", badge_fi
          "Risco de viés padronizado com ferramentas JBI escolhidas pela função de cada estudo.",
          "Síntese com intervalo de predição, 3 modelos concordantes, leave-one-out, Baujat e subgrupo.",
          "Certeza graduada por desfecho (GRADE), com justificativa por domínio.",
+         "Tratamento explícito da sobreposição amostral e do uso de IA (apenas operacional).",
          "Reprodutibilidade: código em Python, planilhas e figuras abertos no OSF.",
      ])
 card(s, 8.95, 1.95, 10.5, 8.4, title="Limitações (declaradas no manuscrito)", icon_name="warning", badge_fill=RED,
@@ -759,6 +800,8 @@ card(s, 8.95, 1.95, 10.5, 8.4, title="Limitações (declaradas no manuscrito)", 
          [("Sobreposição amostral ", {"bold": True}), ("tratada com 1 publicação por desfecho; 1 resumo de congresso na síntese.", {})],
          [("Revisor único ", {"bold": True}), ("na triagem, extração, JBI e GRADE; 6 relatórios não recuperados; elegibilidade em "
                                               "3 idiomas.", {})],
+         [("Instrumentos sem validação relatada ", {"bold": True}), ("e período de recordatório quase nunca informado; taxa "
+                                                                    "de resposta raramente relatada.", {})],
          [("A metanálise estima prevalência em expostos, não risco causal.", {"bold": True, "color": RED})],
      ])
 deck.notes(s, """[7:50–8:15] PONTOS FORTES E LIMITAÇÕES (~25 s)
@@ -781,7 +824,7 @@ tb(s, L + 0.3, 7.02, 7.4, 1.75, [
     "Evacuação local da fumaça na fonte (medida principal);",
     "Respiradores N95/PFF2 (retêm partículas, não substituem a exaustão);",
     "Educação da equipe. Efetividade não avaliada nesta revisão.",
-], size=14, color=INK, bullet=True, bullet_color=NAVY, space_after=2)
+], size=15, color=INK, bullet=True, bullet_color=NAVY, space_after=2)
 concl = [
     ("check", "O que se sabe", GREEN, GREEN_TINT,
      "Sintomas oculares e respiratórios são frequentemente relatados pela equipe exposta, com ampla variação entre contextos "
@@ -800,7 +843,7 @@ for i, (ic, t, col, tint, body) in enumerate(concl):
     icon_badge(s, ic, 10.3, y + 0.55, d=0.8, fill=col)
     tb(s, 10.95, y + 0.15, 8.3, 0.5, [t], size=19, color=col if col != AMBER else rgb("8A6D1F"), bold=True, space_after=0,
        anchor=MSO_ANCHOR.MIDDLE)
-    tb(s, 10.0, y + 0.95, 9.2, 1.15, [body], size=14, color=INK, space_after=0, line_spacing=1.05)
+    tb(s, 10.0, y + 0.95, 9.2, 1.15, [body], size=15, color=INK, space_after=0, line_spacing=1.05)
 rect(s, L, 9.05, 18.2, 1.6, fill=NAVY)
 tb(s, L + 0.4, 9.1, 17.4, 1.5, [[("Mensagem final: ", {"bold": True, "color": GOLD}),
                                  ("a fumaça cirúrgica está associada a uma carga sintomática relevante e a sinais biológicos "
@@ -831,7 +874,7 @@ for i, (ic, t, body) in enumerate(agenda):
     y = 2.75 + i * 1.95
     icon_badge(s, ic, L + 0.75, y + 0.5, d=0.85, fill=NAVY)
     tb(s, L + 1.5, y, 9.5, 0.45, [t], size=18, color=NAVY, bold=True, space_after=0)
-    tb(s, L + 1.5, y + 0.45, 9.5, 1.4, [body], size=15, color=INK, space_after=0, line_spacing=1.05)
+    tb(s, L + 1.5, y + 0.45, 9.2, 1.4, [body], size=15, color=INK, space_after=0, line_spacing=1.05)
 rect(s, 12.55, 1.95, 6.9, 8.7, fill=GOLD_TINT)
 tb(s, 12.85, 2.05, 6.3, 0.5, ["Para este trabalho"], size=19, color=NAVY, bold=True, space_after=0)
 nxt = [("upload", "Submissão do manuscrito a periódico indexado (versão final v5 concluída)."),
@@ -871,8 +914,8 @@ refs_right = [
     "NAVARRO, M. C. et al. Cambios en la mucosa nasal de los médicos por exposición al humo por electrocoagulación. Rev Fac Nac Salud Pública, v. 34, n. 2, p. 135-144, 2016.",
     "CANICOBA, A. R. B. Impacto da exposição ocupacional à fumaça cirúrgica sobre os marcadores biológicos de profissionais de saúde da sala operatória. Tese (Doutorado). EE-USP, 2025.",
 ]
-tb(s, L, 1.95, 8.9, 8.7, refs_left, size=15, color=INK, space_after=9, line_spacing=1.0)
-tb(s, 10.55, 1.95, 8.9, 8.7, refs_right, size=15, color=INK, space_after=9, line_spacing=1.0)
+tb(s, L, 1.95, 8.9, 8.7, refs_left, size=17, color=INK, space_after=12, line_spacing=1.0)
+tb(s, 10.55, 1.95, 8.9, 8.7, refs_right, size=17, color=INK, space_after=12, line_spacing=1.0)
 deck.notes(s, """[8:55–9:00] REFERÊNCIAS (~5 s)
 Estas são as principais referências metodológicas e dos estudos incluídos; a lista completa, com mais de 60 itens, está no manuscrito. (Não leia; apenas mencione e avance.)""")
 
