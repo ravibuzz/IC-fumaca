@@ -44,18 +44,22 @@ def main():
         if m:
             a = int(m.group(1)) * 60 + int(m.group(2))
             b = int(m.group(3)) * 60 + int(m.group(4))
-            secao = re.sub(r"\s*\(~\d+ s\).*$", "", m.group(5)).split("←")[0].strip()
-            linhas_crono.append(f"| {i} | {secao.capitalize().replace("grade", "GRADE") if secao.isupper() else secao} | {mmss(b - a)} | {mmss(b)} |")
+            pal = re.search(r"(\d+) palavras", m.group(5))
+            secao = re.sub(r"\s*\(~\d+ s[^)]*\).*$", "", m.group(5)).split("←")[0].strip()
+            secao = re.sub(r"\bgrade\b", "GRADE", secao.capitalize()) if secao.isupper() else secao
+            linhas_crono.append(f"| {i} | {secao} | {mmss(b - a)} | {pal.group(1) if pal else '—'} | {mmss(b)} |")
             fim = max(fim, b)
         elif i == n:
-            linhas_crono.append(f"| {i} | Encerramento (fica na tela, com o QR code, durante as perguntas) | — | — |")
+            linhas_crono.append(f"| {i} | Encerramento (fica na tela, com o QR code, durante as perguntas) | — | — | — |")
     md.append(f"Tempo-alvo total: ~{fim // 60} min {fim % 60:02d} s, deixando folga para os 10 minutos. "
-              "Os colchetes indicam o relógio acumulado.\n")
+              "Os colchetes indicam o relógio acumulado. Em cada slide, leia em voz alta só o bloco FALA "
+              "(dimensionado para ~150 palavras por minuto); o bloco APOIO é para consulta e para as perguntas.\n")
     md.extend(blocos)
     (PARTES / "01_roteiro.md").write_text("\n".join(md), encoding="utf-8")
 
     intro = (PARTES / "00_intro.md").read_text(encoding="utf-8")
-    tabela = "\n".join(["| Slide | Seção | Tempo | Relógio acumulado |", "|---|---|---|---|", *linhas_crono])
+    tabela = "\n".join(["| Slide | Seção | Tempo | Palavras da FALA | Relógio acumulado |", "|---|---|---|---|---|",
+                        *linhas_crono])
     intro = re.sub(r"(## Cronograma de fala \(tempo-alvo por slide\)\n\n)\| Slide.*?\n\n", lambda m: m.group(1) + tabela + "\n\n",
                    intro, count=1, flags=re.S)
     (PARTES / "00_intro.md").write_text(intro, encoding="utf-8")

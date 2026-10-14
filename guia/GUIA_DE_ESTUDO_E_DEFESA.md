@@ -6,7 +6,7 @@
 
 ## Como usar este guia
 
-1. **Primeiro leia o roteiro de fala (Parte 1)** junto com os slides abertos no modo "Exibição do Apresentador": cada slide tem as notas de fala com o tempo-alvo. Treine em voz alta com cronômetro pelo menos 5 vezes; a meta é terminar entre 9:00 e 9:40.
+1. **Primeiro leia o roteiro de fala (Parte 1)** junto com os slides abertos no modo "Exibição do Apresentador": cada slide tem as notas com o tempo-alvo, divididas em **FALA** (o que dizer, ~150 palavras/min) e **APOIO** (números e respostas para as perguntas; não é para ler). Treine em voz alta com cronômetro pelo menos 5 vezes; a meta é terminar entre 9:00 e 9:40.
 2. **Depois estude o método (Partes 2 a 4).** É a parte mais valorizada pela banca e a que você disse não dominar 100%. Cada etapa tem um quadro "O que dizer se perguntarem" com frases prontas.
 3. **Treine as perguntas (Parte 5).** São cinco lentes de avaliador: estatística, metodologia de revisão, clínica e saúde ocupacional, banca crítica e perguntas gerais de IC. Peça a alguém para sortear perguntas e responda em até 60 segundos.
 4. **Decore a ficha de números (Parte 6)** e leia o checklist do dia (Parte 7).
@@ -15,29 +15,29 @@ Convenções: tudo o que está marcado como **[deste trabalho]** vem do manuscri
 
 ## Cronograma de fala (tempo-alvo por slide)
 
-| Slide | Seção | Tempo | Relógio acumulado |
-|---|---|---|---|
-| 1 | Capa | 0:15 | 0:15 |
-| 2 | Trajetória | 0:20 | 0:35 |
-| 3 | Introdução | 0:45 | 1:20 |
-| 4 | Objetivos | 0:25 | 1:45 |
-| 5 | Metodologia – mapa | 0:30 | 2:15 |
-| 6 | Passos 1 e 2 | 0:35 | 2:50 |
-| 7 | Passo 3 – seleção | 0:35 | 3:25 |
-| 8 | Passos 4 e 5 | 0:30 | 3:55 |
-| 9 | Passo 6 – metanálise | 0:50 | 4:45 |
-| 10 | Passo 7 – GRADE | 0:30 | 5:15 |
-| 11 | Resultados – seleção e características | 0:20 | 5:35 |
-| 12 | Resultado principal – ocular | 0:50 | 6:25 |
-| 13 | Respiratório e robustez | 0:25 | 6:50 |
-| 14 | Desfechos objetivos e GRADE | 0:40 | 7:30 |
-| 15 | Discussão – interpretação | 0:30 | 8:00 |
-| 16 | Pontos fortes e limitações | 0:25 | 8:25 |
-| 17 | Conclusão | 0:25 | 8:50 |
-| 18 | Perspectivas futuras | 0:15 | 9:05 |
-| 19 | Referências | 0:05 | 9:10 |
-| 20 | AGRADEcimentos | 0:10 | 9:20 |
-| 21 | Encerramento (fica na tela, com o QR code, durante as perguntas) | — | — |
+| Slide | Seção | Tempo | Palavras da FALA | Relógio acumulado |
+|---|---|---|---|---|
+| 1 | Capa | 0:15 | 42 | 0:15 |
+| 2 | Trajetória | 0:20 | 55 | 0:35 |
+| 3 | Introdução | 0:45 | 112 | 1:20 |
+| 4 | Objetivos | 0:25 | 55 | 1:45 |
+| 5 | Metodologia – mapa | 0:30 | 68 | 2:15 |
+| 6 | Passos 1 e 2 | 0:35 | 81 | 2:50 |
+| 7 | Passo 3 – seleção | 0:35 | 80 | 3:25 |
+| 8 | Passos 4 e 5 | 0:30 | 64 | 3:55 |
+| 9 | Passo 6 – metanálise | 0:50 | 110 | 4:45 |
+| 10 | Passo 7 – GRADE | 0:30 | 65 | 5:15 |
+| 11 | Resultados – seleção e características | 0:20 | 43 | 5:35 |
+| 12 | Resultado principal – ocular | 0:50 | 119 | 6:25 |
+| 13 | Respiratório e robustez | 0:25 | 62 | 6:50 |
+| 14 | Desfechos objetivos e GRADE | 0:40 | 94 | 7:30 |
+| 15 | Discussão – interpretação | 0:30 | 81 | 8:00 |
+| 16 | Pontos fortes e limitações | 0:25 | 60 | 8:25 |
+| 17 | Conclusão | 0:25 | 59 | 8:50 |
+| 18 | Perspectivas futuras | 0:15 | 35 | 9:05 |
+| 19 | Referências | 0:05 | 10 | 9:10 |
+| 20 | Agradecimentos | 0:10 | 25 | 9:20 |
+| 21 | Encerramento (fica na tela, com o QR code, durante as perguntas) | — | — | — |
 
 Se estiver atrasado ao chegar no slide 11, encurte os slides 13 e 16 (diga só a primeira frase de cada card; no 13, aponte a tabela em vez de ler as linhas); o slide 2 (trajetória) também pode cair para 10 s. Nunca corte os slides 9 (metanálise), 12 (resultado principal, com o intervalo de predição) nem 14 (desfechos objetivos e vazio de evidência): são os que mais mostram análise crítica e rendem nota.
 
@@ -47,176 +47,243 @@ Se estiver atrasado ao chegar no slide 11, encurte os slides 13 e 16 (diga só a
 ## Parte 1 — Roteiro de fala, slide a slide
 
 
-Tempo-alvo total: ~9 min 20 s, deixando folga para os 10 minutos. Os colchetes indicam o relógio acumulado.
+Tempo-alvo total: ~9 min 20 s, deixando folga para os 10 minutos. Os colchetes indicam o relógio acumulado. Em cada slide, leia em voz alta só o bloco FALA (dimensionado para ~150 palavras por minuto); o bloco APOIO é para consulta e para as perguntas.
 
 ### Slide 1 — Capa
 
-[0:00–0:15] CAPA (~15 s)
-Bom dia a todos. Meu nome é Theo Báccaro, sou aluno de Medicina da São Leopoldo Mandic de Araras. Vou apresentar a Iniciação Científica que desenvolvi ao longo de um ano, sob orientação da Profa. Lisie Tocci Justo, com a colaboração do Luiz Henrique Ledesma Pereira e da Dra. Mariana Matera Veras, do LIM05 da USP.
-O trabalho é uma revisão sistemática com metanálise de prevalência sobre os efeitos à saúde da exposição ocupacional à fumaça cirúrgica na equipe de centro cirúrgico.
+[0:00–0:15] CAPA (~15 s · 42 palavras)
+FALA:
+Bom dia. Sou Theo Báccaro, aluno de Medicina da São Leopoldo Mandic de Araras, orientado pela Profa. Lisie Tocci Justo. Vou apresentar nossa revisão sistemática com metanálise de prevalência sobre os efeitos da fumaça cirúrgica na saúde da equipe do centro cirúrgico.
 
-DICA: fale o título de forma natural, sem ler palavra por palavra. Respire e vá para o próximo slide.
+APOIO (não ler):
+- Coautores: Luiz Henrique Ledesma Pereira e Dra. Mariana Matera Veras (LIM05, HC-FMUSP); cite-os se sobrar fôlego.
+- Fale o título de forma natural, sem ler palavra por palavra. Respire e avance.
 
-### Slide 2 — TRAJETÓRIA: Um ano de preparação: formação, protocolo, leitura de 10.910 registros e análise
+### Slide 2 — TRAJETÓRIA: Mais de um ano de preparação: formação, protocolo, leitura de 10.910 registros e análise
 
-[0:15–0:35] TRAJETÓRIA (~20 s)
-Antes do conteúdo, um ano de trabalho em uma imagem. Em julho de 2025 fiz o curso de Revisão Sistemática e Metanálise da Unicamp, 40 horas, concluído com distinção, e um curso de escrita científica. Estudei as Diretrizes Metodológicas do Ministério da Saúde e as ferramentas de risco de viés do JBI, registrei o protocolo no PROSPERO e obtive a dispensa do CEP. Em março de 2026 fiz os cursos de normalização da Fiocruz. Em julho rodei a busca final nas sete bases e li, um a um, 10.910 títulos e resumos; depois vieram a extração, o risco de viés, a metanálise em Python, o GRADE e o manuscrito.
+[0:15–0:35] TRAJETÓRIA (~20 s · 55 palavras)
+FALA:
+Antes dos resultados, o caminho. Em julho de 2025 fiz o curso de revisão sistemática e metanálise da Unicamp, concluído com distinção, e um de escrita científica. Estudei as diretrizes do Ministério da Saúde e as ferramentas do JBI, registrei o protocolo no PROSPERO e, em 2026, li um a um 10.910 títulos e resumos.
 
-DICA: este slide é contexto; não leia as legendas. Aponte a linha do tempo e siga. A animação monta o slide sozinha (cerca de 3 s).
+APOIO (não ler):
+- Cursos: Revisão Sistemática e Metanálise (Unicamp, via Coursera), 40 h, com distinção (20/07/2025); Escrita Científica: Produção de Artigos de Alto Impacto (ZucoEscrita), 3,6 h (31/07/2025); Fiocruz: ABNT, 3 h (11/03/2026) e referências, 2 h (25/03/2026). Total ≈ 49 h.
+- Capas: Diretrizes Metodológicas do Ministério da Saúde (estudos observacionais; Sistema GRADE) e os checklists do JBI usados (prevalência, transversal analítico, coorte).
+- Busca final em 09/07/2026; triagem entre julho e agosto de 2026; depois extração, JBI, metanálise em Python, GRADE e manuscrito.
+- A animação monta o slide sozinha (~3 s): comece a falar sem esperar. Não leia as legendas.
 
 ### Slide 3 — INTRODUÇÃO: Fumaça cirúrgica: o que é e por que importa
 
-[0:35–1:20] INTRODUÇÃO (~45 s)
-Fumaça cirúrgica é o subproduto da destruição térmica dos tecidos pelo eletrocautério, pelo laser e pelo bisturi ultrassônico. Ela não é só "fumaça": contém hidrocarbonetos aromáticos policíclicos, compostos orgânicos voláteis como benzeno, tolueno e xileno, material particulado fino, o PM2,5, e partículas ultrafinas, que chegam às vias aéreas inferiores, e até material genético viral, como o HPV.
-(Se perguntarem: PM2,5 é a fração fina, com diâmetro aerodinâmico abaixo de 2,5 µm; "ultrafina" é abaixo de 0,1 µm. O manuscrito cita as duas.)
-Quem trabalha no centro cirúrgico relata com frequência irritação ocular, tosse, irritação de mucosas, cefaleia e náusea. O que não sabemos é o efeito de longo prazo: há plausibilidade biológica para câncer e doença respiratória, mas a relação causal nunca foi estabelecida, e revisões recentes chegam a dizer que o risco pode estar superestimado.
-Enquanto isso, exaustão de fumaça e máscaras de alta filtração ainda são pouco adotadas. E a literatura prévia era descritiva, sem metanálise. Por isso desenhamos uma síntese em camadas: metanálise de prevalência dos sintomas e síntese narrativa, com GRADE, dos desfechos objetivos.
+[0:35–1:20] INTRODUÇÃO (~45 s · 112 palavras)
+FALA:
+Fumaça cirúrgica é o subproduto da destruição térmica dos tecidos pelo eletrocautério, pelo laser e pelo bisturi ultrassônico. Ela contém hidrocarbonetos aromáticos, compostos orgânicos voláteis como o benzeno, material particulado fino e ultrafino e até material genético viral, como o HPV.
+Quem trabalha no centro cirúrgico relata com frequência irritação ocular, tosse, irritação de mucosas e cefaleia. Os efeitos crônicos são plausíveis, mas sem relação causal estabelecida, e o tema é controverso. Enquanto isso, exaustão de fumaça e máscaras de alta filtração ainda são pouco adotadas, e as revisões anteriores eram descritivas. Por isso propusemos uma síntese em camadas: metanálise da prevalência dos sintomas e síntese narrativa, com GRADE, dos desfechos objetivos.
 
-PONTO-CHAVE: a palavra "controvérsia" justifica a revisão. Se a banca perguntar "por que mais uma revisão?", a resposta é: nenhuma anterior quantificou a prevalência com intervalo de predição e GRADE.
+APOIO (não ler):
+- PM2,5 = fração fina (diâmetro aerodinâmico < 2,5 µm); ultrafina = < 0,1 µm. O manuscrito cita as duas.
+- Controvérsia: Hurst; Stewart (2024) argumentam que o risco pode estar superestimado; Benaim; Jaspers (2024) revisam composição e mitigação.
+- "Por que mais uma revisão?": as revisões que encontramos (Mowbray et al., 2013; Dixon; Dasgupta; Vasdev, 2023) não fizeram síntese quantitativa; aqui há estimativa combinada com intervalo de predição, subgrupo por país e GRADE.
 
 ### Slide 4 — OBJETIVOS: Pergunta estruturada: PECO para os desfechos comparativos e CoCoPop para a prevalência
 
-[1:20–1:45] OBJETIVOS (~25 s)
-O objetivo foi avaliar os desfechos de saúde associados à exposição ocupacional à fumaça cirúrgica na equipe de centro cirúrgico, com ênfase em três coisas: prevalência de sintomas, desfechos objetivos e biomarcadores.
-A pergunta foi estruturada em PECO: população é a equipe de centro cirúrgico; exposição é a fumaça dos dispositivos de energia; comparador são os não expostos ou protegidos; desfecho são os efeitos à saúde. Para a parte de prevalência usamos o esquema CoCoPop, condição, contexto e população, que é o recomendado pelo JBI para metanálises de proporção.
-Um ponto que gosto de deixar claro desde o início: metanálise de proporção estima frequência, não efeito causal. Isso vai ser importante na hora de interpretar.
+[1:20–1:45] OBJETIVOS (~25 s · 55 palavras)
+FALA:
+O objetivo foi avaliar os desfechos de saúde da exposição ocupacional à fumaça cirúrgica, com ênfase na prevalência de sintomas, nos desfechos objetivos e nos biomarcadores. A pergunta seguiu o PECO e, para a prevalência, o CoCoPop, recomendado pelo JBI. Um alerta desde já: a metanálise de proporções estima frequência em expostos, não efeito causal.
 
-SE PERGUNTAREM "por que PECO e não PICO?": porque é exposição, não intervenção; não houve alocação de intervenção.
+APOIO (não ler):
+- PECO e não PICO: é exposição, não intervenção alocada.
+- O (desfecho) no protocolo = efeitos à saúde relacionados à exposição; os que apareceram foram sintomas, espirometria, biomarcadores urinários, mucosa nasal e HPV-DNA.
+- CoCoPop = Condição, Contexto, População (Munn et al., 2015).
+- Específicos: ocular como desfecho principal e respiratório exploratório; síntese narrativa dos desfechos objetivos; GRADE por desfecho.
 
 ### Slide 5 — METODOLOGIA: Mapa da revisão: 7 passos, do protocolo à certeza da evidência (PRISMA 2020)
 
-[1:45–2:15] METODOLOGIA – MAPA (~30 s)
-A parte que mais me orgulho é o método, então vou apresentá-lo como um passo a passo, do jeito que o PRISMA 2020 recomenda. São sete passos.
-Um: a pergunta e o protocolo, registrado no PROSPERO antes da extração de dados, e a dispensa do Comitê de Ética, por ser revisão de literatura. Dois: a busca em sete bases, mais literatura cinzenta e busca por citação. Três: a seleção, com deduplicação, triagem e leitura na íntegra. Quatro: a extração padronizada. Cinco: o risco de viés com as ferramentas do JBI. Seis: a síntese, que é a metanálise de proporções. Sete: a certeza da evidência pelo GRADE.
-Tudo foi feito com ferramentas abertas: Zotero, Rayyan, OpenAlex e análise em Python. Um assistente de IA teve função só operacional: ajudou a priorizar a ordem de leitura na triagem, na leitura assistida de resumos e na organização do fluxo de trabalho. Toda decisão de elegibilidade, a extração, a interpretação e a redação foram minhas, e nada gerado por IA entrou sem verificação humana; isso está declarado conforme a Portaria do CNPq. O código e as planilhas estão públicos no OSF.
+[1:45–2:15] METODOLOGIA – MAPA (~30 s · 68 palavras)
+FALA:
+O método é a parte de que mais me orgulho, e vou apresentá-lo como um passo a passo em sete etapas, seguindo o relato PRISMA 2020: protocolo, busca, seleção, extração, risco de viés, síntese e certeza da evidência. Usei Zotero, Rayyan, OpenAlex e análise em Python. Um assistente de IA teve só apoio operacional; elegibilidade, extração e interpretação foram decisões humanas, e o código está aberto no OSF.
 
-DICA: não detalhe nada aqui; é só o mapa. Os próximos cinco slides percorrem os passos. As colunas aparecem sozinhas, uma a uma.
+APOIO (não ler):
+- Protocolo no PROSPERO (CRD420251238727), registrado antes da extração; dispensa do CEP (protocolo 2025/0743; Res. CNS 510/2016).
+- IA (julho–agosto de 2026): priorização da ordem de leitura, leitura assistida de resumos e organização do fluxo; nada gerado por IA entrou sem verificação humana. Declarada conforme a Portaria CNPq nº 2.664/2026.
+- Ferramentas: Zotero 6 (referências), Rayyan (deduplicação e triagem), OpenAlex (metadados e citações), Python 3.13 com NumPy, SciPy e statsmodels.
+- Não detalhe nada aqui: é só o mapa. As colunas aparecem sozinhas, uma a uma.
 
 ### Slide 6 — METODOLOGIA: Passos 1 e 2 · Critérios de elegibilidade e busca de alta sensibilidade
 
-[2:15–2:50] PASSOS 1 E 2 (~35 s)
-Os critérios de elegibilidade foram definidos no protocolo, e os ajustes feitos depois do registro estão declarados no manuscrito. Incluímos estudos observacionais primários com profissionais de centro cirúrgico expostos, com qualquer efeito à saúde ou marcador de exposição como desfecho, em português, inglês ou espanhol, sem restrição de data. Resumos de congresso só entraram quando traziam população, cenário, definição do desfecho, eventos e denominador; essa admissão foi uma decisão posterior ao registro, declarada, e esses resumos receberam preocupação alta com viés e análise de sensibilidade. Excluímos estudos em animais, populações fora do centro cirúrgico, desfechos só no paciente, medições de ar sem desfecho humano e exposições não atribuíveis à fumaça.
-A busca foi desenhada para sensibilidade máxima: dois blocos, população e exposição, sem bloco de desfecho, sem filtro de idioma nem de data. Rodamos em sete bases, mais literatura cinzenta e busca por citação automatizada no OpenAlex. Resultado: 16.757 registros, mais 443 referências rastreadas por citação. PubMed e Embase trouxeram quase metade.
+[2:15–2:50] PASSOS 1 E 2 (~35 s · 81 palavras)
+FALA:
+Incluímos estudos observacionais com profissionais de centro cirúrgico expostos à fumaça, com qualquer efeito à saúde ou marcador de exposição, em português, inglês ou espanhol, sem limite de data. Resumos de congresso só entraram com eventos e denominador extraíveis, numa decisão posterior ao registro e declarada. A busca foi feita para máxima sensibilidade: dois blocos, população e exposição, sem filtro de idioma ou data, em sete bases, literatura cinzenta e busca por citação. Foram 16.757 registros, mais 443 referências por citação.
 
-SE PERGUNTAREM por que a Cochrane CENTRAL deu zero: ela indexa ensaios clínicos e a revisão só incluiu observacionais; era esperado.
-SE PERGUNTAREM por que sem bloco de desfecho: porque os desfechos eram heterogêneos (sintomas, espirometria, HPV...) e um bloco de desfecho reduziria a sensibilidade.
+APOIO (não ler):
+- Exclusões: in vitro ou animais; fora do centro cirúrgico; desfecho só no paciente; só medição do ar; revisões, editoriais e cartas; exposição não atribuível à fumaça (gases, radiação).
+- PubMed e Embase, juntos, trouxeram mais da metade dos registros (cerca de 55%).
+- Cochrane CENTRAL = 0: indexa ensaios clínicos, e só incluímos observacionais; era esperado.
+- Sem bloco de desfecho porque os desfechos eram heterogêneos (sintomas, espirometria, HPV...): um bloco de desfecho reduziria a sensibilidade.
+- Literatura cinzenta: Google Scholar (4 × 50 resultados) e Catálogo CAPES. A busca não tem filtro de idioma, mas a elegibilidade é restrita a pt/en/es (limitação declarada).
 
 ### Slide 7 — METODOLOGIA: Passo 3 · Seleção dos estudos: do registro bruto ao relatório incluído
 
-[2:50–3:25] PASSO 3 – SELEÇÃO (~35 s)
-Da esquerda para a direita: 16.757 registros entraram no Zotero e foram importados no Rayyan, que removeu 5.839 duplicatas por DOI, PMID e similaridade de título. Sobraram 10.910 registros únicos, e eu li o título e o resumo de todos eles. Um script em Python com regras por palavras-chave e um assistente de IA tiveram papel operacional: reordenaram a fila de leitura, apoiaram a leitura assistida de resumos e a organização do fluxo. Quem decidia a elegibilidade era eu, com os critérios.
-Vinte e oito foram para texto completo, mais quatro vindos da busca por citação, total de 32; seis não foram recuperados apesar de tentativas por acesso institucional e contato com autores; 26 foram avaliados na íntegra e 22 incluídos.
-Um cuidado importante: sete publicações vêm do mesmo grupo brasileiro, com amostras sobrepostas. Para não contar ninguém duas vezes, cada agrupamento recebeu só um representante desse cluster, o Bieniek 2022, que era o relato mais completo.
+[2:50–3:25] PASSO 3 – SELEÇÃO (~35 s · 80 palavras)
+FALA:
+Os registros foram para o Rayyan, que removeu 5.839 duplicatas. Li título e resumo de todos os 10.910 únicos; um script e a IA só reordenavam a fila de leitura, e a decisão era minha. Trinta e dois relatórios foram buscados na íntegra, seis não foram recuperados, 26 foram avaliados e 22 incluídos. Um cuidado importante: sete publicações do mesmo grupo brasileiro tinham amostras sobrepostas, e cada análise usou um único representante, para não contar a mesma amostra duas vezes.
 
-HONESTIDADE METODOLÓGICA: a triagem foi feita por um único revisor. Isso está declarado como limitação. Cuidado com a terminologia: o PRISMA 2020 é um guia de RELATO (diz o que deve constar no texto); a seleção independente por dois revisores é uma recomendação METODOLÓGICA importante (manuais do JBI e da Cochrane; Diretrizes do MS). Se perguntarem, diga que as decisões foram registradas com justificativa e que a replicação em duplicata está nas perspectivas.
+APOIO (não ler):
+- Fluxo: 16.757 identificados → 16.749 importados (8 não exportados) → 5.839 duplicatas (DOI, PMID e similaridade de título) → 10.910 triados → 10.882 excluídos → 28 + 4 por citação = 32 buscados → 6 não recuperados → 26 avaliados → 4 excluídos (1 resumo sem dados; 3 por população ou contexto) → 22 incluídos.
+- Representante do cluster (Paraná): Bieniek et al., 2022, definido antes da síntese.
+- Os 6 não recuperados incluem 2 inquéritos de sintomas e 1 estudo de olho seco; tentativas: acesso institucional, repositórios, páginas dos autores, comutação e contato com autores.
+- HONESTIDADE: triagem por revisor único, declarada como limitação. O PRISMA 2020 é guia de RELATO; a seleção em duplicata é recomendação METODOLÓGICA (JBI, Cochrane, Diretrizes do MS). A replicação em duplicata está nas perspectivas.
 
 ### Slide 8 — METODOLOGIA: Passos 4 e 5 · Extração padronizada e avaliação do risco de viés (JBI)
 
-[3:25–3:55] PASSOS 4 E 5 (~30 s)
-A extração foi feita em planilha padronizada: identificação, desenho, população, dispositivo gerador, comparador, instrumento e definição do desfecho, taxa de resposta e, para a metanálise, o número de eventos e o denominador de cada estudo. Por exemplo, no İlçe 2017, 33 de 81 profissionais relataram lacrimejamento.
-O risco de viés foi avaliado com as ferramentas do Joanna Briggs Institute, escolhidas pela função de cada estudo: a lista de prevalência, com nove itens, para os sete estudos das metanálises; a de transversal analítico para os comparativos; e a de coorte para os três longitudinais. O julgamento global foi qualitativo, guiado pelos domínios críticos: amostragem, tamanho amostral, validade da mensuração e taxa de resposta.
-O semáforo resume: a preocupação foi moderada ou alta em todos, principalmente por amostragem não probabilística, taxa de resposta não relatada e desfecho autorrelatado. Nenhum estudo teve preocupação baixa, e isso vai pesar no GRADE.
+[3:25–3:55] PASSOS 4 E 5 (~30 s · 64 palavras)
+FALA:
+A extração usou planilha padronizada: desenho, população, dispositivo, comparador, definição do desfecho e, para a metanálise, eventos e denominador; por exemplo, 33 de 81 profissionais com lacrimejamento no İlçe 2017. O risco de viés usou as ferramentas do JBI, escolhidas pela função de cada estudo. No semáforo, nenhum estudo teve preocupação baixa, sobretudo por amostragem não probabilística, taxa de resposta não relatada e autorrelato.
 
-SE PERGUNTAREM por que JBI e não Newcastle-Ottawa ou ROBINS-E: o JBI tem lista específica para estudos de prevalência, alinhada ao CoCoPop; NOS não cobre prevalência e ROBINS-E é para exposição comparativa.
+APOIO (não ler):
+- Listas JBI: prevalência (9 itens; os 7 estudos das metanálises), transversal analítico (8; comparativos e objetivos), coorte (11; 3 coortes).
+- Julgamento global qualitativo pelos domínios críticos (amostragem, tamanho, validade da mensuração, taxa de resposta); "não" pesa mais que "incerto". Todos os estudos foram mantidos e a classificação alimentou o GRADE.
+- Por que JBI e não Newcastle-Ottawa ou ROBINS-E: o JBI tem lista específica para prevalência, alinhada ao CoCoPop; NOS não cobre prevalência e ROBINS-E é para efeito de exposição comparativa.
+- Mohd Fikri Rosely 2022 é resumo de congresso: itens incertos e preocupação alta.
 
-### Slide 9 — METODOLOGIA: Passo 6 · Metanálise de prevalência explicada: de 7 proporções a uma estimativa combinada
+### Slide 9 — METODOLOGIA: Passo 6 · Metanálise de prevalência explicada: de 6–7 proporções a uma estimativa combinada
 
-[3:55–4:45] PASSO 6 – METANÁLISE (~50 s)  ← o coração da apresentação
-Vou explicar a metanálise em cinco passos. Primeiro, cada estudo vira uma proporção: eventos dividido pelo n. Segundo, aplicamos a transformação logito, o logaritmo da chance: isso tira a proporção da escala de zero a um, aproxima da distribuição normal e garante que a estimativa combinada e os intervalos fiquem entre 0 e 100%. Terceiro, usamos modelo de efeitos aleatórios, porque não faz sentido supor uma única prevalência verdadeira em hospitais da Turquia, da Malásia e do Brasil; a variância entre estudos, o tau-quadrado, foi estimada por Paule-Mandel. Quarto, o intervalo de confiança da estimativa combinada recebeu o ajuste de Hartung-Knapp, que usa a distribuição t e é mais honesto quando há poucos estudos e muita heterogeneidade. Quinto, voltamos para porcentagem e reportamos o I² e o intervalo de predição, que diz onde cairia a prevalência de um novo estudo.
-Para testar a robustez, repetimos tudo com a transformação de Freeman-Tukey e com um modelo logístico misto, fizemos leave-one-out, gráfico de Baujat e subgrupo por país.
-Não fizemos gráfico de funil nem Egger, porque em proporções o erro-padrão depende da própria proporção, o que cria assimetria falsa, e seriam necessários dez estudos.
+[3:55–4:45] PASSO 6 – METANÁLISE (~50 s · 110 palavras) ← o coração da apresentação
+FALA:
+A metanálise, em cinco passos. Um: cada estudo vira uma proporção, eventos sobre n. Dois: a transformação logito leva essa proporção para uma escala sem limites, mais próxima da normal, e garante resultados entre 0 e 100%. Três: modelo de efeitos aleatórios, porque a prevalência verdadeira varia entre hospitais e países; a variância entre estudos, o tau-quadrado, foi estimada por Paule-Mandel. Quatro: o ajuste de Hartung-Knapp torna o intervalo de confiança mais honesto com poucos estudos. Cinco: voltamos para porcentagem e relatamos o I² e o intervalo de predição, a faixa esperada para um novo estudo. A robustez foi testada com mais dois modelos, leave-one-out, Baujat e subgrupo por país.
 
-ANALOGIA se precisar: efeitos fixos = "todos os estudos medem a mesma coisa com ruído"; efeitos aleatórios = "cada estudo mede a sua prevalência, e queremos a média dessas prevalências e a dispersão delas".
-Os cinco cards aparecem sozinhos, um a um, enquanto você fala.
+APOIO (não ler):
+- Peso de cada estudo = 1 ÷ (variância do estudo + τ²). IC95% individual pelo método de Wilson. Sem 0% ou 100%: não precisou de correção de continuidade.
+- Hartung-Knapp: IC pela distribuição t com k − 1 graus de liberdade (IntHout; Ioannidis; Borm, 2014).
+- Sem funil nem Egger: em proporções o erro-padrão depende da própria proporção (assimetria espúria) e os testes exigem ≥ 10 estudos. Sem metarregressão: poucos estudos por covariável. RR dos desfechos objetivos na escala log (Wald).
+- Analogia: efeitos fixos = todos medem a mesma coisa com ruído; efeitos aleatórios = cada estudo tem a sua prevalência, e queremos a média e a dispersão delas.
+- Os cinco cards aparecem sozinhos enquanto você fala.
 
 ### Slide 10 — METODOLOGIA: Passo 7 · Certeza da evidência: GRADE adaptado a desfechos de prevalência
 
-[4:45–5:15] PASSO 7 – GRADE (~30 s)
-O último passo foi graduar a certeza da evidência pelo GRADE, nos cinco domínios: risco de viés, inconsistência, evidência indireta, imprecisão e viés de publicação. Como não existe adaptação universal do GRADE para prevalência, explicitamos os critérios em cada domínio.
-Partimos de certeza baixa, por ser evidência observacional, e qualquer domínio grave leva a muito baixa. Um detalhe que mostra cuidado: a evidência indireta não foi rebaixada nos sintomas, porque o sintoma autorrelatado é exatamente o desfecho da pergunta de frequência; já nos biomarcadores foi rebaixada, por coexposição e desfecho substituto. E evitamos dupla contagem: o intervalo de predição entrou em inconsistência, e a largura do IC em imprecisão.
-À direita estão as decisões tomadas depois do registro no PROSPERO, todas declaradas no manuscrito.
+[4:45–5:15] PASSO 7 – GRADE (~30 s · 65 palavras)
+FALA:
+Por fim, a certeza da evidência pelo GRADE, em cinco domínios. Partimos de certeza baixa, por ser evidência observacional, e um domínio grave já leva a muito baixa. Dois cuidados: a evidência indireta não foi rebaixada nos sintomas, porque o sintoma relatado é o próprio desfecho, mas foi rebaixada nos desfechos objetivos, por coexposições e desfechos substitutos; e evitamos dupla contagem entre inconsistência e imprecisão.
 
-SE PERGUNTAREM "se começasse em alta, mudaria?": não. Com inconsistência muito grave, risco de viés grave e imprecisão grave, a certeza cairia três níveis e chegaria igualmente a muito baixa.
+APOIO (não ler):
+- Intervalo de predição entra em inconsistência; amplitude do IC95% entra em imprecisão.
+- "Se começasse em alta, mudaria?": não. Inconsistência muito grave + risco de viés grave + imprecisão grave levariam igualmente a muito baixa.
+- Desfechos com um único estudo: inconsistência não aplicável; viés de publicação não avaliável.
+- Decisões posteriores ao registro, todas declaradas: ocular principal e respiratório exploratório; modelo logito + Hartung-Knapp; uma publicação por desfecho no cluster; resumos de congresso com dados suficientes; regra do sintoma-índice e sensibilidade por definição.
 
 ### Slide 11 — RESULTADOS: Seleção (PRISMA 2020) e características dos 22 relatórios incluídos
 
-[5:15–5:35] RESULTADOS – SELEÇÃO E CARACTERÍSTICAS (~20 s)
-Este é o fluxograma PRISMA completo, que vocês já viram em números. Ficaram 22 relatórios de estudos observacionais, de nove países, a maioria transversal; três eram coortes prospectivas (Navarro 2016; Stanganelli 2019; Stanganelli Caus 2025).
-Depois do controle de sobreposição, seis amostras independentes, com 756 profissionais, entraram na metanálise ocular, e sete amostras, com 1.428, na respiratória.
-No risco de viés, a preocupação foi moderada a alta nos inquéritos de prevalência, e moderada nos estudos de desfechos objetivos. Nenhum estudo teve preocupação baixa; só Mohd Fikri Rosely e Titi Rahmawati (2019) usaram amostragem aleatória estratificada.
+[5:15–5:35] RESULTADOS – SELEÇÃO E CARACTERÍSTICAS (~20 s · 43 palavras)
+FALA:
+Este é o fluxograma PRISMA. Ficaram 22 relatórios de nove países, 19 transversais e três coortes. Depois do controle de sobreposição, seis amostras, com 756 profissionais, entraram na metanálise ocular e sete, com 1.428, na respiratória. Nenhum estudo teve preocupação baixa com viés.
+
+APOIO (não ler):
+- Coortes prospectivas: Navarro 2016; Stanganelli 2019; Stanganelli Caus 2025.
+- Só Mohd Fikri Rosely e Titi Rahmawati (2019) usaram amostragem aleatória estratificada.
+- A busca por citação (443 referências) trouxe 4 relatórios, que entram em "Buscados na íntegra" (28 + 4 = 32).
+- Países: Turquia, Malásia, Brasil, Paquistão, China, México, EUA, Sudão e Tailândia.
 
 ### Slide 12 — RESULTADOS: Desfecho principal · Prevalência combinada de sintoma ocular (irritação ou lacrimejamento)
 
-[5:35–6:25] RESULTADO PRINCIPAL – OCULAR (~50 s)  ← dê tempo a este slide; é o que mais mostra análise crítica
-Este é o resultado principal. A prevalência combinada de sintoma ocular, irritação ou lacrimejamento, foi de 37,6%, com intervalo de confiança de 21,9 a 56,5%. São seis amostras independentes, 756 profissionais.
-No gráfico de floresta, cada quadrado é a prevalência de um estudo, com o tamanho proporcional ao peso; a linha preta é o intervalo de confiança de Wilson; o losango vermelho é a estimativa combinada e a linha vermelha mais longa é o intervalo de predição, de 7 a 83%.
-Essa linha longa é a mensagem honesta do trabalho. A heterogeneidade é de 93%, os estudos vão de 19% na Malásia a 56% na Turquia, e um novo estudo, em outro hospital, poderia encontrar quase qualquer valor. Por isso eu não apresento o 37,6% como "a prevalência", e sim como a média de uma distribuição ampla, que o intervalo de predição descreve melhor do que o intervalo de confiança.
-Dois cuidados de interpretação: isto é a proporção de profissionais que relataram o sintoma e o atribuíram à fumaça, conforme a definição de cada estudo, não uma prevalência com período de recordatório homogêneo; e não há grupo não exposto no agrupamento, então o número descreve a carga de sintomas, não um excesso atribuível.
-(O maior inquérito, Van Giersbergen 2019, n = 672, ficou fora do agrupamento ocular por não reportar numerador e denominador extraíveis.)
+[5:35–6:25] RESULTADO PRINCIPAL – OCULAR (~50 s · 119 palavras) ← dê tempo a este slide
+FALA:
+Este é o resultado principal. A prevalência combinada de sintoma ocular foi de 37,6%, com intervalo de confiança de 21,9 a 56,5%, em seis amostras e 756 profissionais. No gráfico de floresta, cada quadrado é um estudo, o losango é a estimativa combinada e a linha vermelha mais longa é o intervalo de predição, de 7 a 83%. Essa linha é a mensagem honesta do trabalho: com I² de 93%, os estudos vão de 19% na Malásia a 56% na Turquia, e um novo estudo poderia encontrar quase qualquer valor. Então 37,6% é a média de uma distribuição ampla, não "a" prevalência. E é a proporção que relatou o sintoma, sem grupo não exposto: descreve carga, não excesso atribuível.
 
-SE PERGUNTAREM "I² de 93% não invalida a metanálise?": em prevalência, I² alto é a regra, não a exceção (Barker et al., 2021). Por isso reportamos o intervalo de predição e investigamos as fontes (país, definição), em vez de esconder a heterogeneidade num único número.
+APOIO (não ler):
+- Tamanho do quadrado ∝ peso; linha preta = IC95% de Wilson.
+- O maior inquérito (Van Giersbergen et al., 2019; n = 672) ficou fora do ocular por não ter numerador e denominador oculares extraíveis.
+- "I² de 93% não invalida a metanálise?": em prevalência, I² alto é a regra (Barker et al., 2021); por isso relatamos o intervalo de predição e investigamos as fontes (país, definição) em vez de esconder a heterogeneidade num único número.
+- Definições: lacrimejamento, irritação ocular ou escala do sistema ocular; o período de recordatório não é homogêneo entre estudos.
 
 ### Slide 13 — RESULTADOS: Desfecho exploratório · Sintoma respiratório ou de vias aéreas, e robustez das estimativas
 
-[6:25–6:50] RESPIRATÓRIO E ROBUSTEZ (~25 s)  ← aponte a tabela, não leia linha por linha
-O desfecho respiratório, tratado como exploratório porque as definições variam muito, deu 41,7%, com intervalo de predição de 15 a 74%, em sete amostras e 1.428 profissionais.
-A tabela resume a robustez, e a mensagem é uma só: três modelos diferentes, retirar um estudo por vez ou excluir o resumo de congresso não mudam a leitura. O achado mais interessante é que, restringindo a definições específicas de sintoma respiratório, o I² cai de 91 para 61%: boa parte da heterogeneidade vem de como cada estudo definiu o sintoma.
-Na análise por país, Turquia e Malásia diferem bastante, mas com dois ou três estudos por país isso é hipótese, não conclusão.
+[6:25–6:50] RESPIRATÓRIO E ROBUSTEZ (~25 s · 62 palavras) ← aponte a tabela, não leia linha por linha
+FALA:
+O desfecho respiratório, exploratório porque as definições variam muito, deu 41,7%, com intervalo de predição de 15 a 74%. A tabela tem uma mensagem só: trocar o modelo, retirar um estudo por vez ou excluir o resumo de congresso não muda a leitura. E, restringindo a definições específicas, o I² respiratório cai de 91 para 61%: a definição explica parte da heterogeneidade.
 
-SE PEDIREM DETALHE DA TABELA: logito-HK 37,6/41,7; Freeman-Tukey 38,1/41,7; GLMM 37,5/42,0; leave-one-out 34,3–42,1 e 38,9–45,5; sem resumo de congresso 42,1/42,4; definições específicas 36,5 (I² 94%)/35,8 (I² 61%). Subgrupo ocular: Turquia n = 268; Malásia n = 333. No gráfico de Baujat, Mohd Fikri Rosely 2022 é o estudo mais influente.
+APOIO (não ler):
+- Tabela: logito-HK 37,6/41,7; Freeman-Tukey 38,1/41,7; GLMM 37,5/42,0; leave-one-out 34,3–42,1 e 38,9–45,5; sem resumo de congresso 42,1 (I² 89%) e 42,4 (I² 90%); definições específicas 36,5 (I² 94%) e 35,8 (I² 61%).
+- O mínimo respiratório do leave-one-out (38,9%) é sem Van Giersbergen 2019, a definição mais divergente.
+- Subgrupo ocular: Turquia 50,5% (k = 3; n = 268; I² 57%); Malásia 19,8% (k = 2; n = 333; I² 0%); p < 0,001 entre subgrupos, mas exploratório (poucos estudos e um resumo na Malásia).
+- Baujat: Mohd Fikri Rosely 2022 é o estudo mais influente; mesmo assim o I² ocular segue alto sem o resumo (89%) ou sem Bieniek (94%).
 
 ### Slide 14 — RESULTADOS: Desfechos objetivos e biomarcadores: sinais além do incômodo agudo (1 estudo por desfecho)
 
-[6:50–7:30] DESFECHOS OBJETIVOS E GRADE (~40 s)
-Além dos sintomas, quatro estudos, um por desfecho, trouxeram medidas objetivas, e todos apontam na mesma direção, desfavorável aos expostos.
-Espirometria no Sudão: VEF1, CVF e pico de fluxo menores nos expostos, com gradiente pelo tempo de atuação; mas a relação VEF1/CVF foi normal e o pico de fluxo depende de esforço, então lemos com cautela. Biomarcadores urinários no Brasil: metabólitos de benzeno e xileno e malondialdeído muito mais altos nos expostos; note que os denominadores diferem: 52 expostos contra 49 controles para os metabólitos, porque três amostras do grupo controle se perderam, e 52 contra 52 para o perfil oxidativo. Biópsia nasal numa coorte mexicana de quatro anos: metaplasia em 70% dos expostos contra 5%, risco relativo de 13,9, com intervalo muito amplo. E DNA de HPV na mucosa nasal de ginecologistas chineses: 9% contra 1,7%, risco relativo de 5,2.
-Pelo GRADE, a certeza foi muito baixa em todos os desfechos. E talvez o achado mais importante seja o que não encontramos: nenhum estudo avaliou diretamente câncer ou DPOC na equipe cirúrgica. Isso é um vazio de evidência, não evidência de ausência de risco.
+[6:50–7:30] DESFECHOS OBJETIVOS E GRADE (~40 s · 94 palavras)
+FALA:
+Além dos sintomas, quatro estudos, um por desfecho, trouxeram medidas objetivas, todas na mesma direção. No Sudão, espirometria com valores menores nos expostos e gradiente pelo tempo de atuação. No Brasil, metabólitos urinários de benzeno e xileno e malondialdeído bem mais altos. No México, metaplasia nasal em 70% contra 5%, risco relativo de 13,9. Na China, DNA de HPV na mucosa nasal em 9% contra 1,7%, risco relativo de 5,2. A certeza foi muito baixa em todos, e nenhum estudo elegível avaliou câncer ou DPOC: isso é vazio de evidência, não ausência de risco.
 
-NÚMEROS para decorar: 37,6% ocular; 41,7% respiratório; RR 13,9 metaplasia; RR 5,2 HPV; 0 estudos de câncer/DPOC.
+APOIO (não ler):
+- Ibrahim 2025 (92 vs 92 pareados): VEF1 2,78 vs 3,14 L; CVF 3,02 vs 3,45 L; PFE 327,5 vs 483,5 L/min; p = 0,001; VEF1/CVF ≈ 91% nos dois grupos; PFE depende de esforço.
+- Canicoba 2025: 52 expostos vs 49 controles para os metabólitos (três amostras do controle se perderam) e 52 vs 52 para o perfil oxidativo; t,t-mucônico 202,9 vs 46,1 µg/L; metil-hipúrico 468,2 vs 184,4 µg/L; malondialdeído 9,33 vs 3,22 nmol/mg; sem IC95%; t,t-mucônico é inespecífico (dieta, tabagismo).
+- Navarro 2016: 16/23 vs 1/20; RR 13,9 (IC95% 2,0–95,8), IC amplo por haver 1 evento no grupo não exposto.
+- Hu 2021: 42/469 vs 4/231; RR 5,2 (IC95% 1,9–14,2); DNA ≠ infecção ou doença; o achado da N95 (0/196) não tem ajuste.
+- Para decorar: 37,6% ocular; 41,7% respiratório; RR 13,9 metaplasia; RR 5,2 HPV; 0 estudos elegíveis de câncer ou DPOC.
 
 ### Slide 15 — DISCUSSÃO: O que os achados significam e como interpretá-los com cautela
 
-[7:30–8:00] DISCUSSÃO – INTERPRETAÇÃO (~30 s)
-Três leituras. Primeira: a carga de sintomas é alta e coerente com a literatura; a novidade é ter uma estimativa combinada com intervalo de predição, subgrupo e GRADE. Segunda: a heterogeneidade acima de 90% é esperada em prevalência; em vez de escondê-la, mostramos o intervalo de predição e as fontes prováveis: definição do sintoma, composição da equipe, tempo de exposição e contexto, como exaustão e EPI. Terceira: os desfechos objetivos têm gradiente dose-resposta (espirometria e HPV), temporalidade e plausibilidade, mas são um estudo por desfecho, com intervalos amplos e coexposições. São marcadores, não doença.
-E o achado mais relevante é o que não foi encontrado: nenhum estudo de câncer ou DPOC. A controvérsia sobre o risco real só se resolve com estudos longitudinais que ainda não existem.
+[7:30–8:00] DISCUSSÃO – INTERPRETAÇÃO (~30 s · 81 palavras)
+FALA:
+Três leituras. Primeira: a carga de sintomas é alta e coerente com a literatura, agora com estimativa combinada, intervalo de predição e GRADE. Segunda: heterogeneidade acima de 90% é esperada em prevalência; mostramos as fontes prováveis, como a definição do sintoma, o tempo de exposição e o uso de exaustão e EPI. Terceira: os desfechos objetivos têm gradiente e plausibilidade, mas são marcadores, não doença. E o achado mais relevante é o que não foi encontrado: estudos de câncer ou DPOC.
+
+APOIO (não ler):
+- Literatura prévia sem síntese quantitativa: Mowbray et al., 2013; Dixon; Dasgupta; Vasdev, 2023.
+- "Qualquer sintoma": 55,6% (Mohd Fikri Rosely, 2022) e 73,2% (Van Giersbergen et al., 2019), síntese narrativa.
+- A favor da causalidade: gradiente com o tempo de exposição, temporalidade (coorte), plausibilidade. Contra: um estudo por desfecho, IC amplos, coexposições (gases anestésicos, radiação).
+- Relatos de caso de papilomatose laríngea e carcinoma orofaríngeo por HPV em cirurgiões (Hallmo; Naess, 1991; Rioux et al., 2013) reforçam a plausibilidade, mas não estimam risco.
 
 ### Slide 16 — DISCUSSÃO: Pontos fortes e limitações
 
-[8:00–8:25] PONTOS FORTES E LIMITAÇÕES (~25 s)
-Como pontos fortes: busca ampla e sem filtro de idioma, protocolo registrado, risco de viés padronizado, síntese com intervalo de predição e três modelos concordantes, GRADE por desfecho e tudo reprodutível no OSF.
-As limitações estão todas declaradas. As principais: os estudos são transversais, com exposição por ocupação e sintomas autorrelatados, e o respondente sabia que o questionário era sobre fumaça; não há grupo não exposto nos agrupamentos, então não estimamos o excesso atribuível; existe o efeito do trabalhador sadio, que subestima a prevalência; a heterogeneidade é alta; e a triagem, a extração e o risco de viés foram feitos por um único revisor, sem duplicata.
-Elas não invalidam a síntese: delimitam o que a evidência permite afirmar.
+[8:00–8:25] PONTOS FORTES E LIMITAÇÕES (~25 s · 60 palavras)
+FALA:
+Os pontos fortes são a busca ampla, o protocolo registrado, a síntese com três modelos concordantes, o GRADE por desfecho e a reprodutibilidade no OSF. As limitações estão declaradas: estudos transversais com autorrelato, sem grupo não exposto nos agrupamentos, efeito do trabalhador sadio, heterogeneidade alta e revisor único. Elas não invalidam a síntese; delimitam o que a evidência permite afirmar.
 
-ATITUDE: fale as limitações com segurança. Banca valoriza quem conhece as fraquezas do próprio trabalho mais do que quem as esconde.
+APOIO (não ler):
+- Viés de atribuição: o respondente sabe que o questionário é sobre fumaça.
+- Trabalhador sadio: quem adoece tende a sair do centro cirúrgico, o que subestima a prevalência.
+- Elegibilidade restrita a português, inglês e espanhol; periódicos de indexação limitada (análise restrita ao MEDLINE não foi factível); 6 relatórios não recuperados.
+- ATITUDE: fale as limitações com segurança. A banca valoriza quem conhece as fraquezas do próprio trabalho.
 
 ### Slide 17 — CONCLUSÃO: Síntese da mensagem da revisão
 
-[8:25–8:50] CONCLUSÃO (~25 s)
-Concluindo. O que se sabe: sintomas oculares e respiratórios são frequentes na equipe exposta, com grande variação entre contextos, e os desfechos objetivos sinalizam alterações além do incômodo agudo. O que não se sabe: não há evidência direta de câncer ou DPOC atribuíveis à fumaça, a certeza é muito baixa e as coexposições limitam a atribuição causal.
-A implicação prática é clara: pelo princípio da precaução e pela carga de sintomas, a exaustão local na fonte, os respiradores N95 e a educação da equipe se justificam hoje. E medir o risco de longo prazo é tarefa de estudos longitudinais.
+[8:25–8:50] CONCLUSÃO (~25 s · 59 palavras)
+FALA:
+Concluindo: sintomas oculares e respiratórios são frequentes na equipe exposta, com grande variação entre contextos, e estudos isolados sugerem alterações além do incômodo agudo. Não há evidência direta de câncer ou DPOC, e a certeza é muito baixa. Ainda assim, pela carga de sintomas e pela precaução, proteger a equipe hoje é prudente: exaustão na fonte, respiradores e educação.
+
+APOIO (não ler):
+- Proteção (NIOSH, 1996): evacuação local na fonte é a medida principal; N95/PFF2 não substituem a exaustão; educação da equipe. A efetividade das medidas não foi avaliada nesta revisão.
+- NR-32: marco geral de gestão de riscos em serviços de saúde, mas não trata especificamente da fumaça cirúrgica.
 
 ### Slide 18 — PERSPECTIVAS FUTURAS: Agenda de pesquisa e próximos passos deste trabalho
 
-[8:50–9:05] PERSPECTIVAS FUTURAS (~15 s)
-Para o campo, a agenda é clara: coortes com medição objetiva da exposição e controle de coexposições, definições padronizadas de sintoma, desfechos crônicos como câncer e DPOC, e estudos de efetividade da exaustão e das máscaras.
-Para este trabalho: submeter o manuscrito, atualizar a busca, replicar a triagem em duplicata e levar uma proposta de proteção para o nosso centro cirúrgico.
+[8:50–9:05] PERSPECTIVAS FUTURAS (~15 s · 35 palavras)
+FALA:
+Para o campo, faltam coortes com medida objetiva da exposição, definições padronizadas, desfechos crônicos e estudos de efetividade da proteção. Para este trabalho: submeter o manuscrito, atualizar a busca e replicar a triagem em duplicata.
+
+APOIO (não ler):
+- Também: devolutiva institucional (proposta de protocolo de proteção no centro cirúrgico) e vigilância dos 6 relatórios não recuperados.
 
 ### Slide 19 — REFERÊNCIAS BIBLIOGRÁFICAS: Principais referências metodológicas e dos estudos incluídos (lista completa no manuscrito)
 
-[9:05–9:10] REFERÊNCIAS (~5 s)
-Estas são as principais referências metodológicas e dos estudos incluídos; a lista completa está no manuscrito, e o QR code leva ao projeto público no OSF, com o manuscrito, os anexos e os suplementos. (Não leia; apenas mencione e avance.)
+[9:05–9:10] REFERÊNCIAS (~5 s · 10 palavras)
+FALA:
+As referências completas e os suplementos estão no QR code.
 
-ANTES DO DIA: confira que o PDF do manuscrito está publicado no OSF (osf.io/jktmn); hoje o projeto tem o suplemento (zip) e as referências do banner.
+APOIO (não ler):
+- Não leia a lista; mencione e avance.
+- ANTES DO DIA: publique o PDF do manuscrito no OSF (osf.io/jktmn), para onde o QR code aponta; hoje o projeto tem o suplemento (zip) e as referências do banner. Confira antes a política de preprint da revista escolhida.
 
 ### Slide 20 — AGRADECIMENTOS
 
-[9:10–9:20] AGRADECIMENTOS (~10 s)
-Agradeço à Profa. Lisie pela orientação, ao Luiz Henrique e à Dra. Mariana pela revisão crítica, e à Faculdade São Leopoldo Mandic e ao PIC pelo apoio. O protocolo está no PROSPERO e o manuscrito, os dados e o código estão no OSF. Obrigado. Estou à disposição para perguntas.
+[9:10–9:20] AGRADECIMENTOS (~10 s · 25 palavras)
+FALA:
+Agradeço à Profa. Lisie, aos coautores Luiz Henrique e Dra. Mariana, e à São Leopoldo Mandic e ao PIC. Obrigado; estou à disposição para perguntas.
+
+APOIO (não ler):
+- PROSPERO CRD420251238727 · OSF osf.io/jktmn · sem financiamento · sem conflitos de interesse.
 
 ### Slide 21 — Encerramento
 
 ENCERRAMENTO
-Deixe este slide na tela durante as perguntas: o QR code leva ao manuscrito e aos suplementos no OSF. Respire, ouça a pergunta inteira, repita-a em uma frase ("a pergunta é sobre…") e responda em no máximo 30–40 segundos. Se não souber, diga o que o estudo permite afirmar e o que seria necessário para responder.
+Deixe este slide na tela durante as perguntas: o QR code leva ao OSF. Ouça a pergunta inteira, repita-a em uma frase ("a pergunta é sobre…") e responda em 30 a 40 segundos. Se não souber, diga o que o estudo permite afirmar e o que seria necessário para responder.
 
 
 ## Parte 2 — Passos 1 a 3: pergunta, protocolo, elegibilidade, busca e seleção
@@ -1337,7 +1404,7 @@ Escolhi efeitos aleatórios porque esse modelo assume que a prevalência verdade
 
 **P2. [Básica] O que significa exatamente o 'n = 756' da metanálise ocular? Por que o desfecho principal tem menos participantes do que o exploratório, com 1.428?**
 
-O n = 756 é a soma dos denominadores das seis amostras independentes do agrupamento ocular: 81 de İlçe, 82 de Cinar e Sanlier, 105 de Usta, 196 e 137 dos dois estudos malaios e 155 de Bieniek 2022. Não é o número de pessoas com sintoma nem o total das 22 publicações; é o número de profissionais efetivamente analisados para esse desfecho, sem ninguém contado duas vezes, porque o cluster brasileiro entrou com um único representante. O desfecho principal tem menos participantes porque o maior inquérito elegível, Van Giersbergen 2019, com **672** pessoas, não reportou numerador e denominador extraíveis para sintoma ocular; dele só eram extraíveis os dados respiratórios e de 'qualquer sintoma', então ele entrou apenas no agrupamento respiratório, que por isso chega a **1.428**, e na síntese narrativa de qualquer sintoma. Reconheço isso nas limitações como uma fragilidade específica do desfecho principal. E lembro que, em efeitos aleatórios, o peso de cada estudo não é proporcional ao n: o 756 descreve o tamanho da base de evidência, não define sozinho a precisão.
+O n = 756 é a soma dos denominadores das seis amostras independentes do agrupamento ocular: 81 de İlçe, 82 de Cinar e Sanlier, 105 de Usta, 196 e 137 dos dois estudos malaios e 155 de Bieniek 2022. Não é o número de pessoas com sintoma nem o total das 22 publicações; é o número de profissionais efetivamente analisados para esse desfecho, sem sobreposição amostral documentada dentro do agrupamento, porque o cluster brasileiro entrou com um único representante. O desfecho principal tem menos participantes porque o maior inquérito elegível, Van Giersbergen 2019, com **672** pessoas, não reportou numerador e denominador extraíveis para sintoma ocular; dele só eram extraíveis os dados respiratórios e de 'qualquer sintoma', então ele entrou apenas no agrupamento respiratório, que por isso chega a **1.428**, e na síntese narrativa de qualquer sintoma. Reconheço isso nas limitações como uma fragilidade específica do desfecho principal. E lembro que, em efeitos aleatórios, o peso de cada estudo não é proporcional ao n: o 756 descreve o tamanho da base de evidência, não define sozinho a precisão.
 
 > Dica: Se perguntarem por que 37,6% não é simplesmente a soma dos eventos (269/756 = 35,6%; conta a partir do Anexo D, não está no texto): o modelo pondera estudos na escala logito, não soma indivíduos. Nunca diga 'n = 22 estudos' para a metanálise.
 
@@ -1699,7 +1766,7 @@ A maior dificuldade foi transformar 22 relatórios em amostras independentes e c
 
 **P61. Quanto tempo levou cada etapa do projeto?**
 
-O que o manuscrito documenta ancora o cronograma assim: os identificadores da dispensa do CEP (protocolo 2025/0743) e do registro PROSPERO (CRD420251238727) indicam que o planejamento, o protocolo e a parte ética foram tratados em 2025, e o registro foi feito antes da extração dos dados. A busca final nas sete bases, na literatura cinzenta e por citação (via OpenAlex) foi executada em um único dia, 9 de julho de 2026. A triagem dos 10.910 registros ocorreu, pelo período declarado de uso das ferramentas de priorização, entre julho e agosto de 2026. Extração, avaliação de risco de viés, análises em Python e redação vieram na sequência, até a versão atual. [Preencha com seus tempos reais: 'a triagem me tomou cerca de X semanas; a programação e as análises de sensibilidade, X semanas; a redação, X meses'.] O que posso dizer com segurança é que a análise foi a etapa mais iterativa: cada decisão, representante do cluster, sintoma-índice, exclusão do resumo de congresso, gerou uma análise de sensibilidade que precisei rodar e relatar.
+A preparação também está documentada em certificados: em julho de 2025 concluí o curso de Revisão Sistemática e Metanálise da Unicamp (40 h, com distinção, 20/07/2025) e um curso de escrita científica (ZucoEscrita, 3,6 h, 31/07/2025); em março de 2026, os cursos de normalização ABNT (3 h, 11/03/2026) e de referências (2 h, 25/03/2026) da Fiocruz, cerca de 49 h no total. O que o manuscrito documenta ancora o cronograma assim: os identificadores da dispensa do CEP (protocolo 2025/0743) e do registro PROSPERO (CRD420251238727) indicam que o planejamento, o protocolo e a parte ética foram tratados em 2025, e o registro foi feito antes da extração dos dados. A busca final nas sete bases, na literatura cinzenta e por citação (via OpenAlex) foi executada em um único dia, 9 de julho de 2026. A triagem dos 10.910 registros ocorreu, pelo período declarado de uso das ferramentas de priorização, entre julho e agosto de 2026. Extração, avaliação de risco de viés, análises em Python e redação vieram na sequência, até a versão atual. [Preencha com seus tempos reais: 'a triagem me tomou cerca de X semanas; a programação e as análises de sensibilidade, X semanas; a redação, X meses'.] O que posso dizer com segurança é que a análise foi a etapa mais iterativa: cada decisão, representante do cluster, sintoma-índice, exclusão do resumo de congresso, gerou uma análise de sensibilidade que precisei rodar e relatar.
 
 > Dica: Nível: básico, mas perigoso: NÃO invente durações. Preencha os colchetes com seu cronograma real antes da apresentação. O ano de 2025 é inferido dos números de protocolo e o período da triagem, do período declarado de uso da IA; confirme ambos. Não afirme qual etapa foi 'a mais longa' sem ter o seu registro, porque o manuscrito não diz isso.
 

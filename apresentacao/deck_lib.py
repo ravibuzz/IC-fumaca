@@ -52,7 +52,7 @@ TOP = 1.85                   # início do conteúdo
 BOT = 10.75                  # fim do conteúdo (sem trilha de passos)
 BOT_T = 10.0                 # fim do conteúdo quando há trilha de passos
 
-STEPS = ["Pergunta e protocolo", "Busca", "Seleção", "Extração",
+STEPS = ["Protocolo", "Busca", "Seleção", "Extração",
          "Risco de viés", "Síntese", "Certeza (GRADE)"]
 
 
@@ -305,9 +305,12 @@ def icon(slide, name, x, y, size=0.5, color="navy"):
     return pic(slide, ICONS / f"{name}_{color}.png", x, y, size, size, name=f"icone {name}")
 
 
+ICON_SCALE = {"biotech": 1.3}  # glifos com muita margem interna no desenho original
+
+
 def icon_badge(slide, name, cx, cy, d=0.9, fill=NAVY, color="white", icon_frac=0.5):
     circle(slide, cx, cy, d, fill=fill)
-    s = d * icon_frac
+    s = d * icon_frac * ICON_SCALE.get(name, 1.0)
     icon(slide, name, cx - s / 2, cy - s / 2, s, color=color)
 
 
@@ -379,6 +382,20 @@ def step_track(slide, active, y=10.12):
 
 
 # ---------- tabela ----------
+def _cell_borders(cell, color="C9CFDA", w_pt=0.75):
+    """Bordas explícitas e discretas (sem elas, cada programa desenha a sua: o LibreOffice usa preto)."""
+    tcPr = cell._tc.get_or_add_tcPr()
+    for tag in ("a:lnL", "a:lnR", "a:lnT", "a:lnB"):
+        for el in tcPr.findall(qn(tag)):
+            tcPr.remove(el)
+    for i, tag in enumerate(("lnL", "lnR", "lnT", "lnB")):  # devem vir antes do preenchimento em a:tcPr
+        ln = etree.fromstring(
+            f'<a:{tag} xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" w="{int(w_pt * 12700)}" '
+            f'cap="flat" cmpd="sng" algn="ctr"><a:solidFill><a:srgbClr val="{color}"/></a:solidFill>'
+            f'<a:prstDash val="solid"/><a:round/></a:{tag}>')
+        tcPr.insert(i, ln)
+
+
 def table(slide, x, y, w, rows, col_widths=None, header=True, size=16, row_h=0.42, header_fill=NAVY,
           header_color=WHITE, zebra=LIGHT, first_col_bold=False, align_cols=None, bold_rows=(),
           cell_fills=None):
@@ -407,6 +424,7 @@ def table(slide, x, y, w, rows, col_widths=None, header=True, size=16, row_h=0.4
                 fill_color = cell_fills[(r, c)]
             cell.fill.solid()
             cell.fill.fore_color.rgb = fill_color
+            _cell_borders(cell)
             val = rows[r][c]
             runs = val if isinstance(val, list) else [(str(val), {})]
             al = PP_ALIGN.LEFT
@@ -536,9 +554,11 @@ class Deck:
             stamp = f"[{a // 60}:{a % 60:02d}–{b // 60}:{b % 60:02d}]"
             first, _, rest = text.partition("\n")
             first = re.sub(r"^\[[^\]]*\]\s*", "", first)
-            first = re.sub(r"\(~\s*\d+\s*s\)", f"(~{dur} s)", first)
-            if f"(~{dur} s)" not in first:
-                first = re.sub(r"^([^←]*?)(\s*←|$)", lambda m: f"{m.group(1).rstrip()} (~{dur} s){m.group(2)}", first, count=1)
+            fala = re.search(r"FALA:\n(.*?)(?:\n\s*\n|$)", rest, re.S)
+            tag = f"(~{dur} s · {len(fala.group(1).split())} palavras)" if fala else f"(~{dur} s)"
+            first = re.sub(r"\(~\s*\d+\s*s\)", tag, first)
+            if tag not in first:
+                first = re.sub(r"^([^←]*?)(\s*←|$)", lambda m: f"{m.group(1).rstrip()} {tag}{m.group(2)}", first, count=1)
             text = f"{stamp} {first}\n{rest}"
         slide.notes_slide.notes_text_frame.text = text
 
