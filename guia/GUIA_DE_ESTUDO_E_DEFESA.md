@@ -26,9 +26,9 @@ Convenções: tudo o que está marcado como **[deste trabalho]** vem do manuscri
 | 7 | Passos 4 e 5 — extração e JBI | 0:30 | 3:45 |
 | 8 | Passo 6 — metanálise explicada | 0:50 | 4:35 |
 | 9 | Passo 7 — GRADE | 0:30 | 5:05 |
-| 10 | Resultados — seleção e características | 0:25 | 5:30 |
-| 11 | Resultado principal — sintoma ocular | 0:40 | 6:10 |
-| 12 | Sintoma respiratório e robustez | 0:30 | 6:40 |
+| 10 | Resultados — seleção e características | 0:20 | 5:25 |
+| 11 | Resultado principal — sintoma ocular | 0:50 | 6:15 |
+| 12 | Sintoma respiratório e robustez | 0:25 | 6:40 |
 | 13 | Desfechos objetivos e GRADE | 0:40 | 7:20 |
 | 14 | Discussão — interpretação | 0:30 | 7:50 |
 | 15 | Discussão — pontos fortes e limitações | 0:25 | 8:15 |
@@ -38,13 +38,13 @@ Convenções: tudo o que está marcado como **[deste trabalho]** vem do manuscri
 | 19 | Agradecimentos | 0:10 | 9:10 |
 | 20 | Encerramento (fica na tela para as perguntas) | — | — |
 
-Se estiver atrasado ao chegar no slide 10, encurte os slides 12 e 15 (diga só a primeira frase de cada card). Nunca corte o slide 8 (metanálise) nem o 13 (desfechos objetivos e vazio de evidência): são os que mais rendem nota.
+Se estiver atrasado ao chegar no slide 10, encurte os slides 12 e 15 (diga só a primeira frase de cada card; no 12, aponte a tabela em vez de ler as linhas). Nunca corte os slides 8 (metanálise), 11 (resultado principal, com o intervalo de predição) nem 13 (desfechos objetivos e vazio de evidência): são os que mais mostram análise crítica e rendem nota.
 
 
 ## Parte 1 — Roteiro de fala, slide a slide
 
 
-Tempo-alvo total: ~9 min 30 s, deixando folga para os 10 minutos. Os colchetes indicam o relógio acumulado.
+Tempo-alvo total: ~9 min 10 s, deixando folga para os 10 minutos. Os colchetes indicam o relógio acumulado.
 
 ### Slide 1 — VIII SEMICA – SEMINÁRIO DE INICIAÇÃO CIENTÍFICA
 
@@ -57,7 +57,8 @@ DICA: fale o título de forma natural, sem ler palavra por palavra. Respire e v�
 ### Slide 2 — INTRODUÇÃO: Fumaça cirúrgica: o que é e por que importa
 
 [0:15–1:05] INTRODUÇÃO (~50 s)
-Fumaça cirúrgica é o subproduto da destruição térmica dos tecidos pelo eletrocautério, pelo laser e pelo bisturi ultrassônico. Ela não é só "fumaça": contém hidrocarbonetos aromáticos policíclicos, compostos orgânicos voláteis como benzeno, tolueno e xileno, partículas ultrafinas que chegam às vias aéreas inferiores e até material genético viral, como o HPV.
+Fumaça cirúrgica é o subproduto da destruição térmica dos tecidos pelo eletrocautério, pelo laser e pelo bisturi ultrassônico. Ela não é só "fumaça": contém hidrocarbonetos aromáticos policíclicos, compostos orgânicos voláteis como benzeno, tolueno e xileno, material particulado fino, o PM2,5, e partículas ultrafinas, que chegam às vias aéreas inferiores, e até material genético viral, como o HPV.
+(Se perguntarem: PM2,5 é a fração fina, com diâmetro aerodinâmico abaixo de 2,5 µm; "ultrafina" é abaixo de 0,1 µm. O manuscrito cita as duas.)
 Quem trabalha no centro cirúrgico relata com frequência irritação ocular, tosse, irritação de mucosas, cefaleia e náusea. O que não sabemos é o efeito de longo prazo: há plausibilidade biológica para câncer e doença respiratória, mas a relação causal nunca foi estabelecida, e revisões recentes chegam a dizer que o risco pode estar superestimado.
 Enquanto isso, exaustão de fumaça e máscaras de alta filtração ainda são pouco adotadas. E a literatura prévia era descritiva, sem metanálise. Por isso desenhamos uma síntese em camadas: metanálise de prevalência dos sintomas e síntese narrativa, com GRADE, dos desfechos objetivos.
 
@@ -77,14 +78,14 @@ SE PERGUNTAREM "por que PECO e não PICO?": porque é exposição, não interven
 [1:35–2:05] METODOLOGIA – MAPA (~30 s)
 A parte que mais me orgulho é o método, então vou apresentá-lo como um passo a passo, do jeito que o PRISMA 2020 recomenda. São sete passos.
 Um: a pergunta e o protocolo, registrado no PROSPERO antes da extração de dados, e a dispensa do Comitê de Ética, por ser revisão de literatura. Dois: a busca em sete bases, mais literatura cinzenta e busca por citação. Três: a seleção, com deduplicação, triagem e leitura na íntegra. Quatro: a extração padronizada. Cinco: o risco de viés com as ferramentas do JBI. Seis: a síntese, que é a metanálise de proporções. Sete: a certeza da evidência pelo GRADE.
-Tudo foi feito com ferramentas abertas: Zotero, Rayyan, OpenAlex e análise em Python. Um assistente de IA foi usado apenas para priorizar a ordem de leitura; nenhuma decisão de elegibilidade ou extração foi delegada. O código e as planilhas estão públicos no OSF.
+Tudo foi feito com ferramentas abertas: Zotero, Rayyan, OpenAlex e análise em Python. Um assistente de IA teve função só operacional: ajudou a priorizar a ordem de leitura na triagem, na leitura assistida de resumos e na organização do fluxo de trabalho. Toda decisão de elegibilidade, a extração, a interpretação e a redação foram minhas, e nada gerado por IA entrou sem verificação humana; isso está declarado conforme a Portaria do CNPq. O código e as planilhas estão públicos no OSF.
 
 DICA: não detalhe nada aqui; é só o mapa. Os próximos cinco slides percorrem os passos.
 
 ### Slide 5 — METODOLOGIA: Passos 1 e 2 · Critérios de elegibilidade e busca de alta sensibilidade
 
 [2:05–2:40] PASSOS 1 E 2 (~35 s)
-Os critérios de elegibilidade foram fixados no protocolo. Incluímos estudos observacionais primários com profissionais de centro cirúrgico expostos, com qualquer efeito à saúde ou marcador de exposição como desfecho, em português, inglês ou espanhol, sem restrição de data. Excluímos estudos em animais, populações fora do centro cirúrgico, desfechos só no paciente, medições de ar sem desfecho humano e exposições não atribuíveis à fumaça.
+Os critérios de elegibilidade foram definidos no protocolo, e os ajustes feitos depois do registro estão declarados no manuscrito. Incluímos estudos observacionais primários com profissionais de centro cirúrgico expostos, com qualquer efeito à saúde ou marcador de exposição como desfecho, em português, inglês ou espanhol, sem restrição de data. Resumos de congresso só entraram quando traziam população, cenário, definição do desfecho, eventos e denominador; essa admissão foi uma decisão posterior ao registro, declarada, e esses resumos receberam preocupação alta com viés e análise de sensibilidade. Excluímos estudos em animais, populações fora do centro cirúrgico, desfechos só no paciente, medições de ar sem desfecho humano e exposições não atribuíveis à fumaça.
 A busca foi desenhada para sensibilidade máxima: dois blocos, população e exposição, sem bloco de desfecho, sem filtro de idioma nem de data. Rodamos em sete bases, mais literatura cinzenta e busca por citação automatizada no OpenAlex. Resultado: 16.757 registros, mais 443 referências rastreadas por citação. PubMed e Embase trouxeram quase metade.
 
 SE PERGUNTAREM por que a Cochrane CENTRAL deu zero: ela indexa ensaios clínicos e a revisão só incluiu observacionais; era esperado.
@@ -93,11 +94,11 @@ SE PERGUNTAREM por que sem bloco de desfecho: porque os desfechos eram heterogê
 ### Slide 6 — METODOLOGIA: Passo 3 · Seleção dos estudos: do registro bruto ao relatório incluído
 
 [2:40–3:15] PASSO 3 – SELEÇÃO (~35 s)
-Da esquerda para a direita: 16.757 registros entraram no Zotero e foram importados no Rayyan, que removeu 5.839 duplicatas por DOI, PMID e similaridade de título. Sobraram 10.910 registros únicos, e eu li o título e o resumo de todos eles. Um script em Python e um assistente de IA só reordenaram a fila de leitura; quem decidia era eu, com os critérios.
+Da esquerda para a direita: 16.757 registros entraram no Zotero e foram importados no Rayyan, que removeu 5.839 duplicatas por DOI, PMID e similaridade de título. Sobraram 10.910 registros únicos, e eu li o título e o resumo de todos eles. Um script em Python com regras por palavras-chave e um assistente de IA tiveram papel operacional: reordenaram a fila de leitura, apoiaram a leitura assistida de resumos e a organização do fluxo. Quem decidia a elegibilidade era eu, com os critérios.
 Vinte e oito foram para texto completo, mais quatro vindos da busca por citação, total de 32; seis não foram recuperados apesar de tentativas por acesso institucional e contato com autores; 26 foram avaliados na íntegra e 22 incluídos.
 Um cuidado importante: sete publicações vêm do mesmo grupo brasileiro, com amostras sobrepostas. Para não contar ninguém duas vezes, cada agrupamento recebeu só um representante desse cluster, o Bieniek 2022, que era o relato mais completo.
 
-HONESTIDADE METODOLÓGICA: a triagem foi feita por um único revisor. Isso está declarado como limitação; o PRISMA pede dupla revisão independente. Se perguntarem, diga que a decisão foi registrada com justificativa e que a replicação em duplicata está nas perspectivas.
+HONESTIDADE METODOLÓGICA: a triagem foi feita por um único revisor. Isso está declarado como limitação. Cuidado com a terminologia: o PRISMA 2020 é um guia de RELATO (diz o que deve constar no texto); a seleção independente por dois revisores é uma recomendação METODOLÓGICA importante (manuais do JBI e da Cochrane; Diretrizes do MS). Se perguntarem, diga que as decisões foram registradas com justificativa e que a replicação em duplicata está nas perspectivas.
 
 ### Slide 7 — METODOLOGIA: Passos 4 e 5 · Extração padronizada e avaliação do risco de viés (JBI)
 
@@ -128,33 +129,35 @@ SE PERGUNTAREM "se começasse em alta, mudaria?": não. Com inconsistência muit
 
 ### Slide 10 — RESULTADOS: Seleção (PRISMA 2020) e características dos 22 relatórios incluídos
 
-[5:05–5:30] RESULTADOS – SELEÇÃO E CARACTERÍSTICAS (~25 s)
+[5:05–5:25] RESULTADOS – SELEÇÃO E CARACTERÍSTICAS (~20 s)
 Este é o fluxograma PRISMA completo, que vocês já viram em números. Ficaram 22 relatórios de estudos observacionais, de nove países, a maioria transversal; três eram coortes prospectivas.
 Depois do controle de sobreposição, seis amostras independentes, com 756 profissionais, entraram na metanálise ocular, e sete amostras, com 1.428, na respiratória.
 No risco de viés, a preocupação foi moderada a alta nos inquéritos de prevalência, e moderada nos estudos de desfechos objetivos. Nenhum estudo teve preocupação baixa.
 
 ### Slide 11 — RESULTADOS: Desfecho principal · Prevalência combinada de sintoma ocular (irritação ou lacrimejamento)
 
-[5:30–6:10] RESULTADO PRINCIPAL – OCULAR (~40 s)
+[5:25–6:15] RESULTADO PRINCIPAL – OCULAR (~50 s)  ← dê tempo a este slide; é o que mais mostra análise crítica
 Este é o resultado principal. A prevalência combinada de sintoma ocular, irritação ou lacrimejamento, foi de 37,6%, com intervalo de confiança de 21,9 a 56,5%. São seis amostras independentes, 756 profissionais.
-No gráfico de floresta, cada quadrado é a prevalência de um estudo, com o tamanho proporcional ao peso; a linha é o intervalo de confiança; o losango vermelho é a estimativa combinada e a linha vermelha mais longa é o intervalo de predição, de 7 a 83%. Essa linha longa é a mensagem honesta: a heterogeneidade é de 93%, os estudos vão de 19% na Malásia a 56% na Turquia, e um novo estudo poderia cair em quase qualquer valor.
-Reforço: isto é a proporção de profissionais que relataram o sintoma, conforme a definição de cada estudo, e não uma prevalência com período de recordatório homogêneo.
+No gráfico de floresta, cada quadrado é a prevalência de um estudo, com o tamanho proporcional ao peso; a linha preta é o intervalo de confiança de Wilson; o losango vermelho é a estimativa combinada e a linha vermelha mais longa é o intervalo de predição, de 7 a 83%.
+Essa linha longa é a mensagem honesta do trabalho. A heterogeneidade é de 93%, os estudos vão de 19% na Malásia a 56% na Turquia, e um novo estudo, em outro hospital, poderia encontrar quase qualquer valor. Por isso eu não apresento o 37,6% como "a prevalência", e sim como a média de uma distribuição ampla, que o intervalo de predição descreve melhor do que o intervalo de confiança.
+Dois cuidados de interpretação: isto é a proporção de profissionais que relataram o sintoma e o atribuíram à fumaça, conforme a definição de cada estudo, não uma prevalência com período de recordatório homogêneo; e não há grupo não exposto no agrupamento, então o número descreve a carga de sintomas, não um excesso atribuível.
 
 SE PERGUNTAREM "I² de 93% não invalida a metanálise?": em prevalência, I² alto é a regra, não a exceção (Barker et al., 2021). Por isso reportamos o intervalo de predição e investigamos as fontes (país, definição), em vez de esconder a heterogeneidade num único número.
 
 ### Slide 12 — RESULTADOS: Desfecho exploratório · Sintoma respiratório ou de vias aéreas, e robustez das estimativas
 
-[6:10–6:40] RESPIRATÓRIO E ROBUSTEZ (~30 s)
+[6:15–6:40] RESPIRATÓRIO E ROBUSTEZ (~25 s)  ← aponte a tabela, não leia linha por linha
 O desfecho respiratório, tratado como exploratório porque as definições variam muito, deu 41,7%, com intervalo de predição de 15 a 74%, em sete amostras e 1.428 profissionais.
-A tabela mostra por que confio nas estimativas: os três modelos, logito com Hartung-Knapp, Freeman-Tukey e o modelo logístico misto, deram praticamente o mesmo número; retirar um estudo por vez movimenta a estimativa ocular só entre 34 e 42%; e excluir o resumo de congresso não muda a leitura.
-Um achado interessante: quando restringimos a definições específicas de sintoma respiratório, o I² caiu de 91 para 61%. Ou seja, boa parte da heterogeneidade vem de como cada estudo definiu o sintoma.
-Na análise por país, a Turquia ficou em 50% e a Malásia em 20%, com diferença significativa, mas com dois ou três estudos por país isso é hipótese, não conclusão.
+A tabela resume a robustez, e a mensagem é uma só: três modelos diferentes, retirar um estudo por vez ou excluir o resumo de congresso não mudam a leitura. O achado mais interessante é que, restringindo a definições específicas de sintoma respiratório, o I² cai de 91 para 61%: boa parte da heterogeneidade vem de como cada estudo definiu o sintoma.
+Na análise por país, Turquia e Malásia diferem bastante, mas com dois ou três estudos por país isso é hipótese, não conclusão.
+
+SE PEDIREM DETALHE DA TABELA: logito-HK 37,6/41,7; Freeman-Tukey 38,1/41,7; GLMM 37,5/42,0; leave-one-out 34,3–42,1 e 38,9–45,5; sem resumo de congresso 42,1/42,4; definições específicas 36,5 (I² 94%)/35,8 (I² 61%).
 
 ### Slide 13 — RESULTADOS: Desfechos objetivos e biomarcadores: sinais além do incômodo agudo (1 estudo por desfecho)
 
 [6:40–7:20] DESFECHOS OBJETIVOS E GRADE (~40 s)
 Além dos sintomas, quatro estudos, um por desfecho, trouxeram medidas objetivas, e todos apontam na mesma direção, desfavorável aos expostos.
-Espirometria no Sudão: VEF1, CVF e pico de fluxo menores nos expostos, com gradiente pelo tempo de atuação; mas a relação VEF1/CVF foi normal e o pico de fluxo depende de esforço, então lemos com cautela. Biomarcadores urinários no Brasil: metabólitos de benzeno e xileno e malondialdeído muito mais altos nos expostos. Biópsia nasal numa coorte mexicana de quatro anos: metaplasia em 70% dos expostos contra 5%, risco relativo de 13,9, com intervalo muito amplo. E DNA de HPV na mucosa nasal de ginecologistas chineses: 9% contra 1,7%, risco relativo de 5,2.
+Espirometria no Sudão: VEF1, CVF e pico de fluxo menores nos expostos, com gradiente pelo tempo de atuação; mas a relação VEF1/CVF foi normal e o pico de fluxo depende de esforço, então lemos com cautela. Biomarcadores urinários no Brasil: metabólitos de benzeno e xileno e malondialdeído muito mais altos nos expostos; note que os denominadores diferem: 52 expostos contra 49 controles para os metabólitos, porque três amostras do grupo controle se perderam, e 52 contra 52 para o perfil oxidativo. Biópsia nasal numa coorte mexicana de quatro anos: metaplasia em 70% dos expostos contra 5%, risco relativo de 13,9, com intervalo muito amplo. E DNA de HPV na mucosa nasal de ginecologistas chineses: 9% contra 1,7%, risco relativo de 5,2.
 Pelo GRADE, a certeza foi muito baixa em todos os desfechos. E talvez o achado mais importante seja o que não encontramos: nenhum estudo avaliou diretamente câncer ou DPOC na equipe cirúrgica. Isso é um vazio de evidência, não evidência de ausência de risco.
 
 NÚMEROS para decorar: 37,6% ocular; 41,7% respiratório; RR 13,9 metaplasia; RR 5,2 HPV; 0 estudos de câncer/DPOC.

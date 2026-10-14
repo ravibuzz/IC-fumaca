@@ -26,9 +26,9 @@ Convenções: tudo o que está marcado como **[deste trabalho]** vem do manuscri
 | 7 | Passos 4 e 5 — extração e JBI | 0:30 | 3:45 |
 | 8 | Passo 6 — metanálise explicada | 0:50 | 4:35 |
 | 9 | Passo 7 — GRADE | 0:30 | 5:05 |
-| 10 | Resultados — seleção e características | 0:25 | 5:30 |
-| 11 | Resultado principal — sintoma ocular | 0:40 | 6:10 |
-| 12 | Sintoma respiratório e robustez | 0:30 | 6:40 |
+| 10 | Resultados — seleção e características | 0:20 | 5:25 |
+| 11 | Resultado principal — sintoma ocular | 0:50 | 6:15 |
+| 12 | Sintoma respiratório e robustez | 0:25 | 6:40 |
 | 13 | Desfechos objetivos e GRADE | 0:40 | 7:20 |
 | 14 | Discussão — interpretação | 0:30 | 7:50 |
 | 15 | Discussão — pontos fortes e limitações | 0:25 | 8:15 |
@@ -38,4 +38,4 @@ Convenções: tudo o que está marcado como **[deste trabalho]** vem do manuscri
 | 19 | Agradecimentos | 0:10 | 9:10 |
 | 20 | Encerramento (fica na tela para as perguntas) | — | — |
 
-Se estiver atrasado ao chegar no slide 10, encurte os slides 12 e 15 (diga só a primeira frase de cada card). Nunca corte o slide 8 (metanálise) nem o 13 (desfechos objetivos e vazio de evidência): são os que mais rendem nota.
+Se estiver atrasado ao chegar no slide 10, encurte os slides 12 e 15 (diga só a primeira frase de cada card; no 12, aponte a tabela em vez de ler as linhas). Nunca corte os slides 8 (metanálise), 11 (resultado principal, com o intervalo de predição) nem 13 (desfechos objetivos e vazio de evidência): são os que mais mostram análise crítica e rendem nota.
