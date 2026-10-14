@@ -9,6 +9,8 @@ import re
 import subprocess
 from pathlib import Path
 
+import gerar_roteiro
+
 HERE = Path(__file__).resolve().parent
 PARTES = HERE / "partes"
 OUT_MD = HERE / "GUIA_DE_ESTUDO_E_DEFESA.md"
@@ -48,6 +50,7 @@ def perguntas_md(data: list[dict]) -> tuple[str, str]:
 
 
 def main():
+    gerar_roteiro.main()  # roteiro e cronograma sempre a partir das notas atuais do PPTX
     explic = json.loads((PARTES / "explicacoes.json").read_text(encoding="utf-8"))
     pergs = json.loads((PARTES / "perguntas.json").read_text(encoding="utf-8"))
     ordem = {"passos-1-3": "Parte 2", "passos-4-5-7": "Parte 3", "passo-6": "Parte 4"}

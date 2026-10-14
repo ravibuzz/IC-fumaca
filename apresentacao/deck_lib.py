@@ -5,6 +5,9 @@ Canvas do modelo: 20,0" x 11,25" (18288000 x 10287000 EMU).
 from __future__ import annotations
 
 import copy
+import itertools
+import re
+from contextlib import contextmanager
 from pathlib import Path
 
 from lxml import etree
@@ -58,7 +61,30 @@ def rgb(hexstr: str) -> RGBColor:
 
 
 # ---------- texto ----------
-def _apply_run(run, size=None, bold=None, italic=None, color=None, font=FONT):
+HIGHLIGHT = "FFEB99"   # marca-texto (amarelo suave)
+
+
+def _set_highlight(run, hexcolor=HIGHLIGHT):
+    """Marca-texto (a:highlight). Ordem do esquema: ... solidFill, effectLst, highlight, ..., latin, ea, cs."""
+    rPr = run._r.get_or_add_rPr()
+    for el in rPr.findall(qn("a:highlight")):
+        rPr.remove(el)
+    hl = etree.Element(qn("a:highlight"))
+    clr = etree.SubElement(hl, qn("a:srgbClr"))
+    clr.set("val", hexcolor)
+    anchor = None
+    for tag in ("a:uLnTx", "a:uLn", "a:uFillTx", "a:uFill", "a:latin", "a:ea", "a:cs", "a:sym", "a:hlinkClick",
+                "a:hlinkMouseOver", "a:rtl", "a:extLst"):
+        anchor = rPr.find(qn(tag))
+        if anchor is not None:
+            break
+    if anchor is not None:
+        anchor.addprevious(hl)
+    else:
+        rPr.append(hl)
+
+
+def _apply_run(run, size=None, bold=None, italic=None, color=None, font=FONT, highlight=False):
     f = run.font
     f.name = font
     if size is not None:
@@ -69,6 +95,8 @@ def _apply_run(run, size=None, bold=None, italic=None, color=None, font=FONT):
         f.italic = italic
     if color is not None:
         f.color.rgb = color
+    if highlight:
+        _set_highlight(run, highlight if isinstance(highlight, str) else HIGHLIGHT)
 
 
 def _set_bullet(p, char="•", indent=0.3, color=None, size_pct=None):
@@ -122,13 +150,15 @@ def fill_text(tf, paragraphs, size=22, color=INK, bold=False, align=PP_ALIGN.LEF
         if par_opts.get("space_before") is not None:
             p.space_before = Pt(par_opts["space_before"])
         p.line_spacing = par_opts.get("line_spacing", line_spacing)
-        for text, opts in runs:
+        for run in runs:
+            text, opts = (run, {}) if isinstance(run, str) else run
             r = p.add_run()
             r.text = text
             _apply_run(r, size=opts.get("size", par_opts.get("size", size)),
                        bold=opts.get("bold", par_opts.get("bold", bold)),
                        italic=opts.get("italic", par_opts.get("italic", False)),
-                       color=opts.get("color", par_opts.get("color", color)), font=font)
+                       color=opts.get("color", par_opts.get("color", color)), font=font,
+                       highlight=opts.get("hl", False))
         b = par_opts.get("bullet", bullet)
         if b:
             _set_bullet(p, char=b if isinstance(b, str) else "•", indent=par_opts.get("indent", 0.3),
@@ -245,7 +275,7 @@ def chevron(slide, x, y, w, h, fill=NAVY, text=None, size=18, color=WHITE, bold=
 
 
 # ---------- imagens ----------
-def pic(slide, path, x, y, w=None, h=None, name=None):
+def pic(slide, path, x, y, w=None, h=None, name=None, border=None, border_w=0.75):
     """Insere imagem mantendo proporção dentro de (w, h). Retorna a forma."""
     path = str(path)
     with Image.open(path) as im:
@@ -265,6 +295,9 @@ def pic(slide, path, x, y, w=None, h=None, name=None):
     shp = slide.shapes.add_picture(path, Inches(px), Inches(py), Inches(pw), Inches(ph))
     if name:
         shp.name = name
+    if border is not None:
+        shp.line.color.rgb = border
+        shp.line.width = Pt(border_w)
     return shp
 
 
@@ -279,37 +312,53 @@ def icon_badge(slide, name, cx, cy, d=0.9, fill=NAVY, color="white", icon_frac=0
 
 
 # ---------- componentes compostos ----------
+PAD = 0.35   # respiro interno padrão dos cards
+GAP = 0.3    # espaço padrão entre blocos
+
+
+def cols(n, x0=None, x1=None, gap=GAP):
+    """Divide [x0, x1] em n colunas iguais; devolve [(x, w), ...]."""
+    x0 = L if x0 is None else x0
+    x1 = R if x1 is None else x1
+    w = (x1 - x0 - gap * (n - 1)) / n
+    return [(x0 + i * (w + gap), w) for i in range(n)]
+
+
 def card(slide, x, y, w, h, title=None, body=None, fill=LIGHT, title_color=NAVY, body_size=20,
-         title_size=22, icon_name=None, icon_color="white", badge_fill=NAVY, pad=0.3, line_color=None,
-         bullet=None, body_color=INK, title_bold=True, radius=0.06, body_space_after=5):
+         title_size=22, icon_name=None, icon_color="white", badge_fill=NAVY, pad=PAD, line_color=None,
+         bullet=None, body_color=INK, title_bold=True, radius=0.06, body_space_after=5, badge_d=0.8,
+         body_gap=0.2):
     rect(slide, x, y, w, h, fill=fill, line=line_color, radius=radius)
     ty = y + pad
     tx = x + pad
     if icon_name:
-        d = 0.8
+        d = badge_d
         icon_badge(slide, icon_name, x + pad + d / 2, y + pad + d / 2, d=d, fill=badge_fill, color=icon_color)
         tx = x + pad + d + 0.25
     if title:
-        tb(slide, tx, ty, w - (tx - x) - pad, 0.8 if icon_name else 0.5, [title], size=title_size,
+        th = badge_d if icon_name else title_size / 72 * 1.3
+        tb(slide, tx, ty, x + w - pad - tx, th, [title], size=title_size,
            color=title_color, bold=title_bold, anchor=MSO_ANCHOR.MIDDLE if icon_name else MSO_ANCHOR.TOP,
            space_after=0)
-        ty += (0.95 if icon_name else 0.55)
+        ty += th + body_gap
     if body:
-        tb(slide, x + pad, ty, w - 2 * pad, y + h - ty - pad * 0.8, body, size=body_size, color=body_color,
+        tb(slide, x + pad, ty, w - 2 * pad, y + h - ty - pad, body, size=body_size, color=body_color,
            bullet=bullet, space_after=body_space_after)
     return ty
 
 
 def stat(slide, x, y, w, number, label, h=1.6, num_size=54, lab_size=18, num_color=NAVY, lab_color=GRAY,
-         fill=None, align=PP_ALIGN.LEFT, number_h=None):
+         fill=None, align=PP_ALIGN.LEFT, number_h=None, pad=None):
     if fill is not None:
         rect(slide, x, y, w, h, fill=fill)
-    pad = 0.2 if fill is not None else 0.0
-    nh = number_h or (num_size / 72 * 1.25)
-    tb(slide, x + pad, y + pad * 0.6, w - 2 * pad, nh, [number], size=num_size, color=num_color, bold=True,
+    if pad is None:
+        pad = 0.3 if fill is not None else 0.0
+    nh = number_h or (num_size / 72 * 1.2)
+    top = y + (pad * 0.75 if fill is not None else 0)
+    tb(slide, x + pad, top, w - 2 * pad, nh, [number], size=num_size, color=num_color, bold=True,
        align=align, space_after=0, line_spacing=0.95)
-    tb(slide, x + pad, y + pad * 0.6 + nh + 0.02, w - 2 * pad, h - nh - pad, [label], size=lab_size,
-       color=lab_color, align=align, space_after=0, line_spacing=1.05)
+    tb(slide, x + pad, top + nh + 0.05, w - 2 * pad, max(0.3, y + h - (top + nh + 0.05) - pad), [label],
+       size=lab_size, color=lab_color, align=align, space_after=0, line_spacing=1.05)
 
 
 def step_track(slide, active, y=10.12):
@@ -476,9 +525,115 @@ class Deck:
         self.slide_count += 1
         return s
 
-    @staticmethod
-    def notes(slide, text):
+    clock = 0  # segundos acumulados do roteiro
+
+    def notes(self, slide, text, dur=None):
+        """Grava as notas do orador. Com `dur` (s), substitui o cabeçalho "[m:ss–m:ss] TÍTULO (~N s)"
+        da primeira linha pelos tempos acumulados corretos."""
+        if dur is not None:
+            a, b = self.clock, self.clock + dur
+            self.clock = b
+            stamp = f"[{a // 60}:{a % 60:02d}–{b // 60}:{b % 60:02d}]"
+            first, _, rest = text.partition("\n")
+            first = re.sub(r"^\[[^\]]*\]\s*", "", first)
+            first = re.sub(r"\(~\s*\d+\s*s\)", f"(~{dur} s)", first)
+            if f"(~{dur} s)" not in first:
+                first = re.sub(r"^([^←]*?)(\s*←|$)", lambda m: f"{m.group(1).rstrip()} (~{dur} s){m.group(2)}", first, count=1)
+            text = f"{stamp} {first}\n{rest}"
         slide.notes_slide.notes_text_frame.text = text
 
     def save(self, path):
         self.prs.save(str(path))
+
+
+# ---------- transições e animações ----------
+P_NS = "http://schemas.openxmlformats.org/presentationml/2006/main"
+
+
+def add_transition(slide, speed="med"):
+    """Transição 'Esmaecer' (fade) sutil. Ordem em p:sld: cSld, clrMapOvr, transition, timing, extLst."""
+    sld = slide._element
+    for el in sld.findall(qn("p:transition")):
+        sld.remove(el)
+    tr = etree.fromstring(f'<p:transition xmlns:p="{P_NS}" spd="{speed}"><p:fade/></p:transition>')
+    anchor = sld.find(qn("p:timing"))
+    if anchor is None:
+        anchor = sld.find(qn("p:extLst"))
+    if anchor is not None:
+        anchor.addprevious(tr)
+    else:
+        sld.append(tr)
+
+
+class Build:
+    """Entradas automáticas em sequência (Esmaecer, 'Após anterior'), sem cliques extras.
+
+    with b.step(): ...cria formas...   -> todas as formas criadas no bloco entram juntas.
+    b.apply() grava <p:timing> no slide.
+    """
+
+    def __init__(self, slide, dur=350):
+        self.slide = slide
+        self.dur = dur
+        self.steps = []
+
+    @contextmanager
+    def step(self):
+        n0 = len(self.slide.shapes)
+        yield
+        new = list(self.slide.shapes)[n0:]
+        if new:
+            self.steps.append(new)
+
+    def apply(self):
+        if not self.steps:
+            return
+        ids = itertools.count(4)
+        inner, t = [], 0
+        bld = []
+        for group in self.steps:
+            effects = []
+            for k, shp in enumerate(group):
+                spid = shp.shape_id
+                node = "afterEffect" if k == 0 else "withEffect"
+                c_eff, c_set, c_anim = next(ids), next(ids), next(ids)
+                effects.append(
+                    f'<p:par><p:cTn id="{c_eff}" presetID="10" presetClass="entr" presetSubtype="0" fill="hold" '
+                    f'grpId="0" nodeType="{node}"><p:stCondLst><p:cond delay="0"/></p:stCondLst><p:childTnLst>'
+                    f'<p:set><p:cBhvr><p:cTn id="{c_set}" dur="1" fill="hold"><p:stCondLst><p:cond delay="0"/>'
+                    f'</p:stCondLst></p:cTn><p:tgtEl><p:spTgt spid="{spid}"/></p:tgtEl><p:attrNameLst>'
+                    f'<p:attrName>style.visibility</p:attrName></p:attrNameLst></p:cBhvr><p:to>'
+                    f'<p:strVal val="visible"/></p:to></p:set>'
+                    f'<p:animEffect transition="in" filter="fade"><p:cBhvr><p:cTn id="{c_anim}" dur="{self.dur}"/>'
+                    f'<p:tgtEl><p:spTgt spid="{spid}"/></p:tgtEl></p:cBhvr></p:animEffect>'
+                    f'</p:childTnLst></p:cTn></p:par>')
+                tag = etree.QName(shp._element).localname
+                if tag == "sp":
+                    bld.append(f'<p:bldP spid="{spid}" grpId="0" animBg="1"/>')
+                elif tag == "graphicFrame":
+                    bld.append(f'<p:bldGraphic spid="{spid}" grpId="0"><p:bldAsOne/></p:bldGraphic>')
+            inner.append(f'<p:par><p:cTn id="{next(ids)}" fill="hold"><p:stCondLst><p:cond delay="{t}"/>'
+                         f'</p:stCondLst><p:childTnLst>{"".join(effects)}</p:childTnLst></p:cTn></p:par>')
+            t += self.dur
+        xml = (
+            f'<p:timing xmlns:p="{P_NS}"><p:tnLst><p:par><p:cTn id="1" dur="indefinite" restart="never" '
+            f'nodeType="tmRoot"><p:childTnLst><p:seq concurrent="1" nextAc="seek"><p:cTn id="2" dur="indefinite" '
+            f'nodeType="mainSeq"><p:childTnLst><p:par><p:cTn id="3" fill="hold"><p:stCondLst>'
+            f'<p:cond delay="indefinite"/><p:cond evt="onBegin" delay="0"><p:tn val="2"/></p:cond></p:stCondLst>'
+            f'<p:childTnLst>{"".join(inner)}</p:childTnLst></p:cTn></p:par></p:childTnLst></p:cTn>'
+            f'<p:prevCondLst><p:cond evt="onPrev" delay="0"><p:tgtEl><p:sldTgt/></p:tgtEl></p:cond></p:prevCondLst>'
+            f'<p:nextCondLst><p:cond evt="onNext" delay="0"><p:tgtEl><p:sldTgt/></p:tgtEl></p:cond></p:nextCondLst>'
+            f'</p:seq></p:childTnLst></p:cTn></p:par></p:tnLst>'
+            + (f'<p:bldLst>{"".join(bld)}</p:bldLst>' if bld else '') + '</p:timing>')
+        # ids precisam ser únicos e crescentes na ordem do documento: renumera
+        tim = etree.fromstring(xml)
+        for n, ctn in enumerate(tim.iter(qn("p:cTn")), start=1):
+            ctn.set("id", str(n))
+        sld = self.slide._element
+        for el in sld.findall(qn("p:timing")):
+            sld.remove(el)
+        anchor = sld.find(qn("p:extLst"))
+        if anchor is not None:
+            anchor.addprevious(tim)
+        else:
+            sld.append(tim)

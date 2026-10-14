@@ -40,15 +40,16 @@
 
 ### Antes do dia
 - [ ] Treinar 5 vezes em voz alta com cronômetro (meta: 9:00–9:40). Gravar uma vez e assistir.
-- [ ] Abrir o PPTX no PowerPoint e conferir as fontes (Arial, Calibri, Tahoma: todas padrão do Office). Conferir os slides 11 e 12 (gráficos de floresta) no projetor, se possível.
+- [ ] Abrir o PPTX no PowerPoint e conferir as fontes (Arial, Calibri, Tahoma: todas padrão do Office). Conferir os slides 12 e 13 (gráficos de floresta) no projetor, se possível, e ver as animações rodando uma vez no modo de apresentação.
 - [ ] Salvar no pen drive: o PPTX e o PDF (o PDF é o plano B se o computador da sala não abrir o PowerPoint corretamente).
+- [ ] Publicar o PDF do manuscrito no OSF (osf.io/jktmn), que é para onde o QR code aponta, depois de conferir a política de preprint da revista escolhida; testar o QR com o celular a 3–4 m da tela.
 - [ ] Imprimir este guia (ou ao menos a Parte 1 e a Parte 6) para revisar na fila.
 - [ ] Conferir o horário e a sala no cronograma oficial; chegar 10 minutos antes para copiar o arquivo e testar.
 
 ### Na sala
 - [ ] Testar o modo "Exibição do Apresentador" (as notas de fala estão nos slides). Se não houver segunda tela, use a versão impressa do roteiro.
 - [ ] Cronômetro no celular ou relógio em modo silencioso.
-- [ ] Ao terminar, deixar o slide 20 (encerramento) na tela durante as perguntas.
+- [ ] Ao terminar, deixar o slide 21 (encerramento, com o QR code) na tela durante as perguntas.
 
 ### Postura nas perguntas
 - Ouça a pergunta inteira; repita-a em uma frase ("A pergunta é sobre…") para ganhar 3 segundos e confirmar o entendimento.

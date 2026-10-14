@@ -18,24 +18,27 @@ Convenções: tudo o que está marcado como **[deste trabalho]** vem do manuscri
 | Slide | Seção | Tempo | Relógio acumulado |
 |---|---|---|---|
 | 1 | Capa | 0:15 | 0:15 |
-| 2 | Introdução | 0:50 | 1:05 |
-| 3 | Objetivos (PECO / CoCoPop) | 0:30 | 1:35 |
-| 4 | Metodologia — mapa dos 7 passos | 0:30 | 2:05 |
-| 5 | Passos 1 e 2 — elegibilidade e busca | 0:35 | 2:40 |
-| 6 | Passo 3 — seleção | 0:35 | 3:15 |
-| 7 | Passos 4 e 5 — extração e JBI | 0:30 | 3:45 |
-| 8 | Passo 6 — metanálise explicada | 0:50 | 4:35 |
-| 9 | Passo 7 — GRADE | 0:30 | 5:05 |
-| 10 | Resultados — seleção e características | 0:20 | 5:25 |
-| 11 | Resultado principal — sintoma ocular | 0:50 | 6:15 |
-| 12 | Sintoma respiratório e robustez | 0:25 | 6:40 |
-| 13 | Desfechos objetivos e GRADE | 0:40 | 7:20 |
-| 14 | Discussão — interpretação | 0:30 | 7:50 |
-| 15 | Discussão — pontos fortes e limitações | 0:25 | 8:15 |
-| 16 | Conclusão | 0:25 | 8:40 |
-| 17 | Perspectivas futuras | 0:15 | 8:55 |
-| 18 | Referências | 0:05 | 9:00 |
-| 19 | Agradecimentos | 0:10 | 9:10 |
-| 20 | Encerramento (fica na tela para as perguntas) | — | — |
+| 2 | Trajetória | 0:20 | 0:35 |
+| 3 | Introdução | 0:45 | 1:20 |
+| 4 | Objetivos | 0:25 | 1:45 |
+| 5 | Metodologia – mapa | 0:30 | 2:15 |
+| 6 | Passos 1 e 2 | 0:35 | 2:50 |
+| 7 | Passo 3 – seleção | 0:35 | 3:25 |
+| 8 | Passos 4 e 5 | 0:30 | 3:55 |
+| 9 | Passo 6 – metanálise | 0:50 | 4:45 |
+| 10 | Passo 7 – GRADE | 0:30 | 5:15 |
+| 11 | Resultados – seleção e características | 0:20 | 5:35 |
+| 12 | Resultado principal – ocular | 0:50 | 6:25 |
+| 13 | Respiratório e robustez | 0:25 | 6:50 |
+| 14 | Desfechos objetivos e GRADE | 0:40 | 7:30 |
+| 15 | Discussão – interpretação | 0:30 | 8:00 |
+| 16 | Pontos fortes e limitações | 0:25 | 8:25 |
+| 17 | Conclusão | 0:25 | 8:50 |
+| 18 | Perspectivas futuras | 0:15 | 9:05 |
+| 19 | Referências | 0:05 | 9:10 |
+| 20 | AGRADEcimentos | 0:10 | 9:20 |
+| 21 | Encerramento (fica na tela, com o QR code, durante as perguntas) | — | — |
 
-Se estiver atrasado ao chegar no slide 10, encurte os slides 12 e 15 (diga só a primeira frase de cada card; no 12, aponte a tabela em vez de ler as linhas). Nunca corte os slides 8 (metanálise), 11 (resultado principal, com o intervalo de predição) nem 13 (desfechos objetivos e vazio de evidência): são os que mais mostram análise crítica e rendem nota.
+Se estiver atrasado ao chegar no slide 11, encurte os slides 13 e 16 (diga só a primeira frase de cada card; no 13, aponte a tabela em vez de ler as linhas); o slide 2 (trajetória) também pode cair para 10 s. Nunca corte os slides 9 (metanálise), 12 (resultado principal, com o intervalo de predição) nem 14 (desfechos objetivos e vazio de evidência): são os que mais mostram análise crítica e rendem nota.
+
+**Animações:** todos os slides entram com um esmaecimento suave (transição "Esmaecer"). Nos slides 2, 5, 7, 9, 11, 12, 14 e 17 os blocos aparecem sozinhos, em sequência, em 2 a 3 segundos, sem precisar de cliques extras: um clique continua levando ao próximo slide. Se apertar a seta enquanto a animação roda, o PowerPoint completa a animação na hora; o próximo clique avança. O PDF não tem animações (é o plano B).
