@@ -10,6 +10,7 @@ from __future__ import annotations
 import sys
 from pathlib import Path
 
+from PIL import Image
 from pptx.enum.text import MSO_ANCHOR, PP_ALIGN
 from pptx.util import Inches
 
@@ -24,7 +25,12 @@ TRJ = ASSETS / "trajetoria"
 TEMPLATE = ASSETS / "modelo" / "modelo_oficial_semica.pptx"
 OUT = Path(sys.argv[1]) if len(sys.argv) > 1 else Path(__file__).resolve().parent / "SEMICA_Fumaca_Cirurgica_Baccaro.pptx"
 
-OSF_URL = "https://osf.io/jktmn/"          # QR code: projeto público do OSF (manuscrito + suplementos)
+OSF_URL = "https://osf.io/jktmn/"          # QR code: projeto público do OSF
+# Troque para True depois de publicar o PDF do manuscrito no OSF; as legendas dos slides 19–21 passam a prometê-lo.
+MANUSCRITO_NO_OSF = False
+QR_TITULO = "Manuscrito completo, anexos e suplementos" if MANUSCRITO_NO_OSF else "Suplementos, código e planilhas"
+QR_CURTO = "Manuscrito e suplementos" if MANUSCRITO_NO_OSF else "Suplementos"
+QR_DADOS = "Manuscrito, dados e código: " if MANUSCRITO_NO_OSF else "Dados e código: "
 QR_PNG = TRJ / "qr_osf_jktmn.png"
 
 TITULO = ("Sintomas, desfechos objetivos e biomarcadores em profissionais de centro cirúrgico "
@@ -119,9 +125,16 @@ capas = [
 AREA_Y, AREA_H = PY + PAD + 0.7 + 0.12, 2.0
 with b.step():
     card(s, lx, PY, lw, PH, title="Formação certificada · ≈ 49 h", icon_name="graduation", title_size=19, badge_d=0.7)
-    for (x, w), (img, nome, meta, extra) in zip(cols(4, lx + PAD, lx + lw - PAD, gap=0.2), certs):
-        CH = 1.28  # certificados com a mesma altura, alinhados pela base com as capas
-        pic(s, TRJ / img, x, AREA_Y + AREA_H - CH, w=w, h=CH, border=rgb("C9CFDA"))
+    CH = 1.28  # certificados com a mesma altura, alinhados pela base com as capas
+    larg = []
+    for img, *_ in certs:
+        with Image.open(TRJ / img) as im:
+            larg.append(CH * im.size[0] / im.size[1])
+    gcert = (lw - 2 * PAD - sum(larg)) / (len(certs) - 1)
+    xs = [lx + PAD + sum(larg[:j]) + j * gcert for j in range(len(certs))]
+    for x, wi, (img, nome, meta, extra) in zip(xs, larg, certs):
+        pic(s, TRJ / img, x, AREA_Y + AREA_H - CH, w=wi, h=CH, border=rgb("C9CFDA"))
+        x, w = x + wi / 2 - 0.95, 1.9
         par = [{"runs": [(nome, {"bold": True, "color": NAVY})], "space_after": 1}, {"runs": [(meta, {"color": GRAY})]}]
         if extra:
             par.append({"runs": [(extra, {"bold": True, "color": DARK_GOLD})]})
@@ -130,7 +143,7 @@ with b.step():
     card(s, rx, PY, rw, PH, title="Base metodológica: diretrizes e ferramentas JBI", icon_name="book", title_size=19,
          badge_d=0.7)
     for (x, w), (img, org, nome) in zip(cols(5, rx + PAD, rx + rw - PAD, gap=0.2), capas):
-        pic(s, TRJ / img, x, AREA_Y, w=w, h=AREA_H, border=rgb("C9CFDA"))
+        pic(s, TRJ / img, x, AREA_Y + AREA_H - 1.75, w=w, h=1.75, border=rgb("C9CFDA"))
         tb(s, x, AREA_Y + AREA_H + 0.12, w, 0.55, [{"runs": [(org, {"bold": True, "color": NAVY})], "space_after": 1},
                                                   {"runs": [(nome, {"color": GRAY})]}],
            size=14, align=PP_ALIGN.CENTER, space_after=0)
@@ -289,11 +302,11 @@ with b.step():
     tools = [("database", "Zotero 6", "gestão de referências"), ("filter", "Rayyan", "deduplicação e triagem"),
              ("link", "OpenAlex", "metadados e citações"), ("code", "Python 3.13", "NumPy, SciPy, statsmodels"),
              ("robot", "Assistente de IA", "apoio operacional")]
-    for j, (ic, name, desc) in enumerate(tools):
-        x = 3.75 + j * 3.10  # passo largo: ~0,4 pol. entre um grupo e o ícone seguinte
+    # posições a partir da largura medida de cada rótulo: ~0,35 pol. entre um grupo e o ícone seguinte
+    for x, lw_, (ic, name, desc) in zip([3.65, 6.73, 9.95, 13.04, 16.58], [2.05, 2.20, 2.05, 2.75, 1.90], tools):
         icon(s, ic, x, TS_Y + (TS_H - 0.55) / 2, 0.55, color="navy")
-        tb(s, x + 0.7, TS_Y + 0.25, 2.25, 0.4, [name], size=17, color=NAVY, bold=True, space_after=0)
-        tb(s, x + 0.7, TS_Y + 0.65, 2.25, 0.55, [desc], size=15, color=INK, space_after=0)
+        tb(s, x + 0.7, TS_Y + 0.25, lw_, 0.4, [name], size=17, color=NAVY, bold=True, space_after=0)
+        tb(s, x + 0.7, TS_Y + 0.65, lw_, 0.55, [desc], size=15, color=INK, space_after=0)
 NB_Y = TS_Y + TS_H + GAP
 with b.step():
     for (x, w), body in zip(cols(2), [
@@ -322,7 +335,7 @@ icon(s, "check", L + PAD, Y0 + 0.95, 0.4, color="teal")
 tb(s, L + PAD + 0.55, Y0 + 0.95, 6.0, 0.4, ["Incluímos"], size=18, color=TEAL, bold=True, space_after=0,
    anchor=MSO_ANCHOR.MIDDLE)
 tb(s, L + PAD, Y0 + 1.4, LW6 - 2 * PAD, 2.85, [
-    "Estudos observacionais primários (transversais, caso-controle, coorte);",
+    "Estudos observacionais (transversais, caso-controle, coorte);",
     "Profissionais de centro cirúrgico expostos à fumaça cirúrgica;",
     "Efeitos à saúde ou marcadores de exposição como desfecho;",
     "Português, inglês ou espanhol; sem restrição de data;",
@@ -375,12 +388,12 @@ deck.notes(s, NOTAS["passos12"], dur=35)
 # =====================================================================
 s = deck.content_slide("METODOLOGIA", "Passo 3 · Seleção dos estudos: do registro bruto ao relatório incluído", track=3)
 b = Build(s)
-flow = [("16.757", ["registros identificados", "nas bases e na", "literatura cinzenta"], NAVY),
-        ("10.910", ["registros únicos", "(8 não exportados)"], NAVY),
+flow = [("16.757", ["registros identificados", "nas bases e", "na literatura cinzenta"], NAVY),
+        ("10.910", ["registros únicos"], NAVY),
         ("32", ["buscados na íntegra", "(28 da triagem +", "4 por citação)"], NAVY),
         ("26", ["avaliados para", "elegibilidade"], NAVY),
         ("22", ["relatórios incluídos"], RED)]
-between = [["5.839", "duplicatas"], ["10.882", "excluídos", "na triagem"], ["6 não", "recuperados"],
+between = [["5.839", "duplicatas", "+ 8 não", "exportados"], ["10.882", "excluídos", "na triagem"], ["6 não", "recuperados"],
            ["4 excluídos", "na íntegra"]]
 FB_Y, FB_H = Y0, 2.2
 bw, bg = 2.6, (R - L - 5 * 2.6) / 4
@@ -537,7 +550,7 @@ pipe = [
     ("Modelo de efeitos aleatórios", "τ² por Paule-Mandel", [
         [("A prevalência verdadeira ", {}), ("varia entre estudos", {"bold": True}), (".", {})],
         [("τ² = variância entre estudos; ", {"bold": True}), ("peso = 1 ÷ (variância + τ²).", {})],
-        "Mais estável que DerSimonian-Laird com poucos estudos.",
+        "Subestima τ² menos que DerSimonian-Laird com poucos estudos.",
     ]),
     ("Ajuste de Hartung-Knapp", "IC pela distribuição t", [
         [("Usa t com ", {}), ("k − 1 graus de liberdade", {"bold": True}), (".", {})],
@@ -583,7 +596,7 @@ with b.step():
     rect(s, L, YBT - BN9, R - L, BN9, fill=GOLD_TINT)
     icon(s, "question", L + PAD, YBT - BN9 + (BN9 - 0.6) / 2, 0.6, color="navy")
     tb(s, L + PAD + 0.85, YBT - BN9 + 0.15, R - L - 2 * PAD - 0.85, BN9 - 0.3, [
-        [("Sem gráfico de funil nem teste de Egger: ", {"bold": True, "color": NAVY}),
+        [("Sem teste de Egger nem funil por erro-padrão: ", {"bold": True, "color": NAVY}),
          ("em proporções o erro-padrão depende da própria proporção (assimetria espúria) e os testes exigem ≥ 10 estudos; "
           "viés de relato apreciado qualitativamente. ", {}),
          ("Sem metarregressão ", {"bold": True}), ("(poucos estudos por covariável). ", {}),
@@ -621,22 +634,21 @@ tb(s, gx + PAD, GB_Y + PAD - 0.05, gw - 2 * PAD, YBT - GB_Y - 2 * PAD + 0.05, [
                                                             "literatura sugere iniciar em alta para prevalência).", {})],
     [("Regra: ", {"bold": True}), ("um domínio grave já leva a MUITO BAIXA", {"bold": True, **HL}),
      ("; a certeza final não muda com o ponto de partida alternativo.", {})],
-    [("Sem dupla contagem: ", {"bold": True}), ("intervalo de predição em inconsistência; amplitude do IC95% em "
-                                               "imprecisão.", {})],
-    [("Desfechos com um único estudo: ", {"bold": True}), ("inconsistência não aplicável; viés de publicação não avaliável.", {})],
+    [("Sem dupla contagem: ", {"bold": True}), ("intervalo de predição em inconsistência; IC95% em imprecisão.", {})],
+    [("Desfechos de estudo único: ", {"bold": True}), ("inconsistência não aplicável; viés de publicação não avaliável.", {})],
     {"runs": [("●●●● alta   ●●●○ moderada   ●●○○ baixa   ●○○○ muito baixa", {"color": NAVY, "bold": True})],
      "space_before": 4, "bullet": False},
-], size=16, color=INK, bullet=True, bullet_color=NAVY, space_after=6)
+], size=16, color=INK, bullet=True, bullet_color=NAVY, space_after=12)
 rect(s, dx, GB_Y, dw, YBT - GB_Y, fill=GOLD_TINT)
 tb(s, dx + PAD, GB_Y + PAD - 0.05, dw - 2 * PAD, YBT - GB_Y - 2 * PAD + 0.05, [  # mesma receita do painel da esquerda
     {"runs": [("Decisões posteriores ao registro", {"bold": True, "color": NAVY, "size": 18})], "space_after": 6,
      "bullet": False},
-    "Ocular como principal; respiratório exploratório (definições mais variáveis);",
+    "Ocular principal; respiratório exploratório (definição variável);",
     "Modelo principal: logito, efeitos aleatórios e Hartung-Knapp;",
     "1 publicação por desfecho no cluster com sobreposição; análises por país e de influência exploratórias;",
-    "Resumos de congresso com dados suficientes (preocupação alta);",
+    "Resumos de congresso incluídos (preocupação alta);",
     "Na análise: regra do sintoma-índice e sensibilidade por definição, independentes dos resultados.",
-], size=16, color=INK, bullet=True, bullet_color=GOLD, space_after=6)
+], size=16, color=INK, bullet=True, bullet_color=GOLD, space_after=12)
 deck.notes(s, NOTAS["passo7"], dur=30)
 
 # =====================================================================
@@ -688,14 +700,14 @@ SX2 = 10.85
 tiles = cols(2, SX2, R)
 TH = 1.95
 with b.step():
-    stat(s, tiles[0][0], Y0, tiles[0][1], "22", "relatórios de estudos observacionais incluídos", h=TH, fill=LIGHT,
+    stat(s, tiles[0][0], Y0, tiles[0][1], "22", "relatórios de estudos observacionais", h=TH, fill=LIGHT,
          num_size=44, lab_size=14)
     stat(s, tiles[1][0], Y0, tiles[1][1], "9", "países: Turquia, Malásia, Brasil, Paquistão, China, México, EUA, Sudão e "
                                                "Tailândia", h=TH, fill=LIGHT, num_size=44, lab_size=14)
     stat(s, tiles[0][0], Y0 + TH + GAP, tiles[0][1], "19 + 3", "transversais + coortes prospectivas", h=TH, fill=LIGHT,
          num_size=40, lab_size=14)
-    stat(s, tiles[1][0], Y0 + TH + GAP, tiles[1][1], "6 | 7", "amostras independentes: ocular (n\u00a0=\u00a0756) | "
-                                                               "respiratória (n\u00a0=\u00a01.428)", h=TH, fill=RED_TINT, num_size=40,
+    stat(s, tiles[1][0], Y0 + TH + GAP, tiles[1][1], "6 | 7", "amostras independentes: ocular\u00a0(n\u00a0=\u00a0756) | "
+                                                               "respiratória\u00a0(n\u00a0=\u00a01.428)", h=TH, fill=RED_TINT, num_size=40,
          lab_size=14, num_color=RED)
 RK_Y = Y0 + 2 * TH + 2 * GAP
 with b.step():
@@ -767,11 +779,11 @@ fp = pic(s, FIG / "fig3_forest_resp_slide.png", L, Y0, w=FW3, name="Figura 3 for
 fb = Y0 + fp.height / 914400
 tb(s, L, fb + 0.08, FW3, 0.5, [[("Figura 3. ", {"bold": True}),
                                 ("Sete amostras independentes (n = 1.428). Definições variam: tosse, ardência de garganta, "
-                                 "irritação de vias aéreas superiores, escala por sistema.", {})]], size=14, color=GRAY,
+                                 "irritação ou qualquer sintoma de vias aéreas superiores, escala por sistema.", {})]], size=14, color=GRAY,
    space_after=0)
 LOW_Y = 8.6
 rect(s, L, LOW_Y, FW3, YB - LOW_Y, fill=NAVY_TINT)
-tb(s, L + PAD, LOW_Y + 0.28, FW3 - 2 * PAD, YB - LOW_Y - 0.5, [
+tb(s, L + PAD, LOW_Y + PAD - 0.05, FW3 - 2 * PAD, YB - LOW_Y - 2 * PAD + 0.05, [
     {"runs": [("Subgrupo por país (sintoma ocular; exploratório)", {"bold": True, "color": NAVY, "size": 17})],
      "space_after": 5},
     [("Turquia 50,5% ", {"bold": True, "color": RED}), ("(k = 3; I² = 57%)  ·  ", {}),
@@ -779,7 +791,7 @@ tb(s, L + PAD, LOW_Y + 0.28, FW3 - 2 * PAD, YB - LOW_Y - 0.5, [
      ("Brasil 43,2% ", {"bold": True}), ("(k = 1)", {})],
     [("Teste entre subgrupos p < 0,001, mas: ", {"bold": True}), ("poucos estudos por país e um resumo de congresso na "
                                                                    "Malásia → gera hipótese, não prova moderação causal.", {})],
-], size=15, color=INK, space_after=4, anchor=MSO_ANCHOR.MIDDLE)
+], size=15, color=INK, space_after=4)
 RX13 = L + FW3 + GAP
 RW13 = R - RX13
 rect(s, RX13, Y0, RW13, 2.35, fill=RED_TINT)
@@ -803,14 +815,14 @@ table(s, RX13, Y0 + 3.05, RW13, [
 ], col_widths=[RW13 - 3.3, 1.55, 1.75], size=14, row_h=0.44, align_cols={1: PP_ALIGN.CENTER, 2: PP_ALIGN.CENTER},
       bold_rows=(1,))
 rect(s, RX13, LOW_Y, RW13, YB - LOW_Y, fill=GOLD_TINT)
-tb(s, RX13 + PAD, LOW_Y + 0.28, RW13 - 2 * PAD, YB - LOW_Y - 0.5, [
+tb(s, RX13 + PAD, LOW_Y + PAD - 0.05, RW13 - 2 * PAD, YB - LOW_Y - 2 * PAD + 0.05, [
     {"runs": [("O que a sensibilidade ensina", {"bold": True, "color": NAVY, "size": 17})], "space_after": 5,
      "bullet": False},
     [("Definições específicas: ", {}), ("I² respiratório 91% → 61%", {"bold": True, **HL}),
      (" (a definição explica parte da heterogeneidade).", {})],
     [("Ocular: I² segue alto sem o resumo (89%) ou sem Bieniek (94%): ", {}),
-     ("não depende de um único estudo.", {"bold": True})],
-], size=15, color=INK, bullet=True, bullet_color=GOLD, space_after=4, anchor=MSO_ANCHOR.MIDDLE)
+     ("não\u00a0depende de um único estudo.", {"bold": True})],
+], size=15, color=INK, bullet=True, bullet_color=GOLD, space_after=4)
 deck.notes(s, NOTAS["respiratorio"], dur=25)
 
 # =====================================================================
@@ -858,7 +870,7 @@ GY = Y0 + 2 * OH + 2 * GAP
 with b.step():
     rect(s, L, GY, R - L, YB - GY, fill=NAVY)
     for (x, w), (t, body) in zip(cols(3, L + PAD, R - PAD, gap=0.45), [
-        ("●○○○  Certeza MUITO BAIXA", "em todos os desfechos (GRADE); medidas comparativas não combinadas (desenhos e "
+        ("●○○○  Certeza MUITO BAIXA", "em todos os desfechos (GRADE); comparações não combinadas (desenhos e "
                                      "desfechos heterogêneos)."),
         ("0 estudos elegíveis: câncer ou DPOC", ["vazio de evidência:", "ausência de estudos ≠ ausência de risco."]),
         ("Direção consistente, mas…", "coexposições (gases anestésicos, radiação), 1 estudo por desfecho e IC amplos: "
@@ -896,14 +908,14 @@ dcols = [
         [("Contra: ", {"bold": True}), ("um estudo por desfecho, intervalos amplos, coexposições (gases anestésicos, "
                                        "radiação).", {})],
         [("Metabólitos: ", {"bold": True}), ("exposição recente · ", {}), ("metaplasia: ", {"bold": True}),
-         ("resposta inespecífica · ", {}), ("DNA de HPV: ", {"bold": True}), ("detecção, não infecção.", {})],
+         ("resposta inespecífica · ", {}), ("DNA\u00a0de\u00a0HPV: ", {"bold": True}), ("detecção, não infecção.", {})],
     ]),
 ]
 DB_H = 2.1
 DC_H = YB - DB_H - GAP - Y0
 chaves = [("37,6% | 41,7%", "prevalência ocular | respiratória"),
           ("IP 7–83%", "faixa esperada para um novo estudo (ocular)"),
-          ("RR 13,9 | RR 5,2", "metaplasia nasal | HPV-DNA (1 estudo cada)")]
+          ("RR 13,9 | RR 5,2", "metaplasia nasal | DNA de HPV (1 estudo cada)")]
 KC_H = 1.15
 for (x, w), (ic, t, body), (num, lab) in zip(cols(3), dcols, chaves):
     card(s, x, Y0, w, DC_H, title=t, body=body, icon_name=ic, fill=LIGHT, body_size=17, bullet=True, title_size=19,
@@ -933,25 +945,25 @@ LC_H = YB - LB_H - GAP - Y0
 card(s, L, Y0, 7.4, LC_H, title="Pontos fortes", icon_name="thumbsup", badge_fill=GREEN, fill=GREEN_TINT, body_size=18,
      bullet=True, body_space_after=18, body=[
          [("Busca abrangente: ", {"bold": True}), ("7 bases, literatura cinzenta e citação, sem filtro de idioma na busca.", {})],
-         [("Protocolo registrado ", {"bold": True}), ("(PROSPERO) e relato PRISMA 2020 (27 itens).", {})],
+         [("Protocolo registrado ", {"bold": True}), ("(PROSPERO) e relato PRISMA\u00a02020 (27\u00a0itens).", {})],
          [("Risco de viés padronizado ", {"bold": True}), ("com ferramentas JBI.", {})],
          [("Síntese robusta: ", {"bold": True}), ("intervalo de predição, 3 modelos concordantes, leave-one-out, Baujat.", {})],
          [("Certeza por desfecho ", {"bold": True}), ("(GRADE), justificada por domínio.", {})],
-         [("Sobreposição amostral e uso de IA ", {"bold": True}), ("tratados e declarados.", {})],
+         [("Sobreposição amostral e uso de IA ", {"bold": True}), ("declarados.", {})],
          [("Reprodutível: ", {"bold": True}), ("código, planilhas e figuras no OSF.", {})],
      ])
 card(s, L + 7.4 + GAP, Y0, R - L - 7.4 - GAP, LC_H, title="Limitações (declaradas no manuscrito)", icon_name="warning",
      badge_fill=RED, fill=RED_TINT, body_size=18, bullet=True, body_space_after=14, body=[
          [("Transversais, exposição por proxy e autorrelato; ", {"bold": True}),
-          ("viés de atribuição (o respondente sabe que o tema é fumaça).", {})],
+          ("viés de atribuição (o\u00a0respondente sabe que o tema é fumaça).", {})],
          [("Sem grupo não exposto nos agrupamentos ", {"bold": True}), ("→ não se estima o excesso atribuível.", {})],
          [("Efeito do trabalhador sadio: ", {"bold": True}), ("quem adoece sai do centro cirúrgico → subestima.", {})],
          [("Heterogeneidade alta; ", {"bold": True}), ("subgrupo exploratório; maior inquérito fora do ocular.", {})],
          [("Sobreposição amostral ", {"bold": True}), ("tratada; 1 resumo de congresso na síntese.", {})],
          [("Revisor único ", {"bold": True}), ("na triagem, extração, JBI e GRADE; 6 relatórios não recuperados.", {})],
          [("Instrumentos sem validação relatada; ", {"bold": True}), ("recordatório e resposta pouco informados.", {})],
-         [("Elegibilidade restrita a português, inglês e espanhol; ", {"bold": True}),
-          ("periódicos de indexação limitada.", {})],
+         [("Elegibilidade só em português, inglês e espanhol; ", {"bold": True}),
+          ("periódicos pouco indexados.", {})],
          [("A metanálise estima prevalência em expostos, não risco causal.", {"bold": True, "color": RED})],
      ])
 rect(s, L, YB - LB_H, R - L, LB_H, fill=NAVY)
@@ -985,15 +997,15 @@ with b.step():
     tb(s, L + PAD, PR_Y + PAD + 0.45, CW - 2 * PAD, TOP_B - PR_Y - 2 * PAD - 0.45, [
         [("Evacuação local na fonte ", {"bold": True}), ("(medida principal);", {})],
         [("Respiradores N95/PFF2 ", {"bold": True}), ("(não substituem a exaustão);", {})],
-        [("Educação da equipe. ", {"bold": True}), ("Efetividade não avaliada aqui.", {})],
+        [("Educação da equipe. ", {"bold": True}), ("Efetividade das medidas não avaliada.", {})],
     ], size=17, color=INK, bullet=True, bullet_color=NAVY, space_after=3)
 concl = [
     ("check", "O que se sabe", GREEN, GREEN_TINT, GREEN,
      [[("Sintomas oculares (37,6%; IP 7–83%) e respiratórios (41,7%; IP 15–74%) são ", {}), ("frequentes", {"bold": True}),
        (", com ampla variação entre contextos; desfechos objetivos sinalizam alterações além do incômodo agudo.", {})]]),
     ("question", "O que não se sabe", AMBER, GOLD_TINT, DARK_GOLD,
-     [[("Não há evidência direta de câncer ou DPOC", {"bold": True}),
-       (" atribuíveis à fumaça; certeza muito baixa; a exposição múltipla limita a atribuição causal.", {})]]),
+     [[("Entre os estudos elegíveis, ", {}), ("não há evidência direta de câncer ou DPOC atribuíveis à fumaça", {"bold": True}),
+       ("; certeza muito baixa; a exposição múltipla limita a atribuição causal.", {})]]),
     ("shield", "Implicação", NAVY, NAVY_TINT, NAVY,
      [[("A proteção da equipe ", {}), ("parece justificada", {"bold": True}),
        (" pela carga sintomática e pelo princípio da precaução; o risco de longo prazo depende de estudos longitudinais.", {})]]),
@@ -1033,13 +1045,13 @@ s = deck.content_slide("PERSPECTIVAS FUTURAS", "Agenda de pesquisa e próximos p
 PW_L = 11.0
 rect(s, L, Y0, PW_L, YB - Y0, fill=LIGHT)
 tb(s, L + PAD, Y0 + PAD - 0.05, PW_L - 2 * PAD, 0.5, ["Para o campo: o que falta para responder ao risco crônico"],
-   size=19, color=NAVY, bold=True, space_after=0)
+   size=22, color=NAVY, bold=True, space_after=0)
 agenda = [
-    ("timeline", "Estudos longitudinais", [[("Coortes com ", {}), ("aferição objetiva da exposição", {"bold": True}),
+    ("hourglass", "Estudos longitudinais", [[("Coortes com ", {}), ("aferição objetiva da exposição", {"bold": True}),
                                             (" (PM2,5, COV, tempo de dispositivo) e controle de coexposições e tabagismo.", {})]]),
     ("list", "Definições padronizadas", [[("Sintoma-índice, recordatório e ", {}), ("instrumentos validados", {"bold": True}),
                                           (", com taxa de resposta relatada.", {})]]),
-    ("dna", "Desfechos crônicos", [[("Incidência de ", {}), ("câncer e DPOC", {"bold": True}),
+    ("lungs", "Desfechos crônicos", [[("Incidência de ", {}), ("câncer e DPOC", {"bold": True}),
                                     ("; seguimento de mucosa nasal, HPV e função pulmonar.", {})]]),
     ("fan", "Efetividade das medidas", [[("Intervenção com ", {}), ("exaustão local, N95/PFF2 e educação", {"bold": True}),
                                          (", medindo a exposição antes e depois.", {})]]),
@@ -1055,9 +1067,9 @@ for i, (ic, t, body) in enumerate(agenda):
        line_spacing=1.05)
 PX = L + PW_L + GAP
 rect(s, PX, Y0, R - PX, YB - Y0, fill=GOLD_TINT)
-tb(s, PX + PAD, Y0 + PAD - 0.05, R - PX - 2 * PAD, 0.5, ["Para este trabalho"], size=19, color=NAVY, bold=True,
+tb(s, PX + PAD, Y0 + PAD - 0.05, R - PX - 2 * PAD, 0.5, ["Para este trabalho"], size=22, color=NAVY, bold=True,
    space_after=0)
-nxt = [("upload", [("Submissão ", {"bold": True}), ("do manuscrito a periódico indexado (versão final v5).", {})]),
+nxt = [("upload", [("Submissão ", {"bold": True}), ("do manuscrito para publicação em periódico indexado.", {})]),
        ("calendar", [("Atualização da busca ", {"bold": True}), ("e vigilância dos 6 relatórios não recuperados.", {})]),
        ("people", [("Duplicata: ", {"bold": True}), ("triagem e extração com segundo revisor independente.", {})]),
        ("hospital", [("Devolutiva institucional: ", {"bold": True}), ("protocolo de proteção no centro cirúrgico.", {})]),
@@ -1122,7 +1134,7 @@ QS = QB_H - 2 * PAD
 pic(s, QR_PNG, R - PAD - QS, QY + PAD, w=QS, h=QS, name="QR code OSF")
 icon(s, "file", L + PAD, QY + (QB_H - 0.7) / 2, 0.7, color="navy")
 tb(s, L + PAD + 1.0, QY + 0.25, R - L - 2 * PAD - 1.0 - QS - 0.3, QB_H - 0.5, [
-    {"runs": [("Manuscrito completo, anexos e suplementos", {"bold": True, "color": NAVY, "size": 22})], "space_after": 6},
+    {"runs": [(QR_TITULO, {"bold": True, "color": NAVY, "size": 22})], "space_after": 6},
     [("Aponte a câmera do celular para o QR code  ·  ", {}), ("osf.io/jktmn", {"bold": True, "color": NAVY})],
     {"runs": [("Planilhas de extração, código em Python, figuras em alta resolução e material complementar.",
                {"color": GRAY})]},
@@ -1137,10 +1149,10 @@ icon(s, "handshake", 10.35 - 0.55, Y0 + 0.3, 1.1, color="navy")
 tb(s, L, Y0 + 1.55, R - L, 0.7, ["Muito obrigado"], size=36, color=NAVY, bold=True, align=PP_ALIGN.CENTER, space_after=0)
 ag = [
     ("graduation", "Orientadora", "Profa. Lisie Tocci Justo, pela orientação, supervisão metodológica e revisão crítica."),
-    ("people", "Coautores", "Luiz Henrique Ledesma Pereira (SLMandic Araras) e Dra. Mariana Matera Veras (LIM05, HC-FMUSP), "
-                            "pela interpretação dos resultados e revisão crítica."),
+    ("people", "Coautores", "Luiz Henrique Ledesma Pereira (SLMandic\u00a0Araras) e Dra.\u00a0Mariana Matera Veras "
+                            "(LIM05,\u00a0HC-FMUSP), pela interpretação dos resultados e revisão crítica."),
     ("hospital", "Instituição", "Faculdade São Leopoldo Mandic Araras e Programa de Iniciação Científica (PIC), na modalidade "
-                                "voluntária, pelo apoio institucional e metodológico."),
+                                "voluntária, pelo apoio institucional\u00a0e\u00a0metodológico."),
 ]
 AG_Y, AG_H = Y0 + 2.6, 3.75
 for (x, w), (ic, t, body) in zip(cols(3), ag):
@@ -1154,7 +1166,7 @@ IB_Y = AG_Y + AG_H + GAP
 rect(s, L, IB_Y, R - L, YB - IB_Y, fill=NAVY_TINT)
 tb(s, L + PAD, IB_Y + 0.2, R - L - 2 * PAD, YB - IB_Y - 0.4, [
     [("Registro PROSPERO: ", {"bold": True, "color": NAVY}), ("CRD420251238727   ·   ", {}),
-     ("Manuscrito, dados e código: ", {"bold": True, "color": NAVY}), ("osf.io/jktmn", {})],
+     (QR_DADOS, {"bold": True, "color": NAVY}), ("osf.io/jktmn", {})],
     [("Financiamento: ", {"bold": True, "color": NAVY}), ("nenhum   ·   ", {}),
      ("Conflitos de interesse: ", {"bold": True, "color": NAVY}), ("nenhum   ·   ", {}),
      ("Dispensa do CEP: ", {"bold": True, "color": NAVY}), ("protocolo 2025/0743 (Res. CNS 510/2016)", {})],
@@ -1170,7 +1182,7 @@ enc = prs.slides[len(prs.slides) - 1]
 QE = 2.4  # grande o bastante para ler do fundo da sala durante as perguntas
 QCX = 12.83 + 6.42 / 2
 pic(enc, QR_PNG, QCX - QE / 2, 5.85, w=QE, h=QE, name="QR code OSF")
-tb(enc, QCX - 3.2, 5.85 + QE + 0.1, 6.4, 0.4, [[("Manuscrito e suplementos  ·  ", {}),
+tb(enc, QCX - 3.2, 5.85 + QE + 0.1, 6.4, 0.4, [[(QR_CURTO + "  ·  ", {}),
                                              ("osf.io/jktmn", {"bold": True, "color": NAVY})]],
    size=16, color=GRAY, align=PP_ALIGN.CENTER, space_after=0)
 deck.notes(enc, NOTAS["encerramento"])

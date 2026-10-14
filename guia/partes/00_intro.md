@@ -17,8 +17,8 @@ Convenções: tudo o que está marcado como **[deste trabalho]** vem do manuscri
 
 | Slide | Seção | Tempo | Palavras da FALA | Relógio acumulado |
 |---|---|---|---|---|
-| 1 | Capa | 0:15 | 42 | 0:15 |
-| 2 | Trajetória | 0:20 | 55 | 0:35 |
+| 1 | Capa | 0:15 | 40 | 0:15 |
+| 2 | Trajetória | 0:20 | 40 | 0:35 |
 | 3 | Introdução | 0:45 | 112 | 1:20 |
 | 4 | Objetivos | 0:25 | 55 | 1:45 |
 | 5 | Metodologia – mapa | 0:30 | 68 | 2:15 |
@@ -28,12 +28,12 @@ Convenções: tudo o que está marcado como **[deste trabalho]** vem do manuscri
 | 9 | Passo 6 – metanálise | 0:50 | 110 | 4:45 |
 | 10 | Passo 7 – GRADE | 0:30 | 65 | 5:15 |
 | 11 | Resultados – seleção e características | 0:20 | 43 | 5:35 |
-| 12 | Resultado principal – ocular | 0:50 | 119 | 6:25 |
-| 13 | Respiratório e robustez | 0:25 | 62 | 6:50 |
+| 12 | Resultado principal – ocular | 0:50 | 93 | 6:25 |
+| 13 | Respiratório e robustez | 0:25 | 47 | 6:50 |
 | 14 | Desfechos objetivos e GRADE | 0:40 | 94 | 7:30 |
-| 15 | Discussão – interpretação | 0:30 | 81 | 8:00 |
+| 15 | Discussão – interpretação | 0:30 | 74 | 8:00 |
 | 16 | Pontos fortes e limitações | 0:25 | 60 | 8:25 |
-| 17 | Conclusão | 0:25 | 59 | 8:50 |
+| 17 | Conclusão | 0:25 | 63 | 8:50 |
 | 18 | Perspectivas futuras | 0:15 | 35 | 9:05 |
 | 19 | Referências | 0:05 | 10 | 9:10 |
 | 20 | Agradecimentos | 0:10 | 25 | 9:20 |

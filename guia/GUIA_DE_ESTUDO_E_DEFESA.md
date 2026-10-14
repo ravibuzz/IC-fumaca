@@ -17,8 +17,8 @@ Convenções: tudo o que está marcado como **[deste trabalho]** vem do manuscri
 
 | Slide | Seção | Tempo | Palavras da FALA | Relógio acumulado |
 |---|---|---|---|---|
-| 1 | Capa | 0:15 | 42 | 0:15 |
-| 2 | Trajetória | 0:20 | 55 | 0:35 |
+| 1 | Capa | 0:15 | 40 | 0:15 |
+| 2 | Trajetória | 0:20 | 40 | 0:35 |
 | 3 | Introdução | 0:45 | 112 | 1:20 |
 | 4 | Objetivos | 0:25 | 55 | 1:45 |
 | 5 | Metodologia – mapa | 0:30 | 68 | 2:15 |
@@ -28,12 +28,12 @@ Convenções: tudo o que está marcado como **[deste trabalho]** vem do manuscri
 | 9 | Passo 6 – metanálise | 0:50 | 110 | 4:45 |
 | 10 | Passo 7 – GRADE | 0:30 | 65 | 5:15 |
 | 11 | Resultados – seleção e características | 0:20 | 43 | 5:35 |
-| 12 | Resultado principal – ocular | 0:50 | 119 | 6:25 |
-| 13 | Respiratório e robustez | 0:25 | 62 | 6:50 |
+| 12 | Resultado principal – ocular | 0:50 | 93 | 6:25 |
+| 13 | Respiratório e robustez | 0:25 | 47 | 6:50 |
 | 14 | Desfechos objetivos e GRADE | 0:40 | 94 | 7:30 |
-| 15 | Discussão – interpretação | 0:30 | 81 | 8:00 |
+| 15 | Discussão – interpretação | 0:30 | 74 | 8:00 |
 | 16 | Pontos fortes e limitações | 0:25 | 60 | 8:25 |
-| 17 | Conclusão | 0:25 | 59 | 8:50 |
+| 17 | Conclusão | 0:25 | 63 | 8:50 |
 | 18 | Perspectivas futuras | 0:15 | 35 | 9:05 |
 | 19 | Referências | 0:05 | 10 | 9:10 |
 | 20 | Agradecimentos | 0:10 | 25 | 9:20 |
@@ -51,9 +51,9 @@ Tempo-alvo total: ~9 min 20 s, deixando folga para os 10 minutos. Os colchetes i
 
 ### Slide 1 — Capa
 
-[0:00–0:15] CAPA (~15 s · 42 palavras)
+[0:00–0:15] CAPA (~15 s · 40 palavras)
 FALA:
-Bom dia. Sou Theo Báccaro, aluno de Medicina da São Leopoldo Mandic de Araras, orientado pela Profa. Lisie Tocci Justo. Vou apresentar nossa revisão sistemática com metanálise de prevalência sobre os efeitos da fumaça cirúrgica na saúde da equipe do centro cirúrgico.
+Bom dia. Sou Theo Báccaro, aluno de Medicina da São Leopoldo Mandic, orientado pela Profa. Lisie Tocci Justo. Vou apresentar nossa revisão sistemática com metanálise de prevalência sobre os efeitos da fumaça cirúrgica na saúde da equipe do centro cirúrgico.
 
 APOIO (não ler):
 - Coautores: Luiz Henrique Ledesma Pereira e Dra. Mariana Matera Veras (LIM05, HC-FMUSP); cite-os se sobrar fôlego.
@@ -61,13 +61,13 @@ APOIO (não ler):
 
 ### Slide 2 — TRAJETÓRIA: Mais de um ano de preparação: formação, protocolo, leitura de 10.910 registros e análise
 
-[0:15–0:35] TRAJETÓRIA (~20 s · 55 palavras)
+[0:15–0:35] TRAJETÓRIA (~20 s · 40 palavras)
 FALA:
-Antes dos resultados, o caminho. Em julho de 2025 fiz o curso de revisão sistemática e metanálise da Unicamp, concluído com distinção, e um de escrita científica. Estudei as diretrizes do Ministério da Saúde e as ferramentas do JBI, registrei o protocolo no PROSPERO e, em 2026, li um a um 10.910 títulos e resumos.
+Antes de começar, o caminho. Em julho de 2025 concluí o curso de revisão sistemática e metanálise da Unicamp, com distinção, e um de escrita científica; registrei o protocolo no PROSPERO e li, um a um, 10.910 títulos e resumos.
 
 APOIO (não ler):
 - Cursos: Revisão Sistemática e Metanálise (Unicamp, via Coursera), 40 h, com distinção (20/07/2025); Escrita Científica: Produção de Artigos de Alto Impacto (ZucoEscrita), 3,6 h (31/07/2025); Fiocruz: ABNT, 3 h (11/03/2026) e referências, 2 h (25/03/2026). Total ≈ 49 h.
-- Capas: Diretrizes Metodológicas do Ministério da Saúde (estudos observacionais; Sistema GRADE) e os checklists do JBI usados (prevalência, transversal analítico, coorte).
+- Capas (falam por si; não precisa citar): Diretrizes Metodológicas do Ministério da Saúde (estudos observacionais; Sistema GRADE) e os checklists do JBI usados (prevalência, transversal analítico, coorte).
 - Busca final em 09/07/2026; triagem entre julho e agosto de 2026; depois extração, JBI, metanálise em Python, GRADE e manuscrito.
 - A animação monta o slide sozinha (~3 s): comece a falar sem esperar. Não leia as legendas.
 
@@ -124,7 +124,7 @@ APOIO (não ler):
 
 [2:50–3:25] PASSO 3 – SELEÇÃO (~35 s · 80 palavras)
 FALA:
-Os registros foram para o Rayyan, que removeu 5.839 duplicatas. Li título e resumo de todos os 10.910 únicos; um script e a IA só reordenavam a fila de leitura, e a decisão era minha. Trinta e dois relatórios foram buscados na íntegra, seis não foram recuperados, 26 foram avaliados e 22 incluídos. Um cuidado importante: sete publicações do mesmo grupo brasileiro tinham amostras sobrepostas, e cada análise usou um único representante, para não contar a mesma amostra duas vezes.
+Os registros foram para o Rayyan, que removeu 5.839 duplicatas. Li título e resumo dos 10.910 registros únicos; um script e a IA ordenaram a fila e apoiaram a leitura, mas cada decisão foi minha. Trinta e dois relatórios foram buscados na íntegra, seis não foram recuperados, 26 foram avaliados e 22 incluídos. Um cuidado importante: sete publicações do mesmo grupo brasileiro tinham amostras sobrepostas, e cada análise usou um único representante, para não contar a mesma amostra duas vezes.
 
 APOIO (não ler):
 - Fluxo: 16.757 identificados → 16.749 importados (8 não exportados) → 5.839 duplicatas (DOI, PMID e similaridade de título) → 10.910 triados → 10.882 excluídos → 28 + 4 por citação = 32 buscados → 6 não recuperados → 26 avaliados → 4 excluídos (1 resumo sem dados; 3 por população ou contexto) → 22 incluídos.
@@ -153,7 +153,8 @@ A metanálise, em cinco passos. Um: cada estudo vira uma proporção, eventos so
 APOIO (não ler):
 - Peso de cada estudo = 1 ÷ (variância do estudo + τ²). IC95% individual pelo método de Wilson. Sem 0% ou 100%: não precisou de correção de continuidade.
 - Hartung-Knapp: IC pela distribuição t com k − 1 graus de liberdade (IntHout; Ioannidis; Borm, 2014).
-- Sem funil nem Egger: em proporções o erro-padrão depende da própria proporção (assimetria espúria) e os testes exigem ≥ 10 estudos. Sem metarregressão: poucos estudos por covariável. RR dos desfechos objetivos na escala log (Wald).
+- Sem teste de Egger nem funil por erro-padrão: em proporções o erro-padrão depende da própria proporção (assimetria espúria) e os testes exigem ≥ 10 estudos. Há uma dispersão prevalência × tamanho amostral (Anexo G3, ocular), sem teste formal.
+- Paule-Mandel: o DerSimonian-Laird tende a subestimar τ² quando a heterogeneidade é alta; com k = 6–7 todo estimador de τ² é impreciso. Sem metarregressão: poucos estudos por covariável. RR dos desfechos objetivos na escala log (Wald).
 - Analogia: efeitos fixos = todos medem a mesma coisa com ruído; efeitos aleatórios = cada estudo tem a sua prevalência, e queremos a média e a dispersão delas.
 - Os cinco cards aparecem sozinhos enquanto você fala.
 
@@ -183,21 +184,22 @@ APOIO (não ler):
 
 ### Slide 12 — RESULTADOS: Desfecho principal · Prevalência combinada de sintoma ocular (irritação ou lacrimejamento)
 
-[5:35–6:25] RESULTADO PRINCIPAL – OCULAR (~50 s · 119 palavras) ← dê tempo a este slide
+[5:35–6:25] RESULTADO PRINCIPAL – OCULAR (~50 s · 93 palavras) ← dê tempo a este slide
 FALA:
-Este é o resultado principal. A prevalência combinada de sintoma ocular foi de 37,6%, com intervalo de confiança de 21,9 a 56,5%, em seis amostras e 756 profissionais. No gráfico de floresta, cada quadrado é um estudo, o losango é a estimativa combinada e a linha vermelha mais longa é o intervalo de predição, de 7 a 83%. Essa linha é a mensagem honesta do trabalho: com I² de 93%, os estudos vão de 19% na Malásia a 56% na Turquia, e um novo estudo poderia encontrar quase qualquer valor. Então 37,6% é a média de uma distribuição ampla, não "a" prevalência. E é a proporção que relatou o sintoma, sem grupo não exposto: descreve carga, não excesso atribuível.
+Este é o resultado principal: 37,6% de prevalência combinada de sintoma ocular, com intervalo de confiança de 21,9 a 56,5%, em seis amostras e 756 profissionais. Cada quadrado é um estudo e o losango, a estimativa combinada; a linha vermelha mais longa é o intervalo de predição, de 7 a 83%, a mensagem honesta do trabalho: com I² de 93%, os estudos vão de 19% na Malásia a 56% na Turquia. Então 37,6% é o centro de uma distribuição ampla, não "a" prevalência, e descreve a carga de sintomas, não um excesso atribuível.
 
 APOIO (não ler):
-- Tamanho do quadrado ∝ peso; linha preta = IC95% de Wilson.
+- Tamanho do quadrado ∝ peso; linha preta = IC95% de Wilson. Não há grupo não exposto no agrupamento: é a proporção que relatou o sintoma.
+- Na escala logito, a estimativa retrotransformada é o centro (mediana) da distribuição das prevalências verdadeiras, não a média aritmética.
 - O maior inquérito (Van Giersbergen et al., 2019; n = 672) ficou fora do ocular por não ter numerador e denominador oculares extraíveis.
 - "I² de 93% não invalida a metanálise?": em prevalência, I² alto é a regra (Barker et al., 2021); por isso relatamos o intervalo de predição e investigamos as fontes (país, definição) em vez de esconder a heterogeneidade num único número.
 - Definições: lacrimejamento, irritação ocular ou escala do sistema ocular; o período de recordatório não é homogêneo entre estudos.
 
 ### Slide 13 — RESULTADOS: Desfecho exploratório · Sintoma respiratório ou de vias aéreas, e robustez das estimativas
 
-[6:25–6:50] RESPIRATÓRIO E ROBUSTEZ (~25 s · 62 palavras) ← aponte a tabela, não leia linha por linha
+[6:25–6:50] RESPIRATÓRIO E ROBUSTEZ (~25 s · 47 palavras) ← aponte a tabela, não leia linha por linha
 FALA:
-O desfecho respiratório, exploratório porque as definições variam muito, deu 41,7%, com intervalo de predição de 15 a 74%. A tabela tem uma mensagem só: trocar o modelo, retirar um estudo por vez ou excluir o resumo de congresso não muda a leitura. E, restringindo a definições específicas, o I² respiratório cai de 91 para 61%: a definição explica parte da heterogeneidade.
+O desfecho respiratório, exploratório, deu 41,7%, com intervalo de predição de 15 a 74%. A tabela diz uma coisa só: trocar o modelo, retirar um estudo ou o resumo de congresso não muda a leitura. E, com definições específicas, o I² respiratório cai de 91 para 61%.
 
 APOIO (não ler):
 - Tabela: logito-HK 37,6/41,7; Freeman-Tukey 38,1/41,7; GLMM 37,5/42,0; leave-one-out 34,3–42,1 e 38,9–45,5; sem resumo de congresso 42,1 (I² 89%) e 42,4 (I² 90%); definições específicas 36,5 (I² 94%) e 35,8 (I² 61%).
@@ -220,9 +222,9 @@ APOIO (não ler):
 
 ### Slide 15 — DISCUSSÃO: O que os achados significam e como interpretá-los com cautela
 
-[7:30–8:00] DISCUSSÃO – INTERPRETAÇÃO (~30 s · 81 palavras)
+[7:30–8:00] DISCUSSÃO – INTERPRETAÇÃO (~30 s · 74 palavras)
 FALA:
-Três leituras. Primeira: a carga de sintomas é alta e coerente com a literatura, agora com estimativa combinada, intervalo de predição e GRADE. Segunda: heterogeneidade acima de 90% é esperada em prevalência; mostramos as fontes prováveis, como a definição do sintoma, o tempo de exposição e o uso de exaustão e EPI. Terceira: os desfechos objetivos têm gradiente e plausibilidade, mas são marcadores, não doença. E o achado mais relevante é o que não foi encontrado: estudos de câncer ou DPOC.
+Três leituras. Primeira: a carga de sintomas é alta e coerente com a literatura, agora com estimativa combinada e GRADE. Segunda: heterogeneidade acima de 90% é esperada em prevalência; a definição do sintoma explicou parte dela, e tempo de exposição, exaustão e EPI são fontes plausíveis, não testadas. Terceira: os desfechos objetivos são marcadores, não doença. E o achado talvez mais relevante é o que não foi encontrado: estudos elegíveis sobre câncer ou DPOC.
 
 APOIO (não ler):
 - Literatura prévia sem síntese quantitativa: Mowbray et al., 2013; Dixon; Dasgupta; Vasdev, 2023.
@@ -244,9 +246,9 @@ APOIO (não ler):
 
 ### Slide 17 — CONCLUSÃO: Síntese da mensagem da revisão
 
-[8:25–8:50] CONCLUSÃO (~25 s · 59 palavras)
+[8:25–8:50] CONCLUSÃO (~25 s · 63 palavras)
 FALA:
-Concluindo: sintomas oculares e respiratórios são frequentes na equipe exposta, com grande variação entre contextos, e estudos isolados sugerem alterações além do incômodo agudo. Não há evidência direta de câncer ou DPOC, e a certeza é muito baixa. Ainda assim, pela carga de sintomas e pela precaução, proteger a equipe hoje é prudente: exaustão na fonte, respiradores e educação.
+Concluindo: sintomas oculares e respiratórios são frequentes na equipe exposta, com grande variação entre contextos, e estudos isolados sugerem alterações além do incômodo agudo. Nenhum estudo elegível avaliou câncer ou DPOC, o que não é ausência de risco, e a certeza é muito baixa. Pela carga de sintomas e por precaução, proteger a equipe hoje é prudente: exaustão na fonte, respiradores e educação.
 
 APOIO (não ler):
 - Proteção (NIOSH, 1996): evacuação local na fonte é a medida principal; N95/PFF2 não substituem a exaustão; educação da equipe. A efetividade das medidas não foi avaliada nesta revisão.
@@ -269,7 +271,8 @@ As referências completas e os suplementos estão no QR code.
 
 APOIO (não ler):
 - Não leia a lista; mencione e avance.
-- ANTES DO DIA: publique o PDF do manuscrito no OSF (osf.io/jktmn), para onde o QR code aponta; hoje o projeto tem o suplemento (zip) e as referências do banner. Confira antes a política de preprint da revista escolhida.
+- O QR code leva ao projeto público do OSF (osf.io/jktmn): hoje, suplementos, código e planilhas. As legendas dizem isso.
+- Se você publicar o PDF do manuscrito no OSF (confira antes a política de preprint da revista escolhida), as legendas podem passar a citar o manuscrito: é uma troca de uma linha no gerador (MANUSCRITO_NO_OSF = True).
 
 ### Slide 20 — AGRADECIMENTOS
 
@@ -279,11 +282,12 @@ Agradeço à Profa. Lisie, aos coautores Luiz Henrique e Dra. Mariana, e à São
 
 APOIO (não ler):
 - PROSPERO CRD420251238727 · OSF osf.io/jktmn · sem financiamento · sem conflitos de interesse.
+- Ao dizer "perguntas", AVANCE para o slide 21 (QR code grande do OSF) e deixe-o na tela durante a arguição.
 
 ### Slide 21 — Encerramento
 
 ENCERRAMENTO
-Deixe este slide na tela durante as perguntas: o QR code leva ao OSF. Ouça a pergunta inteira, repita-a em uma frase ("a pergunta é sobre…") e responda em 30 a 40 segundos. Se não souber, diga o que o estudo permite afirmar e o que seria necessário para responder.
+Deixe este slide na tela durante as perguntas: o QR code leva ao projeto do OSF. Ouça a pergunta inteira, repita-a em uma frase ("a pergunta é sobre…") e responda em 30 a 40 segundos. Se não souber, diga o que o estudo permite afirmar e o que seria necessário para responder.
 
 
 ## Parte 2 — Passos 1 a 3: pergunta, protocolo, elegibilidade, busca e seleção
