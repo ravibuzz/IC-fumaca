@@ -6,13 +6,13 @@ Ensaie com cronômetro: se em algum marco do relógio você estiver mais de 15 s
 
 | Slide | Seção | Tempo | Palavras | Relógio |
 |---|---|---|---|---|
-| 1 | Capa | 15 s | 37 | 0:00 → 0:15 |
-| 2 | Introdução | 45 s | 81 | 0:15 → 1:00 |
+| 1 | Capa | 15 s | 31 | 0:00 → 0:15 |
+| 2 | Introdução | 45 s | 83 | 0:15 → 1:00 |
 | 3 | Objetivo | 25 s | 44 | 1:00 → 1:25 |
 | 4 | Método em 7 passos | 50 s | 83 | 1:25 → 2:15 |
 | 5 | Busca e seleção | 35 s | 57 | 2:15 → 2:50 |
 | 6 | Como os estudos foram combinados | 50 s | 91 | 2:50 → 3:40 |
-| 7 | Resultado principal – ocular | 55 s | 87 | 3:40 → 4:35 |
+| 7 | Resultado principal – ocular | 55 s | 91 | 3:40 → 4:35 |
 | 8 | Sintoma respiratório e robustez | 35 s | 56 | 4:35 → 5:10 |
 | 9 | Desfechos objetivos e biomarcadores | 45 s | 80 | 5:10 → 5:55 |
 | 10 | Discussão | 40 s | 59 | 5:55 → 6:35 |
@@ -26,11 +26,11 @@ Ensaie com cronômetro: se em algum marco do relógio você estiver mais de 15 s
 
 ### 1. Capa  ·  0:00 → 0:15
 
-Bom dia. Sou Theo Báccaro, aluno de Medicina da São Leopoldo Mandic, orientado pela Profa. Lisie Tocci Justo. Vou apresentar nossa revisão sistemática com metanálise sobre a fumaça cirúrgica e a saúde da equipe do centro cirúrgico.
+Bom dia. Sou Theo Báccaro, de Medicina da São Leopoldo Mandic, orientado pela Profa. Lisie. Apresento nossa revisão sistemática sobre a fumaça cirúrgica e a saúde da equipe do centro cirúrgico.
 
 ### 2. Introdução  ·  0:15 → 1:00
 
-Sempre que o eletrocautério, o laser ou o bisturi ultrassônico cortam tecido, formam fumaça. Ela contém benzeno e outros compostos voláteis, partículas ultrafinas e até DNA viral, como o do HPV. A equipe do centro cirúrgico respira essa fumaça todos os dias e relata irritação nos olhos e nas vias aéreas; os efeitos crônicos são plausíveis, mas sem relação causal estabelecida. E as revisões anteriores eram descritivas: faltava combinar os estudos numa estimativa e graduar a certeza. Essa é a lacuna.
+Sempre que o eletrocautério, o laser ou o bisturi ultrassônico cortam tecido, formam fumaça. Ela contém benzeno e outros compostos voláteis, partículas ultrafinas e até DNA viral, como o do HPV. A equipe do centro cirúrgico está exposta a essa fumaça no trabalho e relata irritação nos olhos e nas vias aéreas; os efeitos crônicos são plausíveis, mas sem relação causal estabelecida. E as revisões anteriores eram majoritariamente descritivas: faltava combinar os estudos numa estimativa e graduar a certeza. Essa é a lacuna.
 
 ### 3. Objetivo  ·  1:00 → 1:25
 
@@ -50,7 +50,7 @@ Como combinar estudos tão diferentes? Em quatro passos. Primeiro, cada estudo v
 
 ### 7. Resultado principal – ocular  ·  3:40 → 4:35
 
-Este é o resultado principal. Em seis estudos, com 756 profissionais, a prevalência combinada de sintoma ocular foi de 37,6%: cerca de quatro em cada dez relataram irritação ou lacrimejamento. Cada quadrado é um estudo; o losango, a estimativa combinada. Os estudos vão de 19%, na Malásia, a 56%, na Turquia, e o I² de 93% mostra que a variação é real. Por isso, a mensagem mais honesta é o intervalo de predição: num novo hospital, a prevalência pode ficar entre 7 e 83%, conforme o contexto.
+Este é o resultado principal. Em seis estudos, com 756 profissionais, a prevalência combinada de sintoma ocular foi de 37,6%: cerca de quatro em cada dez relataram irritação ou lacrimejamento. Cada quadrado é um estudo; o losango, a estimativa combinada. Os estudos vão de 19%, na Malásia, a 56%, na Turquia, e o I² de 93% mostra que a variação entre estudos vai além do acaso. Por isso, a mensagem mais honesta é o intervalo de predição: num novo hospital, a prevalência pode ficar entre 7 e 83%, conforme o contexto.
 
 ### 8. Sintoma respiratório e robustez  ·  4:35 → 5:10
 

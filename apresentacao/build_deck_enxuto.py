@@ -46,7 +46,7 @@ def bloco(s, x, y, w, h, title, body, icon_name, badge_fill=NAVY, fill=LIGHT, ti
 # 2 — INTRODUÇÃO
 # =====================================================================
 def slide_introducao(deck):
-    s = deck.content_slide("INTRODUÇÃO", "Fumaça cirúrgica: exposição diária da equipe, efeitos ainda incertos")
+    s = deck.content_slide("INTRODUÇÃO", "Fumaça cirúrgica: exposição ocupacional da equipe, efeitos ainda incertos")
     LW = 8.0
     foto = pic(s, IMG / "centro_cirurgico_fumaca.png", L, Y0, w=LW, name="Foto centro cirúrgico")
     fy = Y0 + foto.height / EMU
@@ -82,7 +82,7 @@ def slide_introducao(deck):
     rect(s, L, BAND_Y, R - L, BAND_H, fill=NAVY)
     icon(s, "question", L + PAD, BAND_Y + (BAND_H - 0.7) / 2, 0.7, color="gold")
     tb(s, L + PAD + 1.0, BAND_Y + 0.15, R - L - 2 * PAD - 1.0, BAND_H - 0.3,
-       [[("Lacuna: ", {"bold": True, "color": GOLD}), ("as revisões anteriores eram descritivas; ", {}),
+       [[("Lacuna: ", {"bold": True, "color": GOLD}), ("as revisões anteriores eram majoritariamente descritivas; ", {}),
          ("faltava combinar os estudos numa estimativa e graduar a certeza da evidência.", {"bold": True})]],
        size=21, color=WHITE, space_after=0, anchor=MSO_ANCHOR.MIDDLE)
     return s
@@ -99,7 +99,7 @@ OBJETIVOS = [
 
 
 def slide_objetivos(deck):
-    s = deck.content_slide("OBJETIVOS", "Pergunta: o que a fumaça cirúrgica faz à saúde da equipe?")
+    s = deck.content_slide("OBJETIVOS", "Pergunta: que desfechos de saúde se associam à exposição à fumaça cirúrgica?")
     OB_H = 1.55
     rect(s, L, Y0, R - L, OB_H, fill=NAVY)
     tb(s, L + 0.45, Y0 + 0.15, R - L - 0.9, OB_H - 0.3,
@@ -118,7 +118,7 @@ def slide_objetivos(deck):
     PL_Y = CY + CH + 0.35
     tb(s, L, PL_Y, R - L, 0.4, [[("Pergunta estruturada (PECO)", {"bold": True, "color": NAVY})]], size=18, space_after=0)
     peco = [("P", "População", "Equipe de centro cirúrgico"), ("E", "Exposição", "Fumaça de dispositivos de energia"),
-            ("C", "Comparador", "Não expostos ou protegidos"), ("O", "Desfecho", "Efeitos à saúde")]
+            ("C", "Comparador", "Não ou pouco expostos, ou protegidos"), ("O", "Desfecho", "Efeitos à saúde")]
     PY = PL_Y + 0.5
     for (x, w), (letter, name, val) in zip(cols(4), peco):
         rect(s, x, PY, w, YB - PY, fill=TEAL_TINT)
@@ -140,7 +140,7 @@ def slide_metodo(deck):
         ("Busca", "7 bases", "+ literatura cinzenta e citação, sem filtro de idioma"),
         ("Seleção", "10.910", "títulos e resumos lidos, um a um"),
         ("Extração", "Planilha", "padronizada: eventos e denominador"),
-        ("Risco de viés", "JBI", "ferramenta para cada desenho de estudo"),
+        ("Risco de viés", "JBI", "ferramenta conforme a função do estudo"),
         ("Síntese", "Metanálise", "de prevalência, com efeitos aleatórios"),
         ("Certeza", "GRADE", "por desfecho, em cinco domínios"),
     ]
@@ -265,7 +265,7 @@ def slide_metanalise(deck):
     PN_Y = Y0 + PC_H + GAP + 0.05
     paineis = [
         ("balance", "Passo 5 · Risco de viés", NAVY, NAVY_TINT,
-         [[("Ferramentas JBI", {"bold": True}), (" por desenho: prevalência (9 itens), transversal (8) e coorte (11)", {})]]),
+         [[("Ferramentas JBI", {"bold": True}), (" por função: prevalência (9 itens), transversal analítico (8) e coorte (11)", {})]]),
         ("check", "Robustez da metanálise", TEAL, TEAL_TINT,
          [[("3 modelos", {"bold": True}), (", leave-one-out, Baujat e subgrupo por país", {})]]),
         ("target", "Passo 7 · Certeza (GRADE)", DARK_GOLD, GOLD_TINT,
@@ -315,7 +315,7 @@ def slide_ocular(deck):
         rect(s, L, BAND_Y, FW, YB - BAND_Y, fill=NAVY_TINT)
         tb(s, L + PAD, BAND_Y + 0.15, FW - 2 * PAD, YB - BAND_Y - 0.3,
            [[("Como ler: ", {"bold": True, "color": NAVY}), ("os estudos vão de 19% (Malásia) a 56% (Turquia); ", {}),
-             ("I² = 93%: a variação entre contextos é real.", {"bold": True})]],
+             ("I² = 93%: a variação entre estudos vai além do acaso.", {"bold": True})]],
            size=19, color=INK, space_after=0, anchor=MSO_ANCHOR.MIDDLE)
     b.apply()
     return s
@@ -378,7 +378,7 @@ def slide_objetivos_bio(deck):
     tiles = [
         ("lungs", "Função pulmonar", "2,78 vs 3,14 L", "VEF1 (mediana); menor com mais tempo de centro cirúrgico",
          "Ibrahim et al., 2025 · Sudão · 92 vs 92"),
-        ("vial", "Benzeno na urina", "202,9 vs 46,1", "µg/L de ácido t,t-mucônico, metabólito do benzeno",
+        ("vial", "Metabólito do benzeno", "202,9 vs 46,1", "µg/L de ácido t,t-mucônico, metabólito do benzeno",
          "Canicoba, 2025 · Brasil · 52 vs 49"),
         ("biotech", "Mucosa nasal", "70% vs 5%", "metaplasia ou hiperplasia na biópsia · RR 13,9",
          "Navarro et al., 2016 · México · 23 vs 20"),
@@ -437,7 +437,7 @@ def slide_discussao(deck):
         ("compass", "Como ler", NAVY, NAVY_TINT, [
             [("Prevalência em expostos: ", {"bold": True}), ("carga de sintomas, não efeito causal", {})],
             [("I² > 90% é esperado: ", {"bold": True}), ("ler pelo intervalo de predição", {})],
-            "Marcadores objetivos não são doença crônica"]),
+            "Marcadores objetivos não demonstram doença crônica"]),
         ("warning", "Limitações (declaradas)", RED, RED_TINT, [
             "Estudos transversais e sintomas autorrelatados",
             "Sem grupo não exposto nas metanálises",

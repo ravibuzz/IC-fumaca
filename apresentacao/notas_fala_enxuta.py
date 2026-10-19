@@ -9,7 +9,7 @@ O cabeçalho "[m:ss–m:ss] TÍTULO (~N s · W palavras)" é preenchido por Deck
 NOTAS = {
     "capa": """CAPA
 FALA:
-Bom dia. Sou Theo Báccaro, aluno de Medicina da São Leopoldo Mandic, orientado pela Profa. Lisie Tocci Justo. Vou apresentar nossa revisão sistemática com metanálise sobre a fumaça cirúrgica e a saúde da equipe do centro cirúrgico.
+Bom dia. Sou Theo Báccaro, de Medicina da São Leopoldo Mandic, orientado pela Profa. Lisie. Apresento nossa revisão sistemática sobre a fumaça cirúrgica e a saúde da equipe do centro cirúrgico.
 
 APOIO (não ler):
 - Coautores: Luiz Henrique Ledesma Pereira e Dra. Mariana Matera Veras (LIM05, HC-FMUSP).
@@ -17,7 +17,7 @@ APOIO (não ler):
 
     "introducao": """INTRODUÇÃO
 FALA:
-Sempre que o eletrocautério, o laser ou o bisturi ultrassônico cortam tecido, formam fumaça. Ela contém benzeno e outros compostos voláteis, partículas ultrafinas e até DNA viral, como o do HPV. A equipe do centro cirúrgico respira essa fumaça todos os dias e relata irritação nos olhos e nas vias aéreas; os efeitos crônicos são plausíveis, mas sem relação causal estabelecida. E as revisões anteriores eram descritivas: faltava combinar os estudos numa estimativa e graduar a certeza. Essa é a lacuna.
+Sempre que o eletrocautério, o laser ou o bisturi ultrassônico cortam tecido, formam fumaça. Ela contém benzeno e outros compostos voláteis, partículas ultrafinas e até DNA viral, como o do HPV. A equipe do centro cirúrgico está exposta a essa fumaça no trabalho e relata irritação nos olhos e nas vias aéreas; os efeitos crônicos são plausíveis, mas sem relação causal estabelecida. E as revisões anteriores eram majoritariamente descritivas: faltava combinar os estudos numa estimativa e graduar a certeza. Essa é a lacuna.
 
 APOIO (não ler):
 - Composição: hidrocarbonetos aromáticos policíclicos, compostos orgânicos voláteis (benzeno, tolueno, xileno), material particulado fino (PM2,5) e ultrafino (< 0,1 µm), material genético viral (Benaim; Jaspers, 2024).
@@ -71,13 +71,13 @@ APOIO (não ler):
 
     "ocular": """RESULTADO PRINCIPAL – OCULAR ← dê tempo a este slide
 FALA:
-Este é o resultado principal. Em seis estudos, com 756 profissionais, a prevalência combinada de sintoma ocular foi de 37,6%: cerca de quatro em cada dez relataram irritação ou lacrimejamento. Cada quadrado é um estudo; o losango, a estimativa combinada. Os estudos vão de 19%, na Malásia, a 56%, na Turquia, e o I² de 93% mostra que a variação é real. Por isso, a mensagem mais honesta é o intervalo de predição: num novo hospital, a prevalência pode ficar entre 7 e 83%, conforme o contexto.
+Este é o resultado principal. Em seis estudos, com 756 profissionais, a prevalência combinada de sintoma ocular foi de 37,6%: cerca de quatro em cada dez relataram irritação ou lacrimejamento. Cada quadrado é um estudo; o losango, a estimativa combinada. Os estudos vão de 19%, na Malásia, a 56%, na Turquia, e o I² de 93% mostra que a variação entre estudos vai além do acaso. Por isso, a mensagem mais honesta é o intervalo de predição: num novo hospital, a prevalência pode ficar entre 7 e 83%, conforme o contexto.
 
 APOIO (não ler):
 - IC95% 21,9–56,5. O intervalo de confiança é sobre a média; o intervalo de predição é sobre um novo estudo.
 - É a proporção de expostos que relatou o sintoma, não um efeito causal: não há grupo não exposto no agrupamento.
 - O maior inquérito (Van Giersbergen et al., 2019; n = 672) ficou fora do ocular: sem numerador e denominador oculares extraíveis.
-- "I² de 93% invalida?": em prevalência, I² alto é a regra (Barker et al., 2021); por isso o intervalo de predição e a investigação das fontes (país, definição).
+- "I² de 93% invalida?": em metanálise de prevalência, I² alto é esperado; por isso o intervalo de predição e a investigação das fontes (país, definição).
 - Subgrupo por país (exploratório): Turquia 50,5%; Malásia 19,8%; p < 0,001 entre subgrupos.""",
 
     "respiratorio": """SINTOMA RESPIRATÓRIO E ROBUSTEZ ← aponte a tabela, não leia linha por linha
@@ -175,7 +175,7 @@ PONTOS-CHAVE:
     "selecao": """APOIO 18 – FLUXOGRAMA PRISMA E CARACTERÍSTICAS
 - Fluxograma da Figura 1 do manuscrito; não recuperados e excluídos no Anexo C.
 - A busca por citação (443 referências) trouxe 4 relatórios, que entram em "Buscados na íntegra" (28 + 4 = 32).
-- Só Mohd Fikri Rosely e Titi Rahmawati (2019) usaram amostragem aleatória; nenhum estudo com preocupação baixa de viés.""",
+- Entre os 7 estudos das metanálises, só Mohd Fikri Rosely e Titi Rahmawati (2019) usaram amostragem aleatória; nenhum estudo com preocupação baixa de viés.""",
 
     "passos45": """APOIO 19 – EXTRAÇÃO E RISCO DE VIÉS (JBI)
 - Listas JBI por função do estudo: prevalência (9 itens), transversal analítico (8), coorte (11).
@@ -194,7 +194,7 @@ PONTOS-CHAVE:
 
     "respiratorio": """APOIO 22 – TABELA DE ROBUSTEZ E SUBGRUPO POR PAÍS
 - Subgrupo ocular: Turquia 50,5% (k = 3; I² 57%); Malásia 19,8% (k = 2; I² 0%); Brasil 43,2% (k = 1); p < 0,001, mas exploratório (poucos estudos e um resumo de congresso na Malásia).
-- Baujat: Mohd Fikri Rosely 2022 é o mais influente; o I² ocular segue alto sem ele (89%) ou sem Bieniek (94%).""",
+- Baujat: no ocular, Mohd Fikri Rosely 2022 é o mais influente; o I² ocular segue alto sem ele (89%) ou sem Bieniek (94%).""",
 
     "objetivos_bio": """APOIO 23 – DESFECHOS OBJETIVOS EM DETALHE
 - Cada desfecho vem de um único estudo; comparações não combinadas (desenhos e desfechos heterogêneos).
