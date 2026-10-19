@@ -17,12 +17,13 @@ APOIO (não ler):
 
     "trajetoria": """TRAJETÓRIA
 FALA:
-Antes de começar, o caminho. Em julho de 2025 concluí o curso de revisão sistemática e metanálise da Unicamp, com distinção, e um de escrita científica; registrei o protocolo no PROSPERO e li, um a um, 10.910 títulos e resumos.
+Antes de começar, o caminho. Em julho de 2025 concluí o curso de revisão sistemática e metanálise da Unicamp, com distinção. Estudei o PRISMA 2020, o Cochrane Handbook, o manual do JBI e os livros de Borenstein e de Harrer; registrei o protocolo no PROSPERO e li, um a um, 10.910 títulos e resumos.
 
 APOIO (não ler):
 - Cursos: Revisão Sistemática e Metanálise (Unicamp, via Coursera), 40 h, com distinção (20/07/2025); Escrita Científica: Produção de Artigos de Alto Impacto (ZucoEscrita), 3,6 h (31/07/2025); Fiocruz: ABNT, 3 h (11/03/2026) e referências, 2 h (25/03/2026). Total ≈ 49 h.
-- Capas (falam por si; não precisa citar): Diretrizes Metodológicas do Ministério da Saúde (estudos observacionais; Sistema GRADE) e os checklists do JBI usados (prevalência, transversal analítico, coorte).
-- Busca final em 09/07/2026; triagem entre julho e agosto de 2026; depois extração, JBI, metanálise em Python, GRADE e manuscrito.
+- Linha de cima (citados no manuscrito): PRISMA 2020 (Page et al., 2021), guia de RELATO com 27 itens, checklist preenchido no Anexo H; Diretrizes Metodológicas do Ministério da Saúde (estudos observacionais; Sistema GRADE); checklists do JBI usados no risco de viés (prevalência, transversal analítico, coorte).
+- Linha de baixo (manuais e livros de estudo): JBI Manual for Evidence Synthesis (Aromataris; Munn, 2020; citado), com o capítulo de revisões de prevalência e incidência (CoCoPop); Cochrane Handbook (Higgins et al., 2ª ed., 2019), referência geral de condução: heterogeneidade, efeitos aleatórios, análises de sensibilidade; Borenstein et al., Introduction to Meta-Analysis (2ª ed., 2021): efeitos fixos vs aleatórios, I² e intervalo de predição; Harrer et al., Doing Meta-Analysis with R (2021): guia prático (Hartung-Knapp, GLMM, leave-one-out, Baujat), que segui implementando em Python.
+- Se perguntarem por que o Cochrane Handbook, o Borenstein e o Harrer não estão nas referências do manuscrito: foram material de estudo; o manuscrito cita os trabalhos específicos de cada método (Barker 2021, IntHout 2014, Riley 2011, Munn 2015).
 - A animação monta o slide sozinha (~3 s): comece a falar sem esperar. Não leia as legendas.""",
 
     "introducao": """INTRODUÇÃO

@@ -98,65 +98,82 @@ marcos = [
     ("chart", "Até Out/2026", "Extração, JBI, metanálise, GRADE e manuscrito"),
 ]
 seg = (R - L) / len(marcos)
-ly = 2.45
+ly = 2.4
 line(s, L + seg / 2, ly, R - seg / 2, ly, color=rgb("C9CFDA"), width=4)
 for i, (ic, quando, oque) in enumerate(marcos):
     cx = L + seg * (i + 0.5)
     with b.step():
-        icon_badge(s, ic, cx, ly, d=0.85, fill=RED if i == len(marcos) - 1 else NAVY)
-        tb(s, cx - seg / 2 + 0.1, 3.0, seg - 0.2, 0.4, [quando], size=18, color=NAVY, bold=True, align=PP_ALIGN.CENTER,
+        icon_badge(s, ic, cx, ly, d=0.8, fill=RED if i == len(marcos) - 1 else NAVY)
+        tb(s, cx - seg / 2 + 0.1, 2.9, seg - 0.2, 0.4, [quando], size=18, color=NAVY, bold=True, align=PP_ALIGN.CENTER,
            space_after=0)
-        tb(s, cx - seg / 2 + 0.2, 3.42, seg - 0.4, 0.85, [oque], size=15, color=INK, align=PP_ALIGN.CENTER, space_after=0)
-PY, PH = 4.35, 4.45
-(lx, lw), (rx, rw) = cols(2)
+        tb(s, cx - seg / 2 + 0.2, 3.3, seg - 0.4, 0.75, [oque], size=15, color=INK, align=PP_ALIGN.CENTER, space_after=0)
+PY = 4.2
+PH = YB - PY
+LW2 = 5.7                                   # certificados em grade 2 x 2 à esquerda; capas à direita
+lx, lw, rx = L, LW2, L + LW2 + GAP
+rw = R - rx
 certs = [
     ("cert_unicamp_rs_metanalise.jpg", "RS e Metanálise", "Unicamp · 40 h", "com distinção"),
     ("cert_zuco_escrita.jpg", "Escrita científica", "ZucoEscrita · 3,6 h", None),
     ("cert_fiocruz_abnt.jpg", "Normas ABNT", "Fiocruz · 3 h", None),
     ("cert_fiocruz_referencias.jpg", "Referências (ABNT)", "Fiocruz · 2 h", None),
 ]
-capas = [
+# (arquivo, linha 1, linha 2): obras usadas no trabalho — guias e ferramentas citados no manuscrito + manuais e livros estudados
+guias = [
+    ("capa_prisma2020.jpg", "PRISMA 2020", "Page et al."),
     ("capa_ms_observacionais.jpg", "MS 2014", "Observacionais"),
     ("capa_ms_grade.jpg", "MS 2014", "Sistema GRADE"),
     ("capa_jbi_prevalencia.jpg", "JBI", "Prevalência"),
     ("capa_jbi_transversal.jpg", "JBI", "Transversal"),
     ("capa_jbi_coorte.jpg", "JBI", "Coorte"),
 ]
-AREA_Y, AREA_H = PY + PAD + 0.7 + 0.12, 2.0
+livros = [
+    ("capa_cochrane_handbook.jpg", "Cochrane", "Handbook, 2019"),
+    ("capa_jbi_manual.jpg", "JBI Manual", "Síntese, 2020"),
+    ("capa_borenstein.jpg", "Borenstein et al.", "Metanálise, 2021"),
+    ("capa_harrer.jpg", "Harrer et al.", "Metanálise em R"),
+]
+TOP = PY + PAD + 0.7 + 0.2                 # abaixo do título do card
 with b.step():
     card(s, lx, PY, lw, PH, title="Formação certificada · ≈ 49 h", icon_name="graduation", title_size=19, badge_d=0.7)
-    CH = 1.28  # certificados com a mesma altura, alinhados pela base com as capas
-    larg = []
-    for img, *_ in certs:
+    CH = 1.5
+    cw = (lw - 2 * PAD - 0.3) / 2
+    row_h = (YB - PAD - TOP) / 2
+    for k, (img, nome, meta, extra) in enumerate(certs):
+        cx0 = lx + PAD + (k % 2) * (cw + 0.3)
+        y0 = TOP + (k // 2) * row_h
         with Image.open(TRJ / img) as im:
-            larg.append(CH * im.size[0] / im.size[1])
-    gcert = (lw - 2 * PAD - sum(larg)) / (len(certs) - 1)
-    xs = [lx + PAD + sum(larg[:j]) + j * gcert for j in range(len(certs))]
-    for x, wi, (img, nome, meta, extra) in zip(xs, larg, certs):
-        pic(s, TRJ / img, x, AREA_Y + AREA_H - CH, w=wi, h=CH, border=rgb("C9CFDA"))
-        x, w = x + wi / 2 - 0.95, 1.9
+            wi = min(cw, CH * im.size[0] / im.size[1])
+        pic(s, TRJ / img, cx0 + (cw - wi) / 2, y0, w=wi, h=CH, border=rgb("C9CFDA"))
         par = [{"runs": [(nome, {"bold": True, "color": NAVY})], "space_after": 1}, {"runs": [(meta, {"color": GRAY})]}]
         if extra:
             par.append({"runs": [(extra, {"bold": True, "color": DARK_GOLD})]})
-        tb(s, x, AREA_Y + AREA_H + 0.12, w, 0.75, par, size=14, align=PP_ALIGN.CENTER, space_after=0)
+        tb(s, cx0, y0 + CH + 0.1, cw, 0.75, par, size=14, align=PP_ALIGN.CENTER, space_after=0)
+COV_H = 1.5
+NCOL = 6
+colw = (rw - 2 * PAD) / NCOL
+row2_h = (YB - PAD - TOP) / 2
+
+
+def linha_capas(itens, y0, rotulo):
+    tb(s, rx + PAD, y0, rw - 2 * PAD, 0.32, [rotulo], size=14, color=GRAY, bold=True, space_after=0)
+    x0 = rx + PAD + (NCOL - len(itens)) * colw / 2      # linha mais curta fica centralizada
+    for j, (img, l1, l2) in enumerate(itens):
+        cx0 = x0 + j * colw
+        pic(s, TRJ / img, cx0 + 0.1, y0 + 0.4, w=colw - 0.2, h=COV_H, border=rgb("C9CFDA"))
+        tb(s, cx0, y0 + 0.4 + COV_H + 0.08, colw, 0.5, [{"runs": [(l1, {"bold": True, "color": NAVY})], "space_after": 1},
+                                                          {"runs": [(l2, {"color": GRAY})]}],
+           size=13, align=PP_ALIGN.CENTER, space_after=0)
+
+
 with b.step():
-    card(s, rx, PY, rw, PH, title="Base metodológica: diretrizes e ferramentas JBI", icon_name="book", title_size=19,
-         badge_d=0.7)
-    for (x, w), (img, org, nome) in zip(cols(5, rx + PAD, rx + rw - PAD, gap=0.2), capas):
-        pic(s, TRJ / img, x, AREA_Y + AREA_H - 1.75, w=w, h=1.75, border=rgb("C9CFDA"))
-        tb(s, x, AREA_Y + AREA_H + 0.12, w, 0.55, [{"runs": [(org, {"bold": True, "color": NAVY})], "space_after": 1},
-                                                  {"runs": [(nome, {"color": GRAY})]}],
-           size=14, align=PP_ALIGN.CENTER, space_after=0)
+    card(s, rx, PY, rw, PH, title="Base metodológica: guias, ferramentas e livros estudados", icon_name="book",
+         title_size=19, badge_d=0.7)
+    linha_capas(guias, TOP, "GUIA DE RELATO, DIRETRIZES DO MINISTÉRIO DA SAÚDE E FERRAMENTAS DE RISCO DE VIÉS")
 with b.step():
-    BY = PY + PH + GAP
-    rect(s, L, BY, R - L, YB - BY, fill=NAVY)
-    numeros = [("≈ 49 h", "de cursos com certificado"), ("16.757", "registros identificados"),
-               ("10.910", "títulos e resumos lidos"), ("26", "textos completos avaliados"), ("22", "relatórios incluídos")]
-    for (x, w), (num, lab) in zip(cols(5, L + PAD, R - PAD, gap=0.2), numeros):
-        tb(s, x, BY + 0.22, w, 0.6, [num], size=30, color=GOLD, bold=True, align=PP_ALIGN.CENTER, space_after=0)
-        tb(s, x, BY + 0.82, w, 0.45, [lab], size=15, color=WHITE, align=PP_ALIGN.CENTER, space_after=0)
+    linha_capas(livros, TOP + row2_h, "MANUAIS E LIVROS DE REVISÃO SISTEMÁTICA E METANÁLISE")
 b.apply()
-deck.notes(s, NOTAS["trajetoria"], dur=20)
+deck.notes(s, NOTAS["trajetoria"], dur=25)
 
 # =====================================================================
 # 3 — INTRODUÇÃO
@@ -263,7 +280,7 @@ tb(s, ax + PAD + 0.8, OB_Y + 0.25, aw - 2 * PAD - 0.8, YB - OB_Y - 0.5,
      ("estima a frequência de sintomas em expostos", {"bold": True, **HL}),
      (", não o efeito causal da fumaça; a causalidade depende dos estudos comparativos.", {})]],
    size=16, color=INK, space_after=0, anchor=MSO_ANCHOR.MIDDLE)
-deck.notes(s, NOTAS["objetivos"], dur=25)
+deck.notes(s, NOTAS["objetivos"], dur=23)
 
 # =====================================================================
 # 5 — METODOLOGIA: MAPA DOS 7 PASSOS
@@ -529,7 +546,7 @@ tb(s, RX8, YBT - CAP_H, R - RX8, CAP_H, [
      ("1\u00a0marco amostral · 2\u00a0amostragem · 3\u00a0tamanho · 4\u00a0sujeitos/cenário · 5\u00a0cobertura · "
       "6\u00a0validade · 7\u00a0padronização · 8\u00a0análise · 9\u00a0taxa de resposta", {"color": GRAY})],
 ], size=14, color=INK, space_after=2)
-deck.notes(s, NOTAS["passos45"], dur=30)
+deck.notes(s, NOTAS["passos45"], dur=29)
 
 # =====================================================================
 # 9 — PASSO 6: METANÁLISE DE PREVALÊNCIA
@@ -722,7 +739,7 @@ with b.step():
               ("→ análise restrita a baixo risco não foi factível.", {})],
          ])
 b.apply()
-deck.notes(s, NOTAS["selecao"], dur=20)
+deck.notes(s, NOTAS["selecao"], dur=18)
 
 # =====================================================================
 # 12 — RESULTADOS: SINTOMA OCULAR
