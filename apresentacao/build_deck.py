@@ -133,15 +133,20 @@ livros = [
     ("capa_borenstein.jpg", "Borenstein et al.", "Metanálise, 2021"),
     ("capa_harrer.jpg", "Harrer et al.", "Metanálise em R"),
 ]
-TOP = PY + PAD + 0.7 + 0.2                 # abaixo do título do card
+NCOL = 6
+colw = (rw - 2 * PAD) / NCOL
+TOP_R = PY + PAD + 0.7 + 0.1               # topo das linhas de capas
+ROW_GAP = 0.3                               # espaço entre as duas linhas
+CAP_H = 0.48                                # legenda de duas linhas (13 pt)
+COV_H = ((YB - PAD - TOP_R) - ROW_GAP) / 2 - (0.4 + 0.08 + CAP_H)
+ROW_H = 0.4 + COV_H + 0.08 + CAP_H
 with b.step():
     card(s, lx, PY, lw, PH, title="Formação certificada · ≈ 49 h", icon_name="graduation", title_size=19, badge_d=0.7)
-    CH = 1.5
+    CH = COV_H                               # mesma altura e mesmas linhas das capas, à direita
     cw = (lw - 2 * PAD - 0.3) / 2
-    row_h = (YB - PAD - TOP) / 2
     for k, (img, nome, meta, extra) in enumerate(certs):
         cx0 = lx + PAD + (k % 2) * (cw + 0.3)
-        y0 = TOP + (k // 2) * row_h
+        y0 = TOP_R + 0.4 + (k // 2) * (ROW_H + ROW_GAP)
         with Image.open(TRJ / img) as im:
             wi = min(cw, CH * im.size[0] / im.size[1])
         pic(s, TRJ / img, cx0 + (cw - wi) / 2, y0, w=wi, h=CH, border=rgb("C9CFDA"))
@@ -149,10 +154,6 @@ with b.step():
         if extra:
             par.append({"runs": [(extra, {"bold": True, "color": DARK_GOLD})]})
         tb(s, cx0, y0 + CH + 0.1, cw, 0.75, par, size=14, align=PP_ALIGN.CENTER, space_after=0)
-COV_H = 1.5
-NCOL = 6
-colw = (rw - 2 * PAD) / NCOL
-row2_h = (YB - PAD - TOP) / 2
 
 
 def linha_capas(itens, y0, rotulo):
@@ -161,7 +162,7 @@ def linha_capas(itens, y0, rotulo):
     for j, (img, l1, l2) in enumerate(itens):
         cx0 = x0 + j * colw
         pic(s, TRJ / img, cx0 + 0.1, y0 + 0.4, w=colw - 0.2, h=COV_H, border=rgb("C9CFDA"))
-        tb(s, cx0, y0 + 0.4 + COV_H + 0.08, colw, 0.5, [{"runs": [(l1, {"bold": True, "color": NAVY})], "space_after": 1},
+        tb(s, cx0, y0 + 0.4 + COV_H + 0.08, colw, CAP_H, [{"runs": [(l1, {"bold": True, "color": NAVY})], "space_after": 1},
                                                           {"runs": [(l2, {"color": GRAY})]}],
            size=13, align=PP_ALIGN.CENTER, space_after=0)
 
@@ -169,9 +170,9 @@ def linha_capas(itens, y0, rotulo):
 with b.step():
     card(s, rx, PY, rw, PH, title="Base metodológica: guias, ferramentas e livros estudados", icon_name="book",
          title_size=19, badge_d=0.7)
-    linha_capas(guias, TOP, "GUIA DE RELATO, DIRETRIZES DO MINISTÉRIO DA SAÚDE E FERRAMENTAS DE RISCO DE VIÉS")
+    linha_capas(guias, TOP_R, "GUIA DE RELATO, DIRETRIZES DO MINISTÉRIO DA SAÚDE E FERRAMENTAS DE RISCO DE VIÉS")
 with b.step():
-    linha_capas(livros, TOP + row2_h, "MANUAIS E LIVROS DE REVISÃO SISTEMÁTICA E METANÁLISE")
+    linha_capas(livros, TOP_R + ROW_H + ROW_GAP, "MANUAIS E LIVROS DE REVISÃO SISTEMÁTICA E METANÁLISE")
 b.apply()
 deck.notes(s, NOTAS["trajetoria"], dur=25)
 

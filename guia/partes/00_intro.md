@@ -18,16 +18,16 @@ Convenções: tudo o que está marcado como **[deste trabalho]** vem do manuscri
 | Slide | Seção | Tempo | Palavras da FALA | Relógio acumulado |
 |---|---|---|---|---|
 | 1 | Capa | 0:15 | 40 | 0:15 |
-| 2 | Trajetória | 0:20 | 40 | 0:35 |
-| 3 | Introdução | 0:45 | 112 | 1:20 |
-| 4 | Objetivos | 0:25 | 55 | 1:45 |
-| 5 | Metodologia – mapa | 0:30 | 68 | 2:15 |
-| 6 | Passos 1 e 2 | 0:35 | 81 | 2:50 |
-| 7 | Passo 3 – seleção | 0:35 | 80 | 3:25 |
-| 8 | Passos 4 e 5 | 0:30 | 64 | 3:55 |
-| 9 | Passo 6 – metanálise | 0:50 | 110 | 4:45 |
-| 10 | Passo 7 – GRADE | 0:30 | 65 | 5:15 |
-| 11 | Resultados – seleção e características | 0:20 | 43 | 5:35 |
+| 2 | Trajetória | 0:25 | 54 | 0:40 |
+| 3 | Introdução | 0:45 | 112 | 1:25 |
+| 4 | Objetivos | 0:23 | 55 | 1:48 |
+| 5 | Metodologia – mapa | 0:30 | 68 | 2:18 |
+| 6 | Passos 1 e 2 | 0:35 | 81 | 2:53 |
+| 7 | Passo 3 – seleção | 0:35 | 80 | 3:28 |
+| 8 | Passos 4 e 5 | 0:29 | 64 | 3:57 |
+| 9 | Passo 6 – metanálise | 0:50 | 110 | 4:47 |
+| 10 | Passo 7 – GRADE | 0:30 | 65 | 5:17 |
+| 11 | Resultados – seleção e características | 0:18 | 43 | 5:35 |
 | 12 | Resultado principal – ocular | 0:50 | 93 | 6:25 |
 | 13 | Respiratório e robustez | 0:25 | 47 | 6:50 |
 | 14 | Desfechos objetivos e GRADE | 0:40 | 94 | 7:30 |

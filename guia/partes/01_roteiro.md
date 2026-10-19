@@ -14,19 +14,20 @@ APOIO (não ler):
 
 ## Slide 2 — TRAJETÓRIA: Mais de um ano de preparação: formação, protocolo, leitura de 10.910 registros e análise
 
-[0:15–0:35] TRAJETÓRIA (~20 s · 40 palavras)
+[0:15–0:40] TRAJETÓRIA (~25 s · 54 palavras)
 FALA:
-Antes de começar, o caminho. Em julho de 2025 concluí o curso de revisão sistemática e metanálise da Unicamp, com distinção, e um de escrita científica; registrei o protocolo no PROSPERO e li, um a um, 10.910 títulos e resumos.
+Antes de começar, o caminho. Em julho de 2025 concluí o curso de revisão sistemática e metanálise da Unicamp, com distinção. Estudei o PRISMA 2020, o Cochrane Handbook, o manual do JBI e os livros de Borenstein e de Harrer; registrei o protocolo no PROSPERO e li, um a um, 10.910 títulos e resumos.
 
 APOIO (não ler):
 - Cursos: Revisão Sistemática e Metanálise (Unicamp, via Coursera), 40 h, com distinção (20/07/2025); Escrita Científica: Produção de Artigos de Alto Impacto (ZucoEscrita), 3,6 h (31/07/2025); Fiocruz: ABNT, 3 h (11/03/2026) e referências, 2 h (25/03/2026). Total ≈ 49 h.
-- Capas (falam por si; não precisa citar): Diretrizes Metodológicas do Ministério da Saúde (estudos observacionais; Sistema GRADE) e os checklists do JBI usados (prevalência, transversal analítico, coorte).
-- Busca final em 09/07/2026; triagem entre julho e agosto de 2026; depois extração, JBI, metanálise em Python, GRADE e manuscrito.
+- Linha de cima (citados no manuscrito): PRISMA 2020 (Page et al., 2021), guia de RELATO com 27 itens, checklist preenchido no Anexo H; Diretrizes Metodológicas do Ministério da Saúde (estudos observacionais; Sistema GRADE); checklists do JBI usados no risco de viés (prevalência, transversal analítico, coorte).
+- Linha de baixo (manuais e livros de estudo): JBI Manual for Evidence Synthesis (Aromataris; Munn, 2020; citado), com o capítulo de revisões de prevalência e incidência (CoCoPop); Cochrane Handbook (Higgins et al., 2ª ed., 2019), referência geral de condução: heterogeneidade, efeitos aleatórios, análises de sensibilidade; Borenstein et al., Introduction to Meta-Analysis (2ª ed., 2021): efeitos fixos vs aleatórios, I² e intervalo de predição; Harrer et al., Doing Meta-Analysis with R (2021): guia prático (Hartung-Knapp, GLMM, leave-one-out, Baujat), que segui implementando em Python.
+- Se perguntarem por que o Cochrane Handbook, o Borenstein e o Harrer não estão nas referências do manuscrito: foram material de estudo; o manuscrito cita os trabalhos específicos de cada método (Barker 2021, IntHout 2014, Riley 2011, Munn 2015).
 - A animação monta o slide sozinha (~3 s): comece a falar sem esperar. Não leia as legendas.
 
 ## Slide 3 — INTRODUÇÃO: Fumaça cirúrgica: o que é e por que importa
 
-[0:35–1:20] INTRODUÇÃO (~45 s · 112 palavras)
+[0:40–1:25] INTRODUÇÃO (~45 s · 112 palavras)
 FALA:
 Fumaça cirúrgica é o subproduto da destruição térmica dos tecidos pelo eletrocautério, pelo laser e pelo bisturi ultrassônico. Ela contém hidrocarbonetos aromáticos, compostos orgânicos voláteis como o benzeno, material particulado fino e ultrafino e até material genético viral, como o HPV.
 Quem trabalha no centro cirúrgico relata com frequência irritação ocular, tosse, irritação de mucosas e cefaleia. Os efeitos crônicos são plausíveis, mas sem relação causal estabelecida, e o tema é controverso. Enquanto isso, exaustão de fumaça e máscaras de alta filtração ainda são pouco adotadas, e as revisões anteriores eram descritivas. Por isso propusemos uma síntese em camadas: metanálise da prevalência dos sintomas e síntese narrativa, com GRADE, dos desfechos objetivos.
@@ -38,7 +39,7 @@ APOIO (não ler):
 
 ## Slide 4 — OBJETIVOS: Pergunta estruturada: PECO para os desfechos comparativos e CoCoPop para a prevalência
 
-[1:20–1:45] OBJETIVOS (~25 s · 55 palavras)
+[1:25–1:48] OBJETIVOS (~23 s · 55 palavras)
 FALA:
 O objetivo foi avaliar os desfechos de saúde da exposição ocupacional à fumaça cirúrgica, com ênfase na prevalência de sintomas, nos desfechos objetivos e nos biomarcadores. A pergunta seguiu o PECO e, para a prevalência, o CoCoPop, recomendado pelo JBI. Um alerta desde já: a metanálise de proporções estima frequência em expostos, não efeito causal.
 
@@ -50,7 +51,7 @@ APOIO (não ler):
 
 ## Slide 5 — METODOLOGIA: Mapa da revisão: 7 passos, do protocolo à certeza da evidência (PRISMA 2020)
 
-[1:45–2:15] METODOLOGIA – MAPA (~30 s · 68 palavras)
+[1:48–2:18] METODOLOGIA – MAPA (~30 s · 68 palavras)
 FALA:
 O método é a parte de que mais me orgulho, e vou apresentá-lo como um passo a passo em sete etapas, seguindo o relato PRISMA 2020: protocolo, busca, seleção, extração, risco de viés, síntese e certeza da evidência. Usei Zotero, Rayyan, OpenAlex e análise em Python. Um assistente de IA teve só apoio operacional; elegibilidade, extração e interpretação foram decisões humanas, e o código está aberto no OSF.
 
@@ -62,7 +63,7 @@ APOIO (não ler):
 
 ## Slide 6 — METODOLOGIA: Passos 1 e 2 · Critérios de elegibilidade e busca de alta sensibilidade
 
-[2:15–2:50] PASSOS 1 E 2 (~35 s · 81 palavras)
+[2:18–2:53] PASSOS 1 E 2 (~35 s · 81 palavras)
 FALA:
 Incluímos estudos observacionais com profissionais de centro cirúrgico expostos à fumaça, com qualquer efeito à saúde ou marcador de exposição, em português, inglês ou espanhol, sem limite de data. Resumos de congresso só entraram com eventos e denominador extraíveis, numa decisão posterior ao registro e declarada. A busca foi feita para máxima sensibilidade: dois blocos, população e exposição, sem filtro de idioma ou data, em sete bases, literatura cinzenta e busca por citação. Foram 16.757 registros, mais 443 referências por citação.
 
@@ -75,7 +76,7 @@ APOIO (não ler):
 
 ## Slide 7 — METODOLOGIA: Passo 3 · Seleção dos estudos: do registro bruto ao relatório incluído
 
-[2:50–3:25] PASSO 3 – SELEÇÃO (~35 s · 80 palavras)
+[2:53–3:28] PASSO 3 – SELEÇÃO (~35 s · 80 palavras)
 FALA:
 Os registros foram para o Rayyan, que removeu 5.839 duplicatas. Li título e resumo dos 10.910 registros únicos; um script e a IA ordenaram a fila e apoiaram a leitura, mas cada decisão foi minha. Trinta e dois relatórios foram buscados na íntegra, seis não foram recuperados, 26 foram avaliados e 22 incluídos. Um cuidado importante: sete publicações do mesmo grupo brasileiro tinham amostras sobrepostas, e cada análise usou um único representante, para não contar a mesma amostra duas vezes.
 
@@ -87,7 +88,7 @@ APOIO (não ler):
 
 ## Slide 8 — METODOLOGIA: Passos 4 e 5 · Extração padronizada e avaliação do risco de viés (JBI)
 
-[3:25–3:55] PASSOS 4 E 5 (~30 s · 64 palavras)
+[3:28–3:57] PASSOS 4 E 5 (~29 s · 64 palavras)
 FALA:
 A extração usou planilha padronizada: desenho, população, dispositivo, comparador, definição do desfecho e, para a metanálise, eventos e denominador; por exemplo, 33 de 81 profissionais com lacrimejamento no İlçe 2017. O risco de viés usou as ferramentas do JBI, escolhidas pela função de cada estudo. No semáforo, nenhum estudo teve preocupação baixa, sobretudo por amostragem não probabilística, taxa de resposta não relatada e autorrelato.
 
@@ -99,7 +100,7 @@ APOIO (não ler):
 
 ## Slide 9 — METODOLOGIA: Passo 6 · Metanálise de prevalência explicada: de 6–7 proporções a uma estimativa combinada
 
-[3:55–4:45] PASSO 6 – METANÁLISE (~50 s · 110 palavras) ← o coração da apresentação
+[3:57–4:47] PASSO 6 – METANÁLISE (~50 s · 110 palavras) ← o coração da apresentação
 FALA:
 A metanálise, em cinco passos. Um: cada estudo vira uma proporção, eventos sobre n. Dois: a transformação logito leva essa proporção para uma escala sem limites, mais próxima da normal, e garante resultados entre 0 e 100%. Três: modelo de efeitos aleatórios, porque a prevalência verdadeira varia entre hospitais e países; a variância entre estudos, o tau-quadrado, foi estimada por Paule-Mandel. Quatro: o ajuste de Hartung-Knapp torna o intervalo de confiança mais honesto com poucos estudos. Cinco: voltamos para porcentagem e relatamos o I² e o intervalo de predição, a faixa esperada para um novo estudo. A robustez foi testada com mais dois modelos, leave-one-out, Baujat e subgrupo por país.
 
@@ -113,7 +114,7 @@ APOIO (não ler):
 
 ## Slide 10 — METODOLOGIA: Passo 7 · Certeza da evidência: GRADE adaptado a desfechos de prevalência
 
-[4:45–5:15] PASSO 7 – GRADE (~30 s · 65 palavras)
+[4:47–5:17] PASSO 7 – GRADE (~30 s · 65 palavras)
 FALA:
 Por fim, a certeza da evidência pelo GRADE, em cinco domínios. Partimos de certeza baixa, por ser evidência observacional, e um domínio grave já leva a muito baixa. Dois cuidados: a evidência indireta não foi rebaixada nos sintomas, porque o sintoma relatado é o próprio desfecho, mas foi rebaixada nos desfechos objetivos, por coexposições e desfechos substitutos; e evitamos dupla contagem entre inconsistência e imprecisão.
 
@@ -125,7 +126,7 @@ APOIO (não ler):
 
 ## Slide 11 — RESULTADOS: Seleção (PRISMA 2020) e características dos 22 relatórios incluídos
 
-[5:15–5:35] RESULTADOS – SELEÇÃO E CARACTERÍSTICAS (~20 s · 43 palavras)
+[5:17–5:35] RESULTADOS – SELEÇÃO E CARACTERÍSTICAS (~18 s · 43 palavras)
 FALA:
 Este é o fluxograma PRISMA. Ficaram 22 relatórios de nove países, 19 transversais e três coortes. Depois do controle de sobreposição, seis amostras, com 756 profissionais, entraram na metanálise ocular e sete, com 1.428, na respiratória. Nenhum estudo teve preocupação baixa com viés.
 
