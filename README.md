@@ -40,6 +40,7 @@ igual e gerada por `build_deck.py`.
 | `apresentacao/ROTEIRO_VERSAO_ENXUTA.md` | Tempo por slide, relógio acumulado e a fala de cada slide |
 | `apresentacao/CADERNO_DO_ORADOR_VERSAO_ENXUTA.pdf` | Caderno do orador: cada slide (1–25) com miniatura, tempo, fala e notas de apoio; gerado por `gerar_caderno.py` |
 | `guia/GUIA_DE_ESTUDO_E_DEFESA.pdf` | Guia de estudo completo em PDF (método explicado, perguntas da banca com respostas, ficha de números) |
+| `guia/PERGUNTAS_DA_BANCA.pdf` | As 16 perguntas mais prováveis com resposta de 30 s e o slide a mostrar, mais o banco completo de 70 perguntas; gerado por `guia/gerar_perguntas.py` |
 | `apresentacao/build_deck_enxuto.py` + `notas_fala_enxuta.py` | Gerador e notas; capa, referências, agradecimentos, encerramento e apoio reaproveitam as funções `slide_*` de `build_deck.py` |
 
 ```bash
