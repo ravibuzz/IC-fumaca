@@ -1,4 +1,4 @@
-"""Notas do orador da VERSÃO ENXUTA (15 slides principais, ~7 min 40 s, mais slides de apoio para as perguntas).
+"""Notas do orador da VERSÃO ENXUTA (16 slides principais, ~7 min 50 s, mais slides de apoio para as perguntas).
 
 Mesmo formato de notas_fala.py:
   FALA  — o que dizer em voz alta; dimensionada para ~120 palavras/min, com folga para apontar a figura e respirar;
@@ -17,7 +17,7 @@ APOIO (não ler):
 
     "introducao": """INTRODUÇÃO
 FALA:
-Sempre que o eletrocautério, o laser ou o bisturi ultrassônico cortam tecido, formam fumaça. Ela contém benzeno e outros compostos voláteis, partículas ultrafinas e até DNA viral, como o do HPV. A equipe do centro cirúrgico está exposta a essa fumaça no trabalho e relata irritação nos olhos e nas vias aéreas; os efeitos crônicos são plausíveis, mas sem relação causal estabelecida. E as revisões anteriores eram majoritariamente descritivas: faltava combinar os estudos numa estimativa e graduar a certeza. Essa é a lacuna.
+Sempre que o eletrocautério, o laser ou o bisturi ultrassônico cortam tecido, formam fumaça, com benzeno e outros voláteis, partículas ultrafinas e até DNA viral, como o do HPV. A equipe do centro cirúrgico está exposta a ela no trabalho e relata irritação nos olhos e nas vias aéreas; os efeitos crônicos são plausíveis, mas sem relação causal estabelecida. As revisões anteriores eram majoritariamente descritivas: faltava combinar os estudos e graduar a certeza. Essa é a lacuna.
 
 APOIO (não ler):
 - Composição: hidrocarbonetos aromáticos policíclicos, compostos orgânicos voláteis (benzeno, tolueno, xileno), material particulado fino (PM2,5) e ultrafino (< 0,1 µm), material genético viral (Benaim; Jaspers, 2024).
@@ -25,14 +25,23 @@ APOIO (não ler):
 - Revisões anteriores sem síntese quantitativa: Mowbray et al., 2013; Dixon; Dasgupta; Vasdev, 2023.
 - A imagem é ilustrativa, gerada por IA (a legenda diz isso).""",
 
-    "objetivos": """OBJETIVO
+    "objetivos": """OBJETIVOS – GERAL E ESPECÍFICOS
 FALA:
-O objetivo foi avaliar os desfechos de saúde associados à exposição ocupacional à fumaça cirúrgica na equipe de centro cirúrgico, em três frentes: a prevalência de sintomas, por metanálise; os desfechos objetivos e biomarcadores, por síntese narrativa; e a certeza da evidência, pelo GRADE.
+O objetivo geral foi avaliar os desfechos de saúde associados à exposição ocupacional à fumaça cirúrgica na equipe de centro cirúrgico. Os específicos: estimar a prevalência de sintomas oculares e, de forma exploratória, respiratórios; sintetizar os achados sobre função pulmonar e biomarcadores; e avaliar a certeza da evidência.
 
 APOIO (não ler):
-- PECO, e não PICO, porque é exposição, não intervenção alocada. Para a prevalência, o esquema CoCoPop (Condição, Contexto, População; Munn et al., 2015), recomendado pelo JBI.
+- Cada objetivo específico tem o seu método: metanálise (1), síntese narrativa (2) e GRADE (3).
 - Ocular é o desfecho principal; respiratório é exploratório (definições mais variáveis).
 - A conclusão responde a estes três itens, na mesma ordem (1, 2, 3).""",
+
+    "peco": """PERGUNTA PECO
+FALA:
+A pergunta seguiu o PECO: na equipe de centro cirúrgico, a exposição ocupacional à fumaça dos dispositivos de energia, comparada a quem não é exposto ou se protege, e os efeitos à saúde como desfecho.
+
+APOIO (não ler):
+- PECO, e não PICO, porque é exposição, não intervenção alocada.
+- População: cirurgiões, residentes, enfermagem perioperatória, instrumentadores e anestesia. Comparador: não expostos, minimamente expostos ou com medidas de proteção.
+- O PECO orientou a busca e os desfechos comparativos; para a prevalência, o esquema CoCoPop (Condição, Contexto, População; Munn et al., 2015), recomendado pelo JBI.""",
 
     "metodo": """MÉTODO EM 7 PASSOS
 FALA:
@@ -43,19 +52,20 @@ APOIO (não ler):
 - 7 bases: PubMed/MEDLINE, Embase, Web of Science, Scopus, BVS (LILACS/IBECS), SciELO e Cochrane CENTRAL; cinzenta: Google Scholar (4 × 50 resultados) e Catálogo CAPES; citação: OpenAlex.
 - Ferramentas: Zotero 6, Rayyan, OpenAlex, Python 3.13 (NumPy, SciPy, statsmodels).
 - IA (declarada, Portaria CNPq nº 2.664/2026): priorização da ordem de leitura, leitura assistida de resumos e organização do fluxo; elegibilidade, extração, interpretação e redação foram decisões humanas.
-- Detalhes de elegibilidade e busca: slide de apoio 17.
+- Detalhes de elegibilidade e busca: slide de apoio 18.
 - As colunas aparecem sozinhas, uma a uma: comece a falar sem esperar.""",
 
     "selecao": """BUSCA E SELEÇÃO
 FALA:
-A busca trouxe 16.757 registros. Sem as duplicatas, li 10.910 títulos e resumos; 32 relatórios foram buscados na íntegra, seis não foram recuperados, 26 foram avaliados e 22 incluídos, de nove países. Um cuidado importante: sete publicações do mesmo grupo tinham amostras sobrepostas, e cada análise usou uma só, para não contar as mesmas pessoas duas vezes.
+A busca trouxe 16.757 registros. Sem as duplicatas, li 10.910 títulos e resumos, avaliei 26 relatórios na íntegra e incluí 22, de nove países. As metanálises reuniram seis e sete amostras independentes, sem contar a mesma pessoa duas vezes.
 
 APOIO (não ler):
 - Fluxo: 16.757 identificados → 16.749 importados (8 não exportados) → 5.839 duplicatas → 10.910 triados → 10.882 excluídos → 28 + 4 por citação = 32 buscados → 6 não recuperados → 26 avaliados → 4 excluídos (1 resumo sem dados; 3 por população ou contexto) → 22 incluídos.
+- Busca de alta sensibilidade: 7 bases, literatura cinzenta e busca por citação; sem filtro de idioma ou data; última busca em 09/07/2026.
 - 19 transversais e 3 coortes prospectivas; países: Turquia, Malásia, Brasil, Paquistão, China, México, EUA, Sudão e Tailândia.
-- Representante do grupo com sobreposição (Paraná): Bieniek et al., 2022, definido antes da síntese.
+- Sobreposição amostral: 7 publicações do mesmo grupo (Paraná); 1 representante por análise (Bieniek et al., 2022), definido antes da síntese.
 - Triagem por revisor único: limitação declarada; replicar em duplicata está nas perspectivas.
-- Fluxograma PRISMA completo: slide de apoio 18.""",
+- Fluxograma PRISMA completo: slide de apoio 19.""",
 
     "metanalise": """COMO OS ESTUDOS FORAM COMBINADOS
 FALA:
@@ -67,7 +77,7 @@ APOIO (não ler):
 - Intervalo de predição com t (k − 2); instável com menos de 10 estudos.
 - Sem teste de Egger nem funil: em proporções o erro-padrão depende da própria proporção, e os testes pedem ≥ 10 estudos.
 - GRADE: ponto de partida baixa (observacional); um domínio grave já leva a muito baixa.
-- Detalhes: slides de apoio 19 (extração e JBI), 20 (metanálise) e 21 (GRADE).""",
+- Detalhes: slides de apoio 20 (extração e JBI), 21 (metanálise) e 22 (GRADE).""",
 
     "ocular": """RESULTADO PRINCIPAL – OCULAR ← dê tempo a este slide
 FALA:
@@ -88,7 +98,7 @@ APOIO (não ler):
 - IC95% 30,4–53,9; intervalo de predição 15–74%; I² = 91%.
 - Leave-one-out: ocular 34,3–42,1%; respiratório 38,9–45,5%. Sem o resumo de congresso: 42,1% e 42,4%.
 - Só definições específicas: ocular 36,5% (I² 94%); respiratório 35,8% (I² 61%).
-- Tabela completa e subgrupo por país: slide de apoio 22.""",
+- Tabela completa e subgrupo por país: slide de apoio 23.""",
 
     "objetivos_bio": """DESFECHOS OBJETIVOS E BIOMARCADORES
 FALA:
@@ -99,7 +109,7 @@ APOIO (não ler):
 - Canicoba 2025 (52 vs 49): ácido t,t-mucônico 202,9 vs 46,1 µg/L (benzeno); metil-hipúrico 468,2 vs 184,4 µg/L (xileno); malondialdeído 9,33 vs 3,22 nmol/mg; sem IC95%; t,t-mucônico é inespecífico (dieta, tabagismo).
 - Navarro 2016: 16/23 vs 1/20; RR 13,9 (IC95% 2,0–95,8), IC amplo por 1 evento no grupo não exposto.
 - Hu 2021: 42/469 vs 4/231; RR 5,2 (IC95% 1,9–14,2); DNA ≠ infecção ou doença; achado da N95 (0/196) sem ajuste.
-- Coexposições (gases anestésicos, radiação) limitam a atribuição. Detalhes: slide de apoio 23.""",
+- Coexposições (gases anestésicos, radiação) limitam a atribuição. Detalhes: slide de apoio 24.""",
 
     "discussao": """DISCUSSÃO
 FALA:
@@ -109,7 +119,7 @@ APOIO (não ler):
 - Viés de atribuição: o respondente sabe que o tema é fumaça. Trabalhador sadio: quem adoece sai do centro cirúrgico (subestima).
 - Heterogeneidade: definição do sintoma e recordatório, composição profissional, tempo de exposição, exaustão e EPI.
 - A favor da causalidade: gradiente com o tempo de exposição, temporalidade (coorte), plausibilidade. Contra: um estudo por desfecho, IC amplos, coexposições.
-- Lista completa de pontos fortes e limitações: slide de apoio 24.
+- Lista completa de pontos fortes e limitações: slide de apoio 25.
 - ATITUDE: fale as limitações com segurança; a banca valoriza quem conhece as fraquezas do próprio trabalho.""",
 
     "conclusao": """CONCLUSÃO – RESPOSTA AO OBJETIVO
@@ -140,25 +150,25 @@ FALA:
 Agradeço à Profa. Lisie, aos coautores e à São Leopoldo Mandic. Obrigado; estou à disposição para perguntas.
 
 APOIO (não ler):
-- Ao dizer "perguntas", AVANCE para o slide 15 (QR code grande) e deixe-o na tela durante a arguição.""",
+- Ao dizer "perguntas", AVANCE para o slide 16 (QR code grande) e deixe-o na tela durante a arguição.""",
 
     "encerramento": """ENCERRAMENTO
 Deixe este slide na tela durante as perguntas. Ouça a pergunta inteira, repita-a em uma frase e responda em 30 a 40 segundos.
-SLIDES DE APOIO (depois deste; no modo de apresentação, digite o número e Enter para ir direto, e 15 + Enter para voltar):
-16 Trajetória e aprendizado (se perguntarem como foi a formação ou o que aprendeu)
-17 Elegibilidade e busca por base
-18 Fluxograma PRISMA completo e características dos estudos
-19 Extração e risco de viés (JBI)
-20 Metanálise passo a passo e verificações de robustez
-21 GRADE: domínios e decisões
-22 Sintoma respiratório: tabela de robustez e subgrupo por país
-23 Desfechos objetivos em detalhe
-24 Pontos fortes e limitações""",
+SLIDES DE APOIO (depois deste; no modo de apresentação, digite o número e Enter para ir direto, e 16 + Enter para voltar):
+17 Trajetória e aprendizado (se perguntarem como foi a formação ou o que aprendeu)
+18 Elegibilidade e busca por base
+19 Fluxograma PRISMA completo e características dos estudos
+20 Extração e risco de viés (JBI)
+21 Metanálise passo a passo e verificações de robustez
+22 GRADE: domínios e decisões
+23 Sintoma respiratório: tabela de robustez e subgrupo por país
+24 Desfechos objetivos em detalhe
+25 Pontos fortes e limitações""",
 }
 
 # Slides de apoio: mostrados só se perguntarem. As notas são para consulta, sem tempo de fala.
 APOIO = {
-    "trajetoria": """APOIO 16 – TRAJETÓRIA E APRENDIZADO (mostre só se perguntarem sobre a formação ou o aprendizado)
+    "trajetoria": """APOIO 17 – TRAJETÓRIA E APRENDIZADO (mostre só se perguntarem sobre a formação ou o aprendizado)
 Se derem a oportunidade, em 20 a 30 segundos:
 Em julho de 2025 concluí o curso de revisão sistemática e metanálise da Unicamp, com distinção. Estudei o PRISMA 2020, o Cochrane Handbook, o manual do JBI e os livros de Borenstein e de Harrer; registrei o protocolo no PROSPERO e li, um a um, 10.910 títulos e resumos.
 (Feche com o seu aprendizado, nas suas palavras; por exemplo: ler a heterogeneidade com honestidade, relatando o intervalo de predição em vez de um número único.)
@@ -167,40 +177,40 @@ PONTOS-CHAVE:
 - Cursos: Unicamp (40 h, com distinção, 20/07/2025); ZucoEscrita (3,6 h); Fiocruz ABNT (3 h) e referências (2 h). Total ≈ 49 h.
 - Cochrane Handbook, Borenstein e Harrer foram material de estudo; o manuscrito cita os trabalhos específicos de cada método (Barker 2021, IntHout 2014, Riley 2011, Munn 2015).""",
 
-    "passos12": """APOIO 17 – ELEGIBILIDADE E BUSCA
+    "passos12": """APOIO 18 – ELEGIBILIDADE E BUSCA
 - Incluídos: observacionais com profissionais de centro cirúrgico expostos; qualquer efeito à saúde ou marcador de exposição; português, inglês ou espanhol; sem limite de data; resumos de congresso só com eventos e denominador (decisão posterior ao registro, declarada).
 - Excluídos: in vitro ou animais; fora do centro cirúrgico; desfecho só no paciente; só medição do ar; revisões, editoriais e cartas; exposição não atribuível à fumaça.
 - Busca em dois blocos (população AND exposição), sem bloco de desfecho, para máxima sensibilidade. Cochrane CENTRAL = 0 era esperado (indexa ensaios clínicos).""",
 
-    "selecao": """APOIO 18 – FLUXOGRAMA PRISMA E CARACTERÍSTICAS
+    "selecao": """APOIO 19 – FLUXOGRAMA PRISMA E CARACTERÍSTICAS
 - Fluxograma da Figura 1 do manuscrito; não recuperados e excluídos no Anexo C.
 - A busca por citação (443 referências) trouxe 4 relatórios, que entram em "Buscados na íntegra" (28 + 4 = 32).
 - Entre os 7 estudos das metanálises, só Mohd Fikri Rosely e Titi Rahmawati (2019) usaram amostragem aleatória; nenhum estudo com preocupação baixa de viés.""",
 
-    "passos45": """APOIO 19 – EXTRAÇÃO E RISCO DE VIÉS (JBI)
+    "passos45": """APOIO 20 – EXTRAÇÃO E RISCO DE VIÉS (JBI)
 - Listas JBI por função do estudo: prevalência (9 itens), transversal analítico (8), coorte (11).
 - Julgamento global qualitativo pelos domínios críticos (amostragem, tamanho, validade da mensuração, taxa de resposta); "não" pesa mais que "incerto". Todos os estudos foram mantidos e a classificação alimentou o GRADE.
 - Por que JBI: tem lista específica para prevalência, alinhada ao CoCoPop; Newcastle-Ottawa não cobre prevalência e o ROBINS-E é para efeito comparativo de exposição.""",
 
-    "passo6": """APOIO 20 – METANÁLISE PASSO A PASSO E ROBUSTEZ
+    "passo6": """APOIO 21 – METANÁLISE PASSO A PASSO E ROBUSTEZ
 - Proporção → logito → efeitos aleatórios (Paule-Mandel) → Hartung-Knapp → retrotransformação, I² e intervalo de predição.
 - Robustez: Freeman-Tukey (DerSimonian-Laird), GLMM logístico, leave-one-out, Baujat, subgrupo por país, sem o resumo de congresso e só definições específicas.
 - Analogia: efeitos fixos = todos medem a mesma coisa com ruído; efeitos aleatórios = cada estudo tem a sua prevalência, e queremos a média e a dispersão delas.""",
 
-    "passo7": """APOIO 21 – GRADE
+    "passo7": """APOIO 22 – GRADE
 - Ponto de partida baixa (observacional); um domínio grave já leva a muito baixa. Começar em alta não mudaria a certeza final.
 - Evidência indireta não rebaixada nos sintomas (o sintoma é o próprio desfecho); rebaixada nos objetivos (coexposições, desfechos substitutos).
 - Sem dupla contagem: intervalo de predição em inconsistência; IC95% em imprecisão.""",
 
-    "respiratorio": """APOIO 22 – TABELA DE ROBUSTEZ E SUBGRUPO POR PAÍS
+    "respiratorio": """APOIO 23 – TABELA DE ROBUSTEZ E SUBGRUPO POR PAÍS
 - Subgrupo ocular: Turquia 50,5% (k = 3; I² 57%); Malásia 19,8% (k = 2; I² 0%); Brasil 43,2% (k = 1); p < 0,001, mas exploratório (poucos estudos e um resumo de congresso na Malásia).
 - Baujat: no ocular, Mohd Fikri Rosely 2022 é o mais influente; o I² ocular segue alto sem ele (89%) ou sem Bieniek (94%).""",
 
-    "objetivos_bio": """APOIO 23 – DESFECHOS OBJETIVOS EM DETALHE
+    "objetivos_bio": """APOIO 24 – DESFECHOS OBJETIVOS EM DETALHE
 - Cada desfecho vem de um único estudo; comparações não combinadas (desenhos e desfechos heterogêneos).
 - Cautelas: VEF1/CVF ≈ 91% nos dois grupos e PFE depende do esforço; t,t-mucônico inespecífico; metaplasia é resposta inespecífica a irritantes; DNA de HPV ≠ infecção ou doença.""",
 
-    "limitacoes": """APOIO 24 – PONTOS FORTES E LIMITAÇÕES
+    "limitacoes": """APOIO 25 – PONTOS FORTES E LIMITAÇÕES
 - Fortes: busca ampla, protocolo registrado, PRISMA 2020, JBI, intervalo de predição, 3 modelos concordantes, GRADE por desfecho, OSF.
 - Limitações: transversais e autorrelato; sem grupo não exposto nos agrupamentos; trabalhador sadio; heterogeneidade; revisor único; 6 não recuperados; elegibilidade em 3 idiomas.""",
 }

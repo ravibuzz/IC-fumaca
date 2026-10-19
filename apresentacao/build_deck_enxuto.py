@@ -4,7 +4,8 @@ Uso:  python3 build_deck_enxuto.py  [saida.pptx]
 
 Pedido da orientadora: slides mais limpos, tempo cronometrado e foco em como o trabalho foi feito e na resposta ao
 objetivo. Cada slide tem uma mensagem (o subtítulo é a frase-chave) e um destaque visual; os detalhes foram para as notas
-e para os slides de apoio, depois do encerramento, mostrados só se perguntarem. Capa, referências, agradecimentos,
+e para os slides de apoio, depois do encerramento, mostrados só se perguntarem.
+Segunda rodada (orientadora): objetivos específicos escritos, PECO num slide próprio e fluxograma de seleção menor. Capa, referências, agradecimentos,
 encerramento e slides de apoio reaproveitam as funções de build_deck.py.
 Também grava ROTEIRO_VERSAO_ENXUTA.md: tempo por slide, relógio acumulado e a fala de cada slide.
 """
@@ -89,43 +90,91 @@ def slide_introducao(deck):
 
 
 # =====================================================================
-# 3 — OBJETIVO (os itens 1, 2 e 3 voltam na conclusão)
+# 3 — OBJETIVOS: geral + específicos (os itens 1, 2 e 3 voltam na conclusão)
 # =====================================================================
-OBJETIVOS = [
-    ("Prevalência de sintomas", "Metanálise", "ocular (principal) e respiratório (exploratório)"),
-    ("Desfechos objetivos e biomarcadores", "Síntese narrativa", "função pulmonar, urina, mucosa nasal e HPV"),
-    ("Certeza da evidência", "GRADE", "por desfecho, em cinco domínios"),
+OBJETIVOS = [  # (título usado na conclusão, verbo, resto do objetivo específico, método, ícone)
+    ("Prevalência de sintomas", "Estimar",
+     " a prevalência de sintomas oculares e, de forma exploratória, respiratórios entre profissionais expostos à "
+     "fumaça cirúrgica.", "Metanálise", "chart"),
+    ("Desfechos objetivos e biomarcadores", "Sintetizar",
+     " os achados sobre função pulmonar e biomarcadores de exposição e de efeitos à saúde.", "Síntese narrativa", "book"),
+    ("Certeza da evidência", "Avaliar", " a certeza da evidência para os desfechos investigados.", "GRADE", "target"),
 ]
 
 
 def slide_objetivos(deck):
-    s = deck.content_slide("OBJETIVOS", "Pergunta: que desfechos de saúde se associam à exposição à fumaça cirúrgica?")
-    OB_H = 1.55
-    rect(s, L, Y0, R - L, OB_H, fill=NAVY)
-    tb(s, L + 0.45, Y0 + 0.15, R - L - 0.9, OB_H - 0.3,
-       [[("Objetivo geral: ", {"bold": True, "color": GOLD}),
-         ("avaliar os desfechos de saúde associados à exposição ocupacional à fumaça cirúrgica na equipe de centro "
-          "cirúrgico.", {})]], size=24, color=WHITE, space_after=0, anchor=MSO_ANCHOR.MIDDLE)
-    CY, CH = Y0 + OB_H + GAP + 0.1, 3.45
-    for i, ((x, w), (t, como, oque)) in enumerate(zip(cols(3), OBJETIVOS), start=1):
-        rect(s, x, CY, w, CH, fill=LIGHT)
-        circle(s, x + PAD + 0.45, CY + PAD + 0.45, 0.9, fill=NAVY, text=str(i), size=30)
-        tb(s, x + PAD + 1.15, CY + PAD, w - 2 * PAD - 1.15, 0.9, [t], size=22, color=NAVY, bold=True, space_after=0,
-           anchor=MSO_ANCHOR.MIDDLE)
-        tb(s, x + PAD, CY + PAD + 1.05, w - 2 * PAD, CH - 2 * PAD - 1.05,
-           [{"runs": [(como, {"bold": True, "color": RED, "size": 26})], "space_after": 6}, oque],
-           size=21, color=INK, space_after=0, anchor=MSO_ANCHOR.MIDDLE)
-    PL_Y = CY + CH + 0.35
-    tb(s, L, PL_Y, R - L, 0.4, [[("Pergunta estruturada (PECO)", {"bold": True, "color": NAVY})]], size=18, space_after=0)
-    peco = [("P", "População", "Equipe de centro cirúrgico"), ("E", "Exposição", "Fumaça de dispositivos de energia"),
-            ("C", "Comparador", "Não ou pouco expostos, ou protegidos"), ("O", "Desfecho", "Efeitos à saúde")]
-    PY = PL_Y + 0.5
-    for (x, w), (letter, name, val) in zip(cols(4), peco):
-        rect(s, x, PY, w, YB - PY, fill=TEAL_TINT)
-        circle(s, x + PAD + 0.45, PY + (YB - PY) / 2, 0.9, fill=TEAL, text=letter, size=28)
-        tb(s, x + PAD + 1.15, PY + 0.15, w - 2 * PAD - 1.15, YB - PY - 0.3,
-           [{"runs": [(name, {"bold": True, "color": TEAL, "size": 20})], "space_after": 2}, val], size=19, color=INK,
-           space_after=0, anchor=MSO_ANCHOR.MIDDLE)
+    s = deck.content_slide("OBJETIVOS", "Um objetivo geral, três objetivos específicos")
+    b = Build(s)
+    OB_H = 1.75
+    with b.step():
+        rect(s, L, Y0, R - L, OB_H, fill=NAVY)
+        icon_badge(s, "target", L + PAD + 0.5, Y0 + OB_H / 2, d=1.0, fill=GOLD)
+        tb(s, L + PAD + 1.3, Y0 + 0.15, R - L - 2 * PAD - 1.3, OB_H - 0.3,
+           [[("Objetivo geral: ", {"bold": True, "color": GOLD}),
+             ("avaliar os desfechos de saúde associados à exposição ocupacional à fumaça cirúrgica na equipe de "
+              "centro cirúrgico.", {})]], size=24, color=WHITE, space_after=0, anchor=MSO_ANCHOR.MIDDLE)
+    LB_Y = Y0 + OB_H + 0.3
+    tb(s, L, LB_Y, R - L, 0.45, [[("Objetivos específicos", {"bold": True, "color": NAVY})]], size=21, space_after=0)
+    RY0 = LB_Y + 0.6
+    RH = (YB - RY0 - 2 * GAP) / 3
+    PW = 3.6  # pílula do método, à direita
+    for i, (_, verbo, resto, metodo, ic) in enumerate(OBJETIVOS):
+        y = RY0 + i * (RH + GAP)
+        with b.step():
+            rect(s, L, y, R - L, RH, fill=LIGHT)
+            rect(s, L, y, 0.12, RH, fill=RED, radius=0)  # filete de destaque
+            circle(s, L + PAD + 0.55, y + RH / 2, 1.0, fill=NAVY, text=str(i + 1), size=32)
+            tx = L + PAD + 1.35
+            tb(s, tx, y + 0.1, R - PAD - PW - 0.35 - tx, RH - 0.2,
+               [[(verbo, {"bold": True, "color": RED}), (resto, {})]], size=22, color=INK, space_after=0,
+               anchor=MSO_ANCHOR.MIDDLE)
+            px = R - PAD - PW
+            rect(s, px, y + (RH - 0.95) / 2, PW, 0.95, fill=WHITE, line=rgb("C9CFDA"), radius=0.5)
+            icon_badge(s, ic, px + 0.5, y + RH / 2, d=0.7, fill=TEAL)
+            tb(s, px + 0.95, y + (RH - 0.95) / 2, PW - 1.05, 0.95, [metodo], size=20, color=TEAL, bold=True,
+               space_after=0, anchor=MSO_ANCHOR.MIDDLE)
+    b.apply()
+    return s
+
+
+# =====================================================================
+# 4 — PERGUNTA PECO
+# =====================================================================
+def slide_peco(deck):
+    s = deck.content_slide("OBJETIVOS", "A pergunta de pesquisa, estruturada pelo PECO")
+    b = Build(s)
+    peco = [
+        ("P", "População", NAVY, NAVY_TINT, "Equipe de centro cirúrgico",
+         "cirurgiões, residentes, enfermagem, instrumentação e anestesia"),
+        ("E", "Exposição", RED, RED_TINT, "Fumaça cirúrgica no trabalho",
+         "eletrocautério, laser e bisturi ultrassônico"),
+        ("C", "Comparador", TEAL, TEAL_TINT, "Não ou pouco expostos",
+         "ou com medidas de proteção"),
+        ("O", "Desfecho", DARK_GOLD, GOLD_TINT, "Efeitos à saúde",
+         "sintomas, função pulmonar e biomarcadores"),
+    ]
+    BAND_H = 1.75
+    CH = YB - BAND_H - GAP - Y0
+    for (x, w), (letra, nome, cor, tint, principal, detalhe) in zip(cols(4), peco):
+        with b.step():
+            rect(s, x, Y0, w, CH, fill=tint)
+            circle(s, x + w / 2, Y0 + PAD + 1.0, 2.0, fill=cor, text=letra, size=66)
+            # rótulo, frase principal e detalhe em alturas fixas: alinhados entre os quatro cards
+            tb(s, x + PAD, Y0 + 2.6, w - 2 * PAD, 0.5, [nome.upper()], size=21, color=cor, bold=True,
+               align=PP_ALIGN.CENTER, space_after=0)
+            tb(s, x + PAD, Y0 + 3.15, w - 2 * PAD, 1.15, [principal], size=26, color=INK, bold=True,
+               align=PP_ALIGN.CENTER, space_after=0, anchor=MSO_ANCHOR.MIDDLE, line_spacing=0.95)
+            tb(s, x + PAD, Y0 + 4.45, w - 2 * PAD, CH - 4.45 - PAD, [detalhe], size=21, color=GRAY,
+               align=PP_ALIGN.CENTER, space_after=0)
+    with b.step():
+        rect(s, L, YB - BAND_H, R - L, BAND_H, fill=NAVY)
+        icon(s, "question", L + PAD, YB - BAND_H + (BAND_H - 0.75) / 2, 0.75, color="gold")
+        tb(s, L + PAD + 1.05, YB - BAND_H + 0.15, R - L - 2 * PAD - 1.05, BAND_H - 0.3,
+           [[("Pergunta: ", {"bold": True, "color": GOLD}),
+             ("na equipe de centro cirúrgico, quais desfechos de saúde se associam à exposição ocupacional à "
+              "fumaça cirúrgica, em comparação com quem não é exposto ou se protege?", {})]],
+           size=22, color=WHITE, space_after=0, anchor=MSO_ANCHOR.MIDDLE)
+    b.apply()
     return s
 
 
@@ -185,51 +234,53 @@ def slide_metodo(deck):
 
 
 # =====================================================================
-# 5 — BUSCA E SELEÇÃO (passos 2 e 3)
+# 5 — BUSCA E SELEÇÃO (passos 2 e 3): fluxograma compacto em funil
 # =====================================================================
 def slide_selecao(deck):
     s = deck.content_slide("METODOLOGIA", "Passos 2 e 3 · Da busca ampla aos 22 relatórios incluídos", track={2, 3})
     b = Build(s)
-    flow = [("16.757", "registros identificados", NAVY), ("10.910", "títulos e resumos lidos", NAVY),
-            ("32", "buscados na íntegra", NAVY), ("26", "avaliados na íntegra", NAVY), ("22", "relatórios incluídos", RED)]
-    between = [["− 5.839", "duplicatas", "− 8 não", "exportados"], ["− 10.882", "excluídos", "+ 4 por", "citação"],
-               ["− 6 não", "recuperados"], ["− 4", "excluídos"]]
-    FB_H = 2.9
-    bw, bg = 2.5, (R - L - 5 * 2.5) / 4
-    for i, (num, lab, col) in enumerate(flow):
-        x = L + i * (bw + bg)
+    FX1 = 12.0                      # funil à esquerda; destaques à direita
+    cx = (L + FX1) / 2
+    niveis = [("16.757", "registros identificados", 10.75, NAVY),
+              ("10.910", "títulos e resumos lidos", 9.0, NAVY),
+              ("26", "relatórios lidos na íntegra", 7.25, TEAL),
+              ("22", "relatórios incluídos", 5.5, RED)]
+    saidas = ["− 5.839 duplicatas  ·  − 8 não exportados",
+              ["− 10.882 na triagem  ·  + 4 por citação", "− 6 não recuperados"],
+              "− 4 excluídos (1 resumo; 3 população ou contexto)"]
+    SG = 0.68
+    BH = (YBT - Y0 - 3 * SG) / 4         # base do funil alinhada com a dos cards à direita
+    for i, (num, lab, w, cor) in enumerate(niveis):
+        y = Y0 + i * (BH + SG)
         with b.step():
             if i > 0:
-                px = x - bg
-                line(s, px + 0.1, Y0 + 0.95, x - 0.1, Y0 + 0.95, color=NAVY, width=2.5, arrow=True)
-                tb(s, px + 0.06, Y0 + 1.15, bg - 0.12, 1.4, between[i - 1], size=15, color=GRAY, align=PP_ALIGN.CENTER,
-                   space_after=0, line_spacing=0.95)
-            rect(s, x, Y0, bw, FB_H, fill=RED_TINT if col == RED else LIGHT)
-            tb(s, x + 0.12, Y0 + 0.15, bw - 0.24, FB_H - 0.3, [
-                {"runs": [(num, {"bold": True, "color": col, "size": 46})], "space_after": 6}, lab], size=20,
-               color=INK, align=PP_ALIGN.CENTER, space_after=0, anchor=MSO_ANCHOR.MIDDLE)
-    CA_Y = Y0 + FB_H + 0.45
-    CA_H = YBT - CA_Y
-    (c1x, c1w), (c2x, c2w), (c3x, c3w) = cols(3)
+                gy = y - SG
+                line(s, cx, gy + 0.05, cx, y - 0.05, color=GRAY, width=2.5, arrow=True)
+                said = saidas[i - 1]
+                tb(s, cx + 0.25, gy, FX1 - cx - 0.25, SG, said if isinstance(said, list) else [said], size=16, color=GRAY, space_after=0,
+                   anchor=MSO_ANCHOR.MIDDLE)
+            rect(s, cx - w / 2, y, w, BH, fill=cor, radius=0.18)
+            tb(s, cx - w / 2 + 0.2, y, w - 0.4, BH,
+               [[(num + "  ", {"bold": True, "size": 44}), (lab, {})]], size=22, color=WHITE,
+               align=PP_ALIGN.CENTER, space_after=0, anchor=MSO_ANCHOR.MIDDLE)
+    RX = FX1 + 0.45
+    RW = R - RX
+    H2 = (YBT - Y0 - GAP) / 2
     with b.step():
-        bloco(s, c1x, CA_Y, c1w, CA_H, "Busca de alta sensibilidade", [
-            [("7 bases", {"bold": True}), (", literatura cinzenta e busca por citação", {})],
-            [("Sem filtro de idioma ou data", {"bold": True})],
-            "Última busca: 09/07/2026",
-        ], "search", bullet=True, body_size=21, space_after=10)
+        rect(s, RX, Y0, RW, H2, fill=RED_TINT)
+        tb(s, RX + PAD, Y0 + PAD, RW - 2 * PAD, H2 - 2 * PAD, [
+            {"runs": [("6 | 7", {"bold": True, "color": RED, "size": 60})], "space_after": 4},
+            {"runs": [("amostras independentes nas metanálises", {"bold": True})], "space_after": 6},
+            {"runs": [("ocular n = 756 · respiratório n = 1.428", {"color": GRAY})]},
+        ], size=20, color=INK, align=PP_ALIGN.CENTER, space_after=0, anchor=MSO_ANCHOR.MIDDLE)
     with b.step():
-        bloco(s, c2x, CA_Y, c2w, CA_H, "Ninguém contado duas vezes", [
-            "7 publicações do mesmo grupo, com amostras sobrepostas",
-            [("1 representante por análise", {"bold": True}), (", definido antes da síntese", {})],
-        ], "people", bullet=True, body_size=21, space_after=10)
-    with b.step():
-        rect(s, c3x, CA_Y, c3w, CA_H, fill=RED_TINT)
-        tb(s, c3x + PAD, CA_Y + PAD, c3w - 2 * PAD, CA_H - 2 * PAD, [
-            {"runs": [("6 | 7", {"bold": True, "color": RED, "size": 54})], "space_after": 4},
-            {"runs": [("amostras independentes nas metanálises", {"bold": True})], "space_after": 4},
-            "ocular: n = 756 · respiratório: n = 1.428",
-            {"runs": [("9 países · 19 transversais + 3 coortes", {"color": GRAY})], "space_before": 10},
-        ], size=20, color=INK, space_after=0, anchor=MSO_ANCHOR.MIDDLE)
+        y2 = Y0 + H2 + GAP
+        rect(s, RX, y2, RW, H2, fill=NAVY)
+        tb(s, RX + PAD, y2 + PAD, RW - 2 * PAD, H2 - 2 * PAD, [
+            {"runs": [("9 países", {"bold": True, "color": GOLD, "size": 48})], "space_after": 6},
+            {"runs": [("19 transversais + 3 coortes", {"bold": True})], "space_after": 6},
+            {"runs": [("busca sem filtro de idioma ou data", {"color": rgb("C9CFDA")})]},
+        ], size=20, color=WHITE, align=PP_ALIGN.CENTER, space_after=0, anchor=MSO_ANCHOR.MIDDLE)
     b.apply()
     return s
 
@@ -473,7 +524,7 @@ def slide_conclusao(deck):
                                                           "ou DPOC.", {})],
     ]
     rh = (TOP_B - Y0 - 2 * GAP) / 3
-    for i, ((t, _, _), body) in enumerate(zip(OBJETIVOS, respostas)):
+    for i, ((t, *_), body) in enumerate(zip(OBJETIVOS, respostas)):
         y = Y0 + i * (rh + GAP)
         with b.step():
             rect(s, L, y, LW, rh, fill=LIGHT)
@@ -543,9 +594,9 @@ def slide_perspectivas(deck):
 # =====================================================================
 # ordem, tempos e montagem
 # =====================================================================
-ROTEIRO = [("capa", completo.slide_capa, 15), ("introducao", slide_introducao, 45), ("objetivos", slide_objetivos, 25),
-           ("metodo", slide_metodo, 50), ("selecao", slide_selecao, 35), ("metanalise", slide_metanalise, 50),
-           ("ocular", slide_ocular, 55), ("respiratorio", slide_respiratorio, 35),
+ROTEIRO = [("capa", completo.slide_capa, 15), ("introducao", slide_introducao, 40), ("objetivos", slide_objetivos, 30),
+           ("peco", slide_peco, 20), ("metodo", slide_metodo, 45), ("selecao", slide_selecao, 25),
+           ("metanalise", slide_metanalise, 50), ("ocular", slide_ocular, 55), ("respiratorio", slide_respiratorio, 35),
            ("objetivos_bio", slide_objetivos_bio, 45), ("discussao", slide_discussao, 40),
            ("conclusao", slide_conclusao, 35), ("perspectivas", slide_perspectivas, 15),
            ("referencias", completo.slide_referencias, 5), ("agradecimentos", completo.slide_agradecimentos, 10),
@@ -573,9 +624,10 @@ def gravar_roteiro(prs, n_principais):
         a, b = int(m.group(1)) * 60 + int(m.group(2)), int(m.group(3)) * 60 + int(m.group(4))
         fim = b
         secao = re.sub(r"\s*\(~\d+ s[^)]*\).*$", "", m.group(5)).split("←")[0].strip()
+        secao = secao.capitalize().replace("peco", "PECO")
         pal = len(fala.group(1).split()) if fala else 0
-        linhas.append(f"| {i} | {secao.capitalize()} | {b - a} s | {pal} | {mmss(a)} → {mmss(b)} |")
-        falas.append(f"### {i}. {secao.capitalize()}  ·  {mmss(a)} → {mmss(b)}\n\n{fala.group(1).strip() if fala else ''}\n")
+        linhas.append(f"| {i} | {secao} | {b - a} s | {pal} | {mmss(a)} → {mmss(b)} |")
+        falas.append(f"### {i}. {secao}  ·  {mmss(a)} → {mmss(b)}\n\n{fala.group(1).strip() if fala else ''}\n")
     total_pal = sum(int(ln.split("|")[4]) for ln in linhas if ln.split("|")[4].strip().isdigit())
     md = [
         "# Roteiro cronometrado — versão enxuta",
@@ -585,7 +637,7 @@ def gravar_roteiro(prs, n_principais):
         "",
         "Ensaie com cronômetro: se em algum marco do relógio você estiver mais de 15 s atrasado, corte o detalhe do "
         "slide seguinte e siga a frase-chave (o subtítulo). Os slides de apoio, depois do encerramento, ficam para as "
-        "perguntas; o aprendizado (slide de apoio 16) só se a banca der a oportunidade.",
+        "perguntas; o aprendizado (slide de apoio 17) só se a banca der a oportunidade.",
         "",
         "| Slide | Seção | Tempo | Palavras | Relógio |",
         "|---|---|---|---|---|",

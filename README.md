@@ -36,9 +36,9 @@ igual e gerada por `build_deck.py`.
 
 | Caminho | O que é |
 |---|---|
-| `apresentacao/SEMICA_Fumaca_Cirurgica_Baccaro_ENXUTA.pptx` / `.pdf` | 15 slides principais (fala de ~7:40, com folga para os 10 min) + 9 slides de apoio depois do encerramento |
+| `apresentacao/SEMICA_Fumaca_Cirurgica_Baccaro_ENXUTA.pptx` / `.pdf` | 16 slides principais (fala de ~7:45, com folga para os 10 min) + 9 slides de apoio depois do encerramento |
 | `apresentacao/ROTEIRO_VERSAO_ENXUTA.md` | Tempo por slide, relógio acumulado e a fala de cada slide |
-| `apresentacao/CADERNO_DO_ORADOR_VERSAO_ENXUTA.pdf` | Caderno do orador: cada slide (1–24) com miniatura, tempo, fala e notas de apoio; gerado por `gerar_caderno.py` |
+| `apresentacao/CADERNO_DO_ORADOR_VERSAO_ENXUTA.pdf` | Caderno do orador: cada slide (1–25) com miniatura, tempo, fala e notas de apoio; gerado por `gerar_caderno.py` |
 | `guia/GUIA_DE_ESTUDO_E_DEFESA.pdf` | Guia de estudo completo em PDF (método explicado, perguntas da banca com respostas, ficha de números) |
 | `apresentacao/build_deck_enxuto.py` + `notas_fala_enxuta.py` | Gerador e notas; capa, referências, agradecimentos, encerramento e apoio reaproveitam as funções `slide_*` de `build_deck.py` |
 
@@ -47,7 +47,7 @@ cd apresentacao && python3 build_deck_enxuto.py   # gera o PPTX e o ROTEIRO_VERS
 python3 gerar_caderno.py       # caderno do orador em PDF (depois de converter o PPTX em PDF)
 ```
 
-Os slides de apoio (16 a 24, título "APOIO · ...": trajetória, critérios e busca, PRISMA, extração e risco de viés,
+Os slides de apoio (17 a 25, título "APOIO · ...": trajetória, critérios e busca, PRISMA, extração e risco de viés,
 metanálise, GRADE, respiratório e robustez, biomarcadores, discussão) só aparecem se a banca perguntar: no modo de
-apresentação, digite o número do slide e Enter; para voltar ao encerramento, digite 15 e Enter. O aprendizado
-(trajetória, slide 16) só se a banca der a oportunidade.
+apresentação, digite o número do slide e Enter; para voltar ao encerramento, digite 16 e Enter. O aprendizado
+(trajetória, slide 17) só se a banca der a oportunidade.

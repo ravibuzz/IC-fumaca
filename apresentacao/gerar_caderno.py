@@ -111,21 +111,24 @@ def main():
     with tempfile.TemporaryDirectory() as tmp:
         imgs = slide_images(tmp)
         assert len(imgs) == len(prs.slides), (len(imgs), len(prs.slides))
+        notas = [sl.notes_slide.notes_text_frame.text for sl in prs.slides]
+        enc = next(i for i, n in enumerate(notas, start=1) if n.startswith("ENCERRAMENTO"))
+        alvo = re.search(r"Tempo-alvo da fala: \*\*(\d+:\d+)\*\*", ROTEIRO_MD.read_text(encoding="utf-8")).group(1)
         partes = [
             "<h1>Caderno do orador — versão enxuta</h1>",
             '<p class="sub">VIII SEMICA · 21/10/2026 · Theo Báccaro · Revisão sistemática e metanálise de prevalência: '
             "fumaça cirúrgica e saúde da equipe de centro cirúrgico</p>",
             '<div class="box"><b>Como usar.</b> Cada slide traz a <b>fala</b> (o que dizer em voz alta, em amarelo) e o '
-            "<b>apoio</b> (números e respostas prontas, só para consultar se perguntarem). Tempo-alvo: <b>7:40</b> "
+            f"<b>apoio</b> (números e respostas prontas, só para consultar se perguntarem). Tempo-alvo: <b>{alvo}</b> "
             "(limite de 10 min). Se estiver mais de 15 s atrasado num marco do relógio, corte o detalhe do slide "
-            "seguinte e diga só a frase-chave (o subtítulo). Os slides 16 a 24 são de apoio: no modo de apresentação, "
-            "digite o número e Enter para ir direto; 15 e Enter para voltar ao encerramento.</div>",
+            f"seguinte e diga só a frase-chave (o subtítulo). Os slides {enc + 1} a {len(notas)} são de apoio: no modo de "
+            f"apresentação, digite o número e Enter para ir direto; {enc} e Enter para voltar ao encerramento.</div>",
             "<h2>Tempo por slide</h2>",
             tabela_tempos(),
         ]
-        for i, (sl, img) in enumerate(zip(prs.slides, imgs), start=1):
-            titulo, corpo = nota_html(sl.notes_slide.notes_text_frame.text)
-            apoio = i > 15
+        for i, (nota, img) in enumerate(zip(notas, imgs), start=1):
+            titulo, corpo = nota_html(nota)
+            apoio = i > enc
             b64 = base64.b64encode(img.read_bytes()).decode()
             cls = "slide novo" + (" apoio" if apoio else "")
             tag = f"Apoio {i}" if apoio else f"Slide {i}"
