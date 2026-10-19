@@ -10,6 +10,7 @@ ocupacionalmente expostos à fumaça cirúrgica: revisão sistemática e metaná
 |---|---|
 | `apresentacao/SEMICA_Fumaca_Cirurgica_Baccaro.pptx` | Apresentação final (21 slides), sobre o modelo oficial do SEMICA, com notas de fala em todos os slides, transição de esmaecimento e animações automáticas nos slides-chave |
 | `apresentacao/SEMICA_Fumaca_Cirurgica_Baccaro.pdf` | Versão PDF para o pen drive (plano B) |
+| `resumo/RESUMO_SEMICA.md` | Resumo para submissão ao SEMICA, conforme as normas do evento (349 palavras) |
 | `guia/GUIA_DE_ESTUDO_E_DEFESA.md` / `.docx` | Guia de estudo: roteiro de fala, método explicado passo a passo, perguntas prováveis da banca com respostas, ficha de números e checklist |
 | `apresentacao/build_deck.py` + `deck_lib.py` | Gerador da apresentação (python-pptx) a partir do modelo oficial |
 | `apresentacao/assets/` | Modelo oficial, figuras do manuscrito, imagens geradas (Higgsfield), ícones e, em `trajetoria/`, miniaturas dos certificados, capas das diretrizes e o QR code do OSF |
