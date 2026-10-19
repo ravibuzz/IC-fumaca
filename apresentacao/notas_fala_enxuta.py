@@ -34,9 +34,9 @@ APOIO (não ler):
 - Ocular é o desfecho principal; respiratório é exploratório (definições mais variáveis).
 - A conclusão responde a estes três itens, na mesma ordem (1, 2, 3).""",
 
-    "peco": """PERGUNTA PECO
+    "peco": """PERGUNTA DE PESQUISA (PECO)
 FALA:
-A pergunta seguiu o PECO: na equipe de centro cirúrgico, a exposição ocupacional à fumaça dos dispositivos de energia, comparada a quem não é exposto ou se protege, e os efeitos à saúde como desfecho.
+Nossa pergunta: na equipe de centro cirúrgico, quais desfechos de saúde se associam à exposição ocupacional à fumaça cirúrgica, em comparação com quem não é exposto ou se protege? Ela foi estruturada pelo PECO: população, exposição, comparador e desfecho.
 
 APOIO (não ler):
 - PECO, e não PICO, porque é exposição, não intervenção alocada.

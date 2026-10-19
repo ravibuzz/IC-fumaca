@@ -141,8 +141,17 @@ def slide_objetivos(deck):
 # 4 — PERGUNTA PECO
 # =====================================================================
 def slide_peco(deck):
-    s = deck.content_slide("OBJETIVOS", "A pergunta de pesquisa, estruturada pelo PECO")
+    s = deck.content_slide("PERGUNTA DE PESQUISA (PECO)", "O que a revisão quis responder, e os quatro elementos que guiaram a busca")
     b = Build(s)
+    BAND_H = 2.0
+    with b.step():  # a pergunta vem primeiro, em destaque
+        rect(s, L, Y0, R - L, BAND_H, fill=NAVY)
+        icon(s, "question", L + PAD, Y0 + (BAND_H - 0.85) / 2, 0.85, color="gold")
+        tb(s, L + PAD + 1.2, Y0 + 0.15, R - L - 2 * PAD - 1.2, BAND_H - 0.3,
+           [[("Pergunta: ", {"bold": True, "color": GOLD}),
+             ("na equipe de centro cirúrgico, quais desfechos de saúde se associam à exposição ocupacional à "
+              "fumaça cirúrgica, em comparação com quem não é exposto ou se protege?", {})]],
+           size=25, color=WHITE, space_after=0, anchor=MSO_ANCHOR.MIDDLE)
     peco = [
         ("P", "População", NAVY, NAVY_TINT, "Equipe de centro cirúrgico",
          "cirurgiões, residentes, enfermagem, instrumentação e anestesia"),
@@ -153,27 +162,19 @@ def slide_peco(deck):
         ("O", "Desfecho", DARK_GOLD, GOLD_TINT, "Efeitos à saúde",
          "sintomas, função pulmonar e biomarcadores"),
     ]
-    BAND_H = 1.75
-    CH = YB - BAND_H - GAP - Y0
+    CY = Y0 + BAND_H + GAP
+    CH = YB - CY
     for (x, w), (letra, nome, cor, tint, principal, detalhe) in zip(cols(4), peco):
         with b.step():
-            rect(s, x, Y0, w, CH, fill=tint)
-            circle(s, x + w / 2, Y0 + PAD + 1.0, 2.0, fill=cor, text=letra, size=66)
+            rect(s, x, CY, w, CH, fill=tint)
+            circle(s, x + w / 2, CY + PAD + 0.95, 1.9, fill=cor, text=letra, size=64)
             # rótulo, frase principal e detalhe em alturas fixas: alinhados entre os quatro cards
-            tb(s, x + PAD, Y0 + 2.6, w - 2 * PAD, 0.5, [nome.upper()], size=21, color=cor, bold=True,
+            tb(s, x + PAD, CY + 2.45, w - 2 * PAD, 0.5, [nome.upper()], size=21, color=cor, bold=True,
                align=PP_ALIGN.CENTER, space_after=0)
-            tb(s, x + PAD, Y0 + 3.15, w - 2 * PAD, 1.15, [principal], size=26, color=INK, bold=True,
+            tb(s, x + PAD, CY + 3.0, w - 2 * PAD, 1.15, [principal], size=26, color=INK, bold=True,
                align=PP_ALIGN.CENTER, space_after=0, anchor=MSO_ANCHOR.MIDDLE, line_spacing=0.95)
-            tb(s, x + PAD, Y0 + 4.45, w - 2 * PAD, CH - 4.45 - PAD, [detalhe], size=21, color=GRAY,
+            tb(s, x + PAD, CY + 4.3, w - 2 * PAD, CH - 4.3 - PAD, [detalhe], size=21, color=GRAY,
                align=PP_ALIGN.CENTER, space_after=0)
-    with b.step():
-        rect(s, L, YB - BAND_H, R - L, BAND_H, fill=NAVY)
-        icon(s, "question", L + PAD, YB - BAND_H + (BAND_H - 0.75) / 2, 0.75, color="gold")
-        tb(s, L + PAD + 1.05, YB - BAND_H + 0.15, R - L - 2 * PAD - 1.05, BAND_H - 0.3,
-           [[("Pergunta: ", {"bold": True, "color": GOLD}),
-             ("na equipe de centro cirúrgico, quais desfechos de saúde se associam à exposição ocupacional à "
-              "fumaça cirúrgica, em comparação com quem não é exposto ou se protege?", {})]],
-           size=22, color=WHITE, space_after=0, anchor=MSO_ANCHOR.MIDDLE)
     b.apply()
     return s
 
@@ -595,7 +596,7 @@ def slide_perspectivas(deck):
 # ordem, tempos e montagem
 # =====================================================================
 ROTEIRO = [("capa", completo.slide_capa, 15), ("introducao", slide_introducao, 40), ("objetivos", slide_objetivos, 30),
-           ("peco", slide_peco, 20), ("metodo", slide_metodo, 45), ("selecao", slide_selecao, 25),
+           ("peco", slide_peco, 25), ("metodo", slide_metodo, 45), ("selecao", slide_selecao, 25),
            ("metanalise", slide_metanalise, 50), ("ocular", slide_ocular, 55), ("respiratorio", slide_respiratorio, 35),
            ("objetivos_bio", slide_objetivos_bio, 45), ("discussao", slide_discussao, 40),
            ("conclusao", slide_conclusao, 35), ("perspectivas", slide_perspectivas, 15),

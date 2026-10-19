@@ -36,7 +36,7 @@ igual e gerada por `build_deck.py`.
 
 | Caminho | O que é |
 |---|---|
-| `apresentacao/SEMICA_Fumaca_Cirurgica_Baccaro_ENXUTA.pptx` / `.pdf` | 16 slides principais (fala de ~7:45, com folga para os 10 min) + 9 slides de apoio depois do encerramento |
+| `apresentacao/SEMICA_Fumaca_Cirurgica_Baccaro_ENXUTA.pptx` / `.pdf` | 16 slides principais (fala de ~7:50, com folga para os 10 min) + 9 slides de apoio depois do encerramento |
 | `apresentacao/ROTEIRO_VERSAO_ENXUTA.md` | Tempo por slide, relógio acumulado e a fala de cada slide |
 | `apresentacao/CADERNO_DO_ORADOR_VERSAO_ENXUTA.pdf` | Caderno do orador: cada slide (1–25) com miniatura, tempo, fala e notas de apoio; gerado por `gerar_caderno.py` |
 | `guia/GUIA_DE_ESTUDO_E_DEFESA.pdf` | Guia de estudo completo em PDF (método explicado, perguntas da banca com respostas, ficha de números) |
