@@ -27,3 +27,24 @@ cd ../guia && python3 montar_guia.py               # gera o guia (.md e .docx), 
 ```
 
 Dependências: Python 3 com `python-pptx`, `Pillow`, `lxml`, `segno` (QR code); `pandoc` para o DOCX do guia; `pdftotext` (poppler) para a auditoria.
+
+## Versão enxuta (pedido da orientadora)
+
+Slides mais limpos e tempo cronometrado: uma mensagem por slide (o subtítulo é a frase-chave), pouco texto e os números
+de destaque grandes; o foco é mostrar como o trabalho foi feito e responder ao objetivo. A versão completa continua
+igual e gerada por `build_deck.py`.
+
+| Caminho | O que é |
+|---|---|
+| `apresentacao/SEMICA_Fumaca_Cirurgica_Baccaro_ENXUTA.pptx` / `.pdf` | 15 slides principais (fala de ~7:40, com folga para os 10 min) + 9 slides de apoio depois do encerramento |
+| `apresentacao/ROTEIRO_VERSAO_ENXUTA.md` | Tempo por slide, relógio acumulado e a fala de cada slide |
+| `apresentacao/build_deck_enxuto.py` + `notas_fala_enxuta.py` | Gerador e notas; capa, referências, agradecimentos, encerramento e apoio reaproveitam as funções `slide_*` de `build_deck.py` |
+
+```bash
+cd apresentacao && python3 build_deck_enxuto.py   # gera o PPTX e o ROTEIRO_VERSAO_ENXUTA.md
+```
+
+Os slides de apoio (16 a 24, título "APOIO · ...": trajetória, critérios e busca, PRISMA, extração e risco de viés,
+metanálise, GRADE, respiratório e robustez, biomarcadores, discussão) só aparecem se a banca perguntar: no modo de
+apresentação, digite o número do slide e Enter; para voltar ao encerramento, digite 15 e Enter. O aprendizado
+(trajetória, slide 16) só se a banca der a oportunidade.

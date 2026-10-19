@@ -154,10 +154,10 @@ def slide_metodo(deck):
             circle(s, x + w / 2, cy, 1.0, fill=RED if destaque else NAVY, text=str(i), size=28)
             tb(s, x, 3.3, w, 0.5, [t], size=20, color=NAVY, bold=True, align=PP_ALIGN.CENTER, space_after=0)
             rect(s, x, BX_Y, w, BX_H, fill=RED_TINT if destaque else LIGHT)
-            tb(s, x + 0.12, BX_Y + 0.22, w - 0.24, 0.6, [big], size=28 if i == 3 else 24, color=RED if destaque else NAVY,
-               bold=True, align=PP_ALIGN.CENTER, space_after=0)
-            tb(s, x + 0.15, BX_Y + 0.9, w - 0.3, BX_H - 1.05, [small], size=18, color=INK, align=PP_ALIGN.CENTER,
-               space_after=0)
+            tb(s, x + 0.2, BX_Y + 0.15, w - 0.4, BX_H - 0.3, [
+                {"runs": [(big, {"bold": True, "color": RED if destaque else NAVY, "size": 28 if i == 3 else 24})],
+                 "space_after": 8}, small], size=18, color=INK, align=PP_ALIGN.CENTER, space_after=0,
+               anchor=MSO_ANCHOR.MIDDLE)
     SL_Y = BX_Y + BX_H + GAP + 0.05
     SL_H = 1.95
     with b.step():
@@ -195,20 +195,19 @@ def slide_selecao(deck):
     between = [["− 5.839", "duplicatas", "− 8 não", "exportados"], ["− 10.882", "excluídos", "+ 4 por", "citação"],
                ["− 6 não", "recuperados"], ["− 4", "excluídos"]]
     FB_H = 2.9
-    bw, bg = 2.6, (R - L - 5 * 2.6) / 4
+    bw, bg = 2.5, (R - L - 5 * 2.5) / 4
     for i, (num, lab, col) in enumerate(flow):
         x = L + i * (bw + bg)
         with b.step():
             if i > 0:
                 px = x - bg
-                line(s, px + 0.08, Y0 + 0.95, x - 0.08, Y0 + 0.95, color=NAVY, width=2.5, arrow=True)
-                tb(s, px + 0.02, Y0 + 1.15, bg - 0.04, 1.4, between[i - 1], size=16, color=GRAY, align=PP_ALIGN.CENTER,
+                line(s, px + 0.1, Y0 + 0.95, x - 0.1, Y0 + 0.95, color=NAVY, width=2.5, arrow=True)
+                tb(s, px + 0.06, Y0 + 1.15, bg - 0.12, 1.4, between[i - 1], size=15, color=GRAY, align=PP_ALIGN.CENTER,
                    space_after=0, line_spacing=0.95)
             rect(s, x, Y0, bw, FB_H, fill=RED_TINT if col == RED else LIGHT)
-            tb(s, x + 0.12, Y0 + 0.28, bw - 0.24, 0.9, [num], size=50, color=col, bold=True, align=PP_ALIGN.CENTER,
-               space_after=0)
-            tb(s, x + 0.2, Y0 + 1.35, bw - 0.4, FB_H - 1.55, [lab], size=20, color=INK, align=PP_ALIGN.CENTER,
-               space_after=0)
+            tb(s, x + 0.12, Y0 + 0.15, bw - 0.24, FB_H - 0.3, [
+                {"runs": [(num, {"bold": True, "color": col, "size": 46})], "space_after": 6}, lab], size=20,
+               color=INK, align=PP_ALIGN.CENTER, space_after=0, anchor=MSO_ANCHOR.MIDDLE)
     CA_Y = Y0 + FB_H + 0.45
     CA_H = YBT - CA_Y
     (c1x, c1w), (c2x, c2w), (c3x, c3w) = cols(3)
@@ -246,7 +245,7 @@ def slide_metanalise(deck):
         ("Escala logito", ["ln [ p ÷ (1 − p) ]"], "mantém estimativa e IC entre 0 e 100%"),
         ("Efeitos aleatórios", ["Paule-Mandel", "+ Hartung-Knapp"],
          "a prevalência verdadeira varia entre hospitais; IC honesto com poucos estudos"),
-        ("Heterogeneidade e predição", ["I²  ·  intervalo de predição"],
+        ("Heterogeneidade e predição", ["I²  +  intervalo", "de predição"],
          "quanto os estudos diferem e o que esperar num novo hospital"),
     ]
     PC_H = 4.2
@@ -258,10 +257,10 @@ def slide_metanalise(deck):
             circle(s, x + PAD + 0.375, Y0 + PAD + 0.375, 0.75, fill=RED, text=str(i), size=24)
             tb(s, x + PAD + 0.95, Y0 + PAD - 0.05, w - 2 * PAD - 0.95, 0.85, [t], size=21, color=NAVY, bold=True,
                space_after=0, anchor=MSO_ANCHOR.MIDDLE)
-            rect(s, x + 0.25, Y0 + 1.4, w - 0.5, 1.0, fill=WHITE, line=rgb("C9CFDA"))
-            tb(s, x + 0.3, Y0 + 1.4, w - 0.6, 1.0, formula, size=22 if len(formula) == 1 else 19, color=RED, bold=True,
+            rect(s, x + 0.25, Y0 + 1.35, w - 0.5, 1.2, fill=WHITE, line=rgb("C9CFDA"))
+            tb(s, x + 0.3, Y0 + 1.35, w - 0.6, 1.2, formula, size=22 if len(formula) == 1 else 19, color=RED, bold=True,
                align=PP_ALIGN.CENTER, space_after=0, anchor=MSO_ANCHOR.MIDDLE)
-            tb(s, x + PAD, Y0 + 2.55, w - 2 * PAD, PC_H - 2.55 - PAD, [body], size=20, color=INK, space_after=0,
+            tb(s, x + PAD, Y0 + 2.7, w - 2 * PAD, PC_H - 2.7 - PAD, [body], size=20, color=INK, space_after=0,
                align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
     PN_Y = Y0 + PC_H + GAP + 0.05
     paineis = [
@@ -515,22 +514,21 @@ def slide_conclusao(deck):
 def slide_perspectivas(deck):
     s = deck.content_slide("PERSPECTIVAS FUTURAS", "O que falta para responder ao risco de longo prazo")
     agenda = [("hourglass", "Coortes", "com medida objetiva da exposição (PM2,5, voláteis)"),
-              ("list", "Definições padronizadas", "sintoma, recordatório e instrumentos validados"),
+              ("list", "Definições padrão", "sintoma, recordatório e instrumentos validados"),
               ("lungs", "Desfechos crônicos", "incidência de câncer e DPOC"),
               ("fan", "Efetividade da proteção", "exaustão, N95/PFF2 e educação, antes e depois")]
-    AH = 4.6
+    AH = 5.55
     for (x, w), (ic, t, body) in zip(cols(4), agenda):
         rect(s, x, Y0, w, AH, fill=LIGHT)
-        icon_badge(s, ic, x + w / 2, Y0 + PAD + 0.6, d=1.2, fill=NAVY)
-        tb(s, x + PAD, Y0 + 1.75, w - 2 * PAD, 0.9, [t], size=22, color=NAVY, bold=True, align=PP_ALIGN.CENTER,
-           space_after=0, anchor=MSO_ANCHOR.MIDDLE)
-        tb(s, x + PAD, Y0 + 2.7, w - 2 * PAD, AH - 2.7 - PAD, [body], size=20, color=INK, align=PP_ALIGN.CENTER,
-           space_after=0, anchor=MSO_ANCHOR.MIDDLE)
+        icon_badge(s, ic, x + w / 2, Y0 + PAD + 0.7, d=1.4, fill=NAVY)
+        tb(s, x + PAD, Y0 + 2.05, w - 2 * PAD, AH - 2.05 - PAD, [
+            {"runs": [(t, {"bold": True, "color": NAVY, "size": 23})], "space_after": 12}, body], size=21, color=INK,
+           align=PP_ALIGN.CENTER, space_after=0, anchor=MSO_ANCHOR.MIDDLE)
     PY = Y0 + AH + GAP
     rect(s, L, PY, R - L, YB - PY, fill=GOLD_TINT)
     tb(s, L + PAD, PY + PAD - 0.05, R - L - 2 * PAD, 0.45, ["Para este trabalho"], size=22, color=NAVY, bold=True,
        space_after=0)
-    IT_Y = PY + 0.95
+    IT_Y = PY + 0.85
     IT_H = YB - PAD - IT_Y
     for (x, w), (ic, body) in zip(cols(3, L + PAD, R - PAD, gap=0.5), [
         ("upload", [("Submissão ", {"bold": True}), ("do manuscrito a periódico indexado", {})]),
@@ -538,7 +536,7 @@ def slide_perspectivas(deck):
         ("calendar", [("Atualização da busca ", {"bold": True}), ("e dos 6 relatórios não recuperados", {})]),
     ]):
         icon(s, ic, x, IT_Y + (IT_H - 0.65) / 2, 0.65, color="navy")
-        tb(s, x + 0.9, IT_Y, w - 0.9, IT_H, [body], size=20, color=INK, space_after=0, anchor=MSO_ANCHOR.MIDDLE)
+        tb(s, x + 0.9, IT_Y, w - 0.9, IT_H, [body], size=21, color=INK, space_after=0, anchor=MSO_ANCHOR.MIDDLE)
     return s
 
 

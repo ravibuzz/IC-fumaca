@@ -519,6 +519,8 @@ class Deck:
         sldIdLst.remove(el)
         sldIdLst.append(el)
 
+    section_prefix = ""  # ex.: "APOIO · " nos slides de apoio, mostrados só nas perguntas
+
     def content_slide(self, section, subtitle=None, track=None):
         s = self.prs.slides.add_slide(self.blank)
         # moldura idêntica ao modelo: fundo com faixa azul, retângulo branco e logo SEMICA
@@ -534,7 +536,7 @@ class Deck:
         t.name = "Título da seção"
         tf = t.text_frame
         tf.word_wrap = True
-        fill_text(tf, [section], size=32, color=RGBColor(0, 0, 0), space_after=0)
+        fill_text(tf, [self.section_prefix + section], size=32, color=RGBColor(0, 0, 0), space_after=0)
         if subtitle:
             tb(s, 1.25, 1.2, 15.5, 0.55, [subtitle], size=24, color=NAVY, bold=True, space_after=0,
                name="Subtítulo")
